@@ -1,0 +1,1000 @@
+{
+  "state": "done",
+  "checkpoint_epoch": 400,
+  "checkpoint_step": 100000,
+  "patient_counts": {
+    "val": 38,
+    "test": 38
+  },
+  "maximum_dice_absolute_delta_from_preserved_results": 0.0,
+  "predictions": [
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0036",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0036.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0036.nii.gz",
+      "seconds": 19.918641804950312,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0091",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0091.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0091.nii.gz",
+      "seconds": 18.732082400936633,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0109",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0109.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0109.nii.gz",
+      "seconds": 18.835389740066603,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0118",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0118.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0118.nii.gz",
+      "seconds": 30.92916665796656,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0211",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0211.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0211.nii.gz",
+      "seconds": 14.852117115980946,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0309",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0309.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0309.nii.gz",
+      "seconds": 19.390385118080303,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0375",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0375.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0375.nii.gz",
+      "seconds": 11.711346679017879,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0407",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0407.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0407.nii.gz",
+      "seconds": 16.430846201023087,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0416",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0416.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0416.nii.gz",
+      "seconds": 11.177252701018006,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0424",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0424.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0424.nii.gz",
+      "seconds": 9.817572124069557,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0445",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0445.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0445.nii.gz",
+      "seconds": 10.632096288027242,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0456",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0456.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0456.nii.gz",
+      "seconds": 16.584778600023128,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0462",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0462.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0462.nii.gz",
+      "seconds": 17.33087235293351,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0469",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0469.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0469.nii.gz",
+      "seconds": 9.512978369020857,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0470",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0470.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0470.nii.gz",
+      "seconds": 14.802718035061844,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0481",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0481.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0481.nii.gz",
+      "seconds": 9.598514812067151,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0490",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0490.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0490.nii.gz",
+      "seconds": 12.175500671961345,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0491",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0491.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0491.nii.gz",
+      "seconds": 16.68869561201427,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0521",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0521.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0521.nii.gz",
+      "seconds": 14.88475761609152,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0555",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0555.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0555.nii.gz",
+      "seconds": 11.693452985025942,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0556",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0556.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0556.nii.gz",
+      "seconds": 19.137196091003716,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0617",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0617.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0617.nii.gz",
+      "seconds": 14.420104090939276,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0651",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0651.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0651.nii.gz",
+      "seconds": 9.391828239080496,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0658",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0658.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0658.nii.gz",
+      "seconds": 16.73315528803505,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0705",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0705.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0705.nii.gz",
+      "seconds": 9.877132414025255,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0733",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0733.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0733.nii.gz",
+      "seconds": 18.277566339005716,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0743",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0743.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0743.nii.gz",
+      "seconds": 13.012836951995268,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0775",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0775.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0775.nii.gz",
+      "seconds": 11.438045836985111,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0776",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0776.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0776.nii.gz",
+      "seconds": 16.196136050042696,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0788",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0788.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0788.nii.gz",
+      "seconds": 11.645289085106924,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0791",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0791.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0791.nii.gz",
+      "seconds": 17.15645556896925,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0810",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0810.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0810.nii.gz",
+      "seconds": 9.532316058059223,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0859",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0859.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0859.nii.gz",
+      "seconds": 9.127890951000154,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0933",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0933.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0933.nii.gz",
+      "seconds": 16.4602645059349,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0973",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0973.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0973.nii.gz",
+      "seconds": 17.70285762893036,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0999",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-0999.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-0999.nii.gz",
+      "seconds": 14.208459827001207,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-1001",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-1001.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-1001.nii.gz",
+      "seconds": 16.43065216008108,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-1003",
+      "prediction_path": "<PREDICTION_ROOT>/val/LIDC-IDRI-1003.nii.gz",
+      "gt_path": "<TRAIN_VAL_DATA>/labelsVa/LIDC-IDRI-1003.nii.gz",
+      "seconds": 11.464600227074698,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0004",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0004.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0004.nii.gz",
+      "seconds": 20.3913046970265,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0012",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0012.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0012.nii.gz",
+      "seconds": 15.862239068024792,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0097",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0097.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0097.nii.gz",
+      "seconds": 21.287532573915087,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0128",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0128.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0128.nii.gz",
+      "seconds": 24.735297602950595,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0129",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0129.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0129.nii.gz",
+      "seconds": 15.75614462804515,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0137",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0137.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0137.nii.gz",
+      "seconds": 24.14491267304402,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0164",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0164.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0164.nii.gz",
+      "seconds": 24.52140607405454,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0344",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0344.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0344.nii.gz",
+      "seconds": 17.368883199989796,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0358",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0358.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0358.nii.gz",
+      "seconds": 16.280399854993448,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0406",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0406.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0406.nii.gz",
+      "seconds": 10.084616804961115,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0427",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0427.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0427.nii.gz",
+      "seconds": 14.336030966951512,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0515",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0515.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0515.nii.gz",
+      "seconds": 23.71968384599313,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0530",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0530.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0530.nii.gz",
+      "seconds": 11.518961562076584,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0542",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0542.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0542.nii.gz",
+      "seconds": 8.737127022002824,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0583",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0583.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0583.nii.gz",
+      "seconds": 13.072185874101706,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0594",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0594.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0594.nii.gz",
+      "seconds": 9.798780060024,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0602",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0602.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0602.nii.gz",
+      "seconds": 13.467297281022184,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0628",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0628.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0628.nii.gz",
+      "seconds": 24.08885472698603,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0634",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0634.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0634.nii.gz",
+      "seconds": 11.666216150973924,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0649",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0649.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0649.nii.gz",
+      "seconds": 17.327200029976666,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0659",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0659.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0659.nii.gz",
+      "seconds": 16.49814277596306,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0674",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0674.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0674.nii.gz",
+      "seconds": 12.358903232961893,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0696",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0696.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0696.nii.gz",
+      "seconds": 8.090695376042277,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0700",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0700.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0700.nii.gz",
+      "seconds": 17.260376945952885,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0712",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0712.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0712.nii.gz",
+      "seconds": 17.589386323001236,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0801",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0801.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0801.nii.gz",
+      "seconds": 8.674405008903705,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0813",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0813.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0813.nii.gz",
+      "seconds": 10.090434235055,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0822",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0822.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0822.nii.gz",
+      "seconds": 14.286058833939023,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0826",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0826.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0826.nii.gz",
+      "seconds": 15.331730892998166,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0827",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0827.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0827.nii.gz",
+      "seconds": 13.261592380004004,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0836",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0836.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0836.nii.gz",
+      "seconds": 9.116894583101384,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0860",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0860.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0860.nii.gz",
+      "seconds": 18.54318943002727,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0871",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0871.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0871.nii.gz",
+      "seconds": 9.575924419914372,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0898",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0898.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0898.nii.gz",
+      "seconds": 13.533015156979673,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0913",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0913.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0913.nii.gz",
+      "seconds": 8.648112263996154,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0928",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0928.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0928.nii.gz",
+      "seconds": 9.746203641057946,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0985",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-0985.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-0985.nii.gz",
+      "seconds": 13.490808404050767,
+      "gpu": "0",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-1004",
+      "prediction_path": "<PREDICTION_ROOT>/test/LIDC-IDRI-1004.nii.gz",
+      "gt_path": "<TEST_DATA>/labelsTs/LIDC-IDRI-1004.nii.gz",
+      "seconds": 11.646081120939925,
+      "gpu": "1",
+      "dice_absolute_delta_from_preserved_results": {
+        "pulmonary_artery": 0.0,
+        "pulmonary_vein": 0.0,
+        "airway_lumen": 0.0
+      }
+    }
+  ]
+}

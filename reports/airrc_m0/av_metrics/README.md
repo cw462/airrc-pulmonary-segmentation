@@ -1,37 +1,42 @@
-# AirRC M0 动静脉错分补充评价记录
+# AirRC M0 动静脉错分补充评价
 
-本次状态为 **incomplete：缺少现有预测标签**。没有可报告的真实 AV 指标数值，没有启动训练或推理。
+状态为 **complete**。用户明确允许补跑推理后，使用原第 400 epoch、100,000 步最佳权重，为固定 38 例验证和 38 例测试导出完整预测标签，再读取这些标签补算六项指标。
 
-| 数据划分 | 固定病例数 | 可读 GT 几何 | 现有预测数 | 六项指标各自 n_valid | 缺失病例 |
-|---|---:|---:|---:|---:|---:|
-| 验证 | 38 | 38 | 0 | 0 | 38 |
-| 测试 | 38 | 38 | 0 | 0 | 38 |
+| 指标 | 验证 mean ± sample_std（%） | 验证 median（%） | n_valid | 测试 mean ± sample_std（%） | 测试 median（%） | n_valid |
+|---|---:|---:|---:|---:|---:|---:|
+| av_mcs | 0.233 ± 0.136 | 0.178 | 38 | 0.215 ± 0.107 | 0.188 | 38 |
+| A→V | 0.437 ± 0.293 | 0.371 | 38 | 0.411 ± 0.269 | 0.311 | 38 |
+| V→A | 0.513 ± 0.371 | 0.385 | 38 | 0.463 ± 0.272 | 0.378 | 38 |
+| 合并血管 Dice | 96.891 ± 0.528 | 97.006 | 38 | 96.901 ± 0.515 | 96.971 | 38 |
+| 合并血管 Precision | 97.152 ± 0.995 | 97.416 | 38 | 97.110 ± 0.663 | 97.177 | 38 |
+| 合并血管 Recall | 96.642 ± 0.755 | 96.623 | 38 | 96.701 ± 0.949 | 96.832 | 38 |
 
-所有新增指标的 mean、sample_std、median 当前均为 null，不表示错分率为零。逐例比率为 nan，原始计数为空。由于预测缺失，76 例均未进行预测/GT 几何比较，不能声称已完成空间配对检查。
-
-已查阅 prepare_airrc.py 的 LABEL_MAP=[0,3,0,1,2]，确认原始标签 3/4 为肺动脉/肺静脉，统一标签为 1/2；当前固定 GT 已是统一编码。验证、测试各实际读取一例 GT 的标签值为 [0,1,2,3]，并读取了全部 76 例 GT 的 shape、spacing、origin、direction 和 affine。固定队列与旧 178/38/38 划分一致。
-
-已有 evaluate_airrc.score_case 只返回指标，没有调用影像写入导出预测。本机已知 full/evaluation 输出目录和服务器对应两个运行目录均未找到保存的 AirRC 预测影像。下列路径是补充脚本约定的输入位置，不是旧评估曾导出的文件位置。完整缺失病例和路径见 av_missing_files.csv。
+上表为患者级统计，sample_std 的 ddof=1。所有比率内部保存 0–1，表格乘 100 显示百分数。验证和测试始终分开，不使用全队列体素池化比率作为主要结果。
 
 ~~~text
 av_mcs = (A_to_V_voxels + V_to_A_voxels)
          / (GT_artery_voxels + GT_vein_voxels + pred_artery_voxels + pred_vein_voxels)
 ~~~
 
-该口径没有额外系数 2。尚未核对 HiPaS 作者代码，不声称与其官方实现完全一致。内部保存 0–1，比率展示时乘 100。每例独立计算后按患者分别汇总验证/测试，sample_std 的 ddof=1；零分母不填 0。
+MCS 没有额外系数 2，分母不替换为 GT 血管量。尚未核对 HiPaS 作者代码，不声称与其官方实现完全一致。错分率需结合合并血管检出指标解释。
 
-已通过用户提供的最小合成测试以及 15 项单元测试，涵盖物理网格还原、原始标签映射、NaN、患者汇总、缺失预测、COPD 标注完整性和 PARSE22 排除。合成测试数值不作为患者实验结果。
+GT 沿用现有统一编码，原始 AirRC 的 LABEL_MAP=[0,3,0,1,2] 已从项目代码确认；用户指出的 LIDC-IDRI-0004 原始人工标注经映射后，与固定测试 GT 的 shape、affine 和全部标签体素相同。
 
-原 per_case.csv 保留，复制后的 228 行原有字段和值全部保留。AV 指标是病例级，追加在每例的三行结构级记录中；汇总只使用 76 个独立患者记录。
+两组各 38 例均检查了预测与 GT 的 shape、spacing、origin、direction 和 LPS affine。实际需物理最近邻重采样的病例为 0 例；其余已在 GT 物理网格。
 
-- [追加列后的逐例表](per_case_with_av_metrics.csv)
-- [分验证/测试汇总](av_metrics_summary.json)
+异常、零分母或不可用指标总数为 0。NaN 不填 0；逐例不可用原因保存在异常表。全部预测已经保存为完整 0/1/2/3 标签。
+
+重算的 228 项病例/类别 Dice 与原评分比较，最大绝对差为 0.0。原有 per_case.csv 以及 Dice、clDice、HD95、Precision、Recall 实现和分数均保留；228 行原字段和值完整保存在追加列后的副本中。AV 指标是病例级，在旧长表的三行结构记录中重复，统计仅使用 76 个独立患者。
+
+指定最小合成测试及 15 项单元测试已通过；实际导出另外逐例检查空间及 Dice 一致性。A1/A2 复用同一 AV 脚本、固定 GT、空间流程和 cohort 文件。
+
+- [逐例补充表](per_case_with_av_metrics.csv)
+- [验证/测试统计汇总](av_metrics_summary.json)
 - [原始错分计数](av_confusion_counts.csv)
-- [全部缺失文件与预期路径](av_missing_files.csv)
+- [缺失文件清单](av_missing_files.csv)
 - [异常和不可用原因](av_metrics_exceptions.csv)
-- [几何检查记录](av_geometry_checks.json)
-- [已有预测检索记录](av_prediction_inventory.json)
+- [空间检查记录](av_geometry_checks.json)
+- [预测导出记录和 Dice 比较](av_prediction_export_summary.json)
+- [原始 GT 映射核对](av_gt_mapping_check.json)
 
-公开副本使用 <GT_ROOT>、<PREDICTION_ROOT> 等占位符表示运行目录。本机持久副本 av_missing_files.csv 保留完整绝对路径。协议、公式、标签映射和 A1/A2 复用命令见 [方法说明](../../../docs/av_metrics.md)。
-
-已按用户指出的 LIDC-IDRI-0004/label 实际读取原始 GT，确认原始编码为 [0,1,2,3,4]，经已有映射与固定测试 GT 的 shape、affine 和全部标签体素一致。见 [GT 映射核对](av_gt_mapping_check.json)。
+公开副本使用运行目录占位符。完整绝对路径保留在本机持久副本。[公式、范围与复用命令](../../../docs/av_metrics.md)

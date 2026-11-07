@@ -79,6 +79,17 @@ python -m evaluation.add_av_metrics \
 
 有缺失或异常时仍输出报告，并以退出码 2 标记不完整。原始 `per_case.csv` 保留，不被覆盖。报告中的缺失预测路径是本脚本的约定输入位置，不表示旧评估曾经创建过这些文件。
 
+## 单独导出 M0 预测
+
+旧 AirRC 评估只保存了分数，缺失标签图后必须先报告。本次用户随后明确允许使用同一个最佳权重补跑固定 76 例推理，并保存完整四类标签。该动作由独立命令执行，`add_av_metrics` 没有任何自动推理入口。
+
+~~~bash
+# 仅在明确允许补跑推理后执行；复用原 checkpoint、GT 和 38+38 划分。
+CUDA_VISIBLE_DEVICES=0,1 bash scripts/export_airrc_predictions.sh "$RUN_ROOT" 0 1
+~~~
+
+导出复用 `evaluate_airrc.load_model`、`predict_case` 及既有 nnU-Net 空间还原。预测为背景 0、动脉 1、静脉 2、气道腔 3。逐例记录与原始评分表的 Dice 绝对差，并验证导出文件与 GT 的实际物理网格；不覆盖原分数表。完成后再运行上述 AV 补算命令。
+
 ## 适用范围
 
 AirRC 使用完整动静脉 GT。COPD 仅对病例或队列元数据显式声明 `gt_av_complete=true` 的统一编码 GT 计算；没有该声明时排除，未知编码报错。
@@ -87,4 +98,4 @@ PARSE22/PARSE2022 只有动脉标注，不能评价完整 MCS、V→A 或合并 
 
 ## 当前 M0 补算状态
 
-见 [M0 实际运行报告](../reports/airrc_m0/av_metrics/README.md)。该报告将缺失数据与零错误明确分开；当前没有可报告的真实 AV 指标数值。
+见 [M0 实际运行报告](../reports/airrc_m0/av_metrics/README.md)。该报告包含已完成的 38+38 例实际 AV 结果、患者级统计、原始计数和预测导出记录。初始缺失状态保留在 Git 历史及本机归档中。

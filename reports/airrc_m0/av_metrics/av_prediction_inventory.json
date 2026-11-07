@@ -1,31 +1,19 @@
 {
-  "checked_at": "2026-11-07T21:59:14+08:00",
-  "local_searched_roots": [
-    "<LOCAL_RUNS>/full",
-    "<LOCAL_RUNS>/evaluation"
-  ],
-  "server_searched_roots": [
-    "<SERVER_RUNS>/full",
-    "<SERVER_RUNS>/evaluation"
-  ],
-  "image_extensions_searched": [
-    ".nii",
-    ".nii.gz",
-    ".nrrd",
-    ".mha"
-  ],
-  "excluded_source_image_directories": [
-    "raw",
-    "holdout"
-  ],
-  "saved_airrc_prediction_files_found": 0,
-  "source_code_finding": "evaluate_airrc.score_case returns class metrics without exporting the prediction label image",
-  "gt_headers_available": {
+  "phase": "after_authorized_prediction_export",
+  "updated_at": "2026-11-07T22:26:49+08:00",
+  "original_evaluation_saved_predictions": 0,
+  "saved_airrc_prediction_files_found": 76,
+  "inference_authorized_by_user": true,
+  "inference_started": true,
+  "training_started": false,
+  "patient_counts": {
     "val": 38,
     "test": 38
   },
-  "expected_prediction_input_convention": "{prediction_root}/{split}/{case_id}.nii.gz",
-  "inference_or_training_started": false,
-  "additional_source_directory_checked": "<AIRRC_SOURCE>",
-  "source_directory_finding": "Official CT/label pairs referenced by the original AirRC mapping CSV; no prediction/output/checkpoint filenames found."
+  "local_prediction_root": "<LOCAL_PREDICTION_ROOT>",
+  "server_prediction_root": "<PREDICTION_ROOT>",
+  "checkpoint_step": 100000,
+  "checkpoint_epoch": 400,
+  "maximum_dice_absolute_delta_from_preserved_results": 0.0,
+  "initial_missing_report_local": "<LOCAL_EVALUATION_RESULTS>/av_metrics_before_authorized_export"
 }

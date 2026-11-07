@@ -1,0 +1,1151 @@
+{
+  "protocol": "airrc-m0-hipas-public-v1",
+  "dataset": "HiPaS",
+  "cohort": "public_250_case_subset",
+  "evaluation_role": "frozen_model_external_evaluation",
+  "model_id": "AirRC_M0",
+  "source_record": "https://zenodo.org/records/14879605",
+  "source_repository": "https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation",
+  "source_intensity": "Actual downloaded CT NPZs are raw HU; check each case; do not apply normalized-example inversion",
+  "axis_layout": "source YXZ, converted to SITK ZYX with transpose(2,0,1)",
+  "spacing_source": "per-case XYZ Resolution in official metadata.xlsx",
+  "geometry_basis": "original origin/direction not published; canonical common LPS benchmark grid with published spacing, not recovered patient-world geometry",
+  "overlap_policy": "artery priority per explicit author recommendation in GitHub issue #10; original binary NPZs unchanged",
+  "overlap_policy_source": "https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation/issues/10",
+  "checkpoint": "<AIRRC_M0_MODEL_ROOT>/fold_0/checkpoint_best.pth",
+  "checkpoint_epoch": 400,
+  "checkpoint_step": 100000,
+  "inference": "unchanged AirRC M0; 1 mm preprocessing; native reference-grid export; no TTA",
+  "state": "done",
+  "patients_expected": 250,
+  "patients_completed": 250,
+  "updated_at": "2026-11-07T21:35:01.672795+00:00",
+  "aggregation": "one value per patient; arithmetic mean, sample_std ddof=1, median; no voxel pooling",
+  "scores": {
+    "pulmonary_artery": {
+      "dice": {
+        "mean": 0.811606221709542,
+        "sample_std": 0.05736989053529998,
+        "median": 0.8225285699093395,
+        "n_valid": 250
+      },
+      "iou": {
+        "mean": 0.6861201332163767,
+        "sample_std": 0.06740876906105901,
+        "median": 0.6985550570178936,
+        "n_valid": 250
+      },
+      "precision": {
+        "mean": 0.8179233515909454,
+        "sample_std": 0.07109787594916,
+        "median": 0.827967477809291,
+        "n_valid": 250
+      },
+      "recall": {
+        "mean": 0.8131811064482135,
+        "sample_std": 0.0844246415308669,
+        "median": 0.8395309023007438,
+        "n_valid": 250
+      },
+      "cldice": {
+        "mean": 0.7658759367230602,
+        "sample_std": 0.08805054136015482,
+        "median": 0.7750820318048867,
+        "n_valid": 250
+      },
+      "hd95_mm": {
+        "mean": 8.452267927191192,
+        "sample_std": 3.786857562390118,
+        "median": 7.695785748597552,
+        "n_valid": 250
+      }
+    },
+    "pulmonary_vein": {
+      "dice": {
+        "mean": 0.7794631616838588,
+        "sample_std": 0.05860951454827352,
+        "median": 0.7874821189237771,
+        "n_valid": 250
+      },
+      "iou": {
+        "mean": 0.6416619390923495,
+        "sample_std": 0.06479133731241822,
+        "median": 0.6494602115387931,
+        "n_valid": 250
+      },
+      "precision": {
+        "mean": 0.786201919283753,
+        "sample_std": 0.10604322367792474,
+        "median": 0.8052232416777557,
+        "n_valid": 250
+      },
+      "recall": {
+        "mean": 0.7932376495446809,
+        "sample_std": 0.10532472220295387,
+        "median": 0.7835388259822291,
+        "n_valid": 250
+      },
+      "cldice": {
+        "mean": 0.781386100072141,
+        "sample_std": 0.08289418282780722,
+        "median": 0.7945332907708964,
+        "n_valid": 250
+      },
+      "hd95_mm": {
+        "mean": 9.113538997733597,
+        "sample_std": 5.875516643734168,
+        "median": 8.403120071655728,
+        "n_valid": 250
+      }
+    }
+  },
+  "av_metrics": {
+    "av_mcs": {
+      "mean": 0.004892766125720866,
+      "sample_std": 0.005673041346091853,
+      "median": 0.004320922475265068,
+      "n_valid": 250
+    },
+    "artery_to_vein_rate": {
+      "mean": 0.01661059814225321,
+      "sample_std": 0.012614346720738908,
+      "median": 0.01512597503562383,
+      "n_valid": 250
+    },
+    "vein_to_artery_rate": {
+      "mean": 0.0037193495254422425,
+      "sample_std": 0.010153566677013979,
+      "median": 0.002538026360546758,
+      "n_valid": 250
+    },
+    "merged_vessel_dice": {
+      "mean": 0.8046391151001905,
+      "sample_std": 0.048106701776988225,
+      "median": 0.8121182307589294,
+      "n_valid": 250
+    },
+    "merged_vessel_precision": {
+      "mean": 0.8109875604662182,
+      "sample_std": 0.08029880711231707,
+      "median": 0.8272802285910075,
+      "n_valid": 250
+    },
+    "merged_vessel_recall": {
+      "mean": 0.8106382342139986,
+      "sample_std": 0.0860186255345751,
+      "median": 0.8214105851234744,
+      "n_valid": 250
+    }
+  },
+  "av_formulas": {
+    "av_mcs": "(a_to_v + v_to_a) / (gt_artery + gt_vein + pred_artery + pred_vein)",
+    "artery_to_vein_rate": "a_to_v / gt_artery",
+    "vein_to_artery_rate": "v_to_a / gt_vein",
+    "merged_vessel_dice": "2 * vessel_tp / (gt_vessel + pred_vessel)",
+    "merged_vessel_precision": "vessel_tp / pred_vessel",
+    "merged_vessel_recall": "vessel_tp / gt_vessel"
+  },
+  "overlap_cases": [
+    {
+      "case_id": "hipas_001",
+      "voxels": 6656
+    },
+    {
+      "case_id": "hipas_002",
+      "voxels": 3163
+    },
+    {
+      "case_id": "hipas_003",
+      "voxels": 2385
+    },
+    {
+      "case_id": "hipas_004",
+      "voxels": 4177
+    },
+    {
+      "case_id": "hipas_005",
+      "voxels": 4197
+    },
+    {
+      "case_id": "hipas_006",
+      "voxels": 3664
+    },
+    {
+      "case_id": "hipas_007",
+      "voxels": 2807
+    },
+    {
+      "case_id": "hipas_008",
+      "voxels": 4549
+    },
+    {
+      "case_id": "hipas_009",
+      "voxels": 6439
+    },
+    {
+      "case_id": "hipas_010",
+      "voxels": 2209
+    },
+    {
+      "case_id": "hipas_011",
+      "voxels": 2730
+    },
+    {
+      "case_id": "hipas_012",
+      "voxels": 4437
+    },
+    {
+      "case_id": "hipas_013",
+      "voxels": 5233
+    },
+    {
+      "case_id": "hipas_014",
+      "voxels": 2847
+    },
+    {
+      "case_id": "hipas_015",
+      "voxels": 3069
+    },
+    {
+      "case_id": "hipas_016",
+      "voxels": 3388
+    },
+    {
+      "case_id": "hipas_017",
+      "voxels": 5546
+    },
+    {
+      "case_id": "hipas_018",
+      "voxels": 4421
+    },
+    {
+      "case_id": "hipas_019",
+      "voxels": 5533
+    },
+    {
+      "case_id": "hipas_020",
+      "voxels": 2983
+    },
+    {
+      "case_id": "hipas_021",
+      "voxels": 5850
+    },
+    {
+      "case_id": "hipas_022",
+      "voxels": 5120
+    },
+    {
+      "case_id": "hipas_023",
+      "voxels": 4585
+    },
+    {
+      "case_id": "hipas_024",
+      "voxels": 2518
+    },
+    {
+      "case_id": "hipas_025",
+      "voxels": 3472
+    },
+    {
+      "case_id": "hipas_026",
+      "voxels": 2999
+    },
+    {
+      "case_id": "hipas_027",
+      "voxels": 3795
+    },
+    {
+      "case_id": "hipas_028",
+      "voxels": 3259
+    },
+    {
+      "case_id": "hipas_029",
+      "voxels": 2536
+    },
+    {
+      "case_id": "hipas_030",
+      "voxels": 3884
+    },
+    {
+      "case_id": "hipas_031",
+      "voxels": 5328
+    },
+    {
+      "case_id": "hipas_032",
+      "voxels": 2495
+    },
+    {
+      "case_id": "hipas_033",
+      "voxels": 2795
+    },
+    {
+      "case_id": "hipas_034",
+      "voxels": 3652
+    },
+    {
+      "case_id": "hipas_035",
+      "voxels": 3799
+    },
+    {
+      "case_id": "hipas_036",
+      "voxels": 3983
+    },
+    {
+      "case_id": "hipas_037",
+      "voxels": 5890
+    },
+    {
+      "case_id": "hipas_038",
+      "voxels": 4697
+    },
+    {
+      "case_id": "hipas_039",
+      "voxels": 3914
+    },
+    {
+      "case_id": "hipas_040",
+      "voxels": 6782
+    },
+    {
+      "case_id": "hipas_041",
+      "voxels": 1459
+    },
+    {
+      "case_id": "hipas_042",
+      "voxels": 3871
+    },
+    {
+      "case_id": "hipas_043",
+      "voxels": 2432
+    },
+    {
+      "case_id": "hipas_044",
+      "voxels": 2366
+    },
+    {
+      "case_id": "hipas_045",
+      "voxels": 4121
+    },
+    {
+      "case_id": "hipas_046",
+      "voxels": 2497
+    },
+    {
+      "case_id": "hipas_047",
+      "voxels": 3180
+    },
+    {
+      "case_id": "hipas_048",
+      "voxels": 3831
+    },
+    {
+      "case_id": "hipas_049",
+      "voxels": 4136
+    },
+    {
+      "case_id": "hipas_050",
+      "voxels": 3790
+    },
+    {
+      "case_id": "hipas_051",
+      "voxels": 6088
+    },
+    {
+      "case_id": "hipas_052",
+      "voxels": 4203
+    },
+    {
+      "case_id": "hipas_053",
+      "voxels": 2932
+    },
+    {
+      "case_id": "hipas_054",
+      "voxels": 5310
+    },
+    {
+      "case_id": "hipas_055",
+      "voxels": 3897
+    },
+    {
+      "case_id": "hipas_056",
+      "voxels": 5087
+    },
+    {
+      "case_id": "hipas_057",
+      "voxels": 5647
+    },
+    {
+      "case_id": "hipas_058",
+      "voxels": 3879
+    },
+    {
+      "case_id": "hipas_059",
+      "voxels": 3259
+    },
+    {
+      "case_id": "hipas_060",
+      "voxels": 2951
+    },
+    {
+      "case_id": "hipas_061",
+      "voxels": 4722
+    },
+    {
+      "case_id": "hipas_062",
+      "voxels": 3820
+    },
+    {
+      "case_id": "hipas_063",
+      "voxels": 3275
+    },
+    {
+      "case_id": "hipas_064",
+      "voxels": 3551
+    },
+    {
+      "case_id": "hipas_065",
+      "voxels": 3410
+    },
+    {
+      "case_id": "hipas_066",
+      "voxels": 4190
+    },
+    {
+      "case_id": "hipas_067",
+      "voxels": 4191
+    },
+    {
+      "case_id": "hipas_068",
+      "voxels": 3422
+    },
+    {
+      "case_id": "hipas_069",
+      "voxels": 4084
+    },
+    {
+      "case_id": "hipas_070",
+      "voxels": 5577
+    },
+    {
+      "case_id": "hipas_071",
+      "voxels": 3644
+    },
+    {
+      "case_id": "hipas_072",
+      "voxels": 4530
+    },
+    {
+      "case_id": "hipas_073",
+      "voxels": 4260
+    },
+    {
+      "case_id": "hipas_074",
+      "voxels": 3469
+    },
+    {
+      "case_id": "hipas_075",
+      "voxels": 4294
+    },
+    {
+      "case_id": "hipas_076",
+      "voxels": 5368
+    },
+    {
+      "case_id": "hipas_077",
+      "voxels": 4051
+    },
+    {
+      "case_id": "hipas_078",
+      "voxels": 3850
+    },
+    {
+      "case_id": "hipas_079",
+      "voxels": 1696
+    },
+    {
+      "case_id": "hipas_080",
+      "voxels": 4107
+    },
+    {
+      "case_id": "hipas_081",
+      "voxels": 3220
+    },
+    {
+      "case_id": "hipas_082",
+      "voxels": 2371
+    },
+    {
+      "case_id": "hipas_083",
+      "voxels": 4013
+    },
+    {
+      "case_id": "hipas_084",
+      "voxels": 4491
+    },
+    {
+      "case_id": "hipas_085",
+      "voxels": 3816
+    },
+    {
+      "case_id": "hipas_086",
+      "voxels": 3190
+    },
+    {
+      "case_id": "hipas_087",
+      "voxels": 5726
+    },
+    {
+      "case_id": "hipas_088",
+      "voxels": 4500
+    },
+    {
+      "case_id": "hipas_089",
+      "voxels": 4028
+    },
+    {
+      "case_id": "hipas_090",
+      "voxels": 2035
+    },
+    {
+      "case_id": "hipas_091",
+      "voxels": 2046
+    },
+    {
+      "case_id": "hipas_092",
+      "voxels": 2275
+    },
+    {
+      "case_id": "hipas_093",
+      "voxels": 7075
+    },
+    {
+      "case_id": "hipas_094",
+      "voxels": 5522
+    },
+    {
+      "case_id": "hipas_095",
+      "voxels": 2148
+    },
+    {
+      "case_id": "hipas_096",
+      "voxels": 6720
+    },
+    {
+      "case_id": "hipas_097",
+      "voxels": 8214
+    },
+    {
+      "case_id": "hipas_098",
+      "voxels": 2320
+    },
+    {
+      "case_id": "hipas_099",
+      "voxels": 2300
+    },
+    {
+      "case_id": "hipas_100",
+      "voxels": 4396
+    },
+    {
+      "case_id": "hipas_101",
+      "voxels": 4885
+    },
+    {
+      "case_id": "hipas_102",
+      "voxels": 5530
+    },
+    {
+      "case_id": "hipas_103",
+      "voxels": 7509
+    },
+    {
+      "case_id": "hipas_104",
+      "voxels": 3450
+    },
+    {
+      "case_id": "hipas_105",
+      "voxels": 3479
+    },
+    {
+      "case_id": "hipas_106",
+      "voxels": 4707
+    },
+    {
+      "case_id": "hipas_107",
+      "voxels": 6385
+    },
+    {
+      "case_id": "hipas_108",
+      "voxels": 5616
+    },
+    {
+      "case_id": "hipas_109",
+      "voxels": 3626
+    },
+    {
+      "case_id": "hipas_110",
+      "voxels": 4801
+    },
+    {
+      "case_id": "hipas_111",
+      "voxels": 11587
+    },
+    {
+      "case_id": "hipas_112",
+      "voxels": 5127
+    },
+    {
+      "case_id": "hipas_113",
+      "voxels": 2017
+    },
+    {
+      "case_id": "hipas_114",
+      "voxels": 3984
+    },
+    {
+      "case_id": "hipas_115",
+      "voxels": 3307
+    },
+    {
+      "case_id": "hipas_116",
+      "voxels": 4825
+    },
+    {
+      "case_id": "hipas_117",
+      "voxels": 7832
+    },
+    {
+      "case_id": "hipas_118",
+      "voxels": 6149
+    },
+    {
+      "case_id": "hipas_119",
+      "voxels": 2064
+    },
+    {
+      "case_id": "hipas_120",
+      "voxels": 2710
+    },
+    {
+      "case_id": "hipas_121",
+      "voxels": 2192
+    },
+    {
+      "case_id": "hipas_122",
+      "voxels": 5821
+    },
+    {
+      "case_id": "hipas_123",
+      "voxels": 2852
+    },
+    {
+      "case_id": "hipas_124",
+      "voxels": 2456
+    },
+    {
+      "case_id": "hipas_125",
+      "voxels": 5193
+    },
+    {
+      "case_id": "hipas_126",
+      "voxels": 7316
+    },
+    {
+      "case_id": "hipas_127",
+      "voxels": 5720
+    },
+    {
+      "case_id": "hipas_128",
+      "voxels": 9378
+    },
+    {
+      "case_id": "hipas_129",
+      "voxels": 6249
+    },
+    {
+      "case_id": "hipas_130",
+      "voxels": 4898
+    },
+    {
+      "case_id": "hipas_131",
+      "voxels": 4038
+    },
+    {
+      "case_id": "hipas_132",
+      "voxels": 5867
+    },
+    {
+      "case_id": "hipas_133",
+      "voxels": 6381
+    },
+    {
+      "case_id": "hipas_134",
+      "voxels": 12037
+    },
+    {
+      "case_id": "hipas_135",
+      "voxels": 3072
+    },
+    {
+      "case_id": "hipas_136",
+      "voxels": 5023
+    },
+    {
+      "case_id": "hipas_137",
+      "voxels": 8430
+    },
+    {
+      "case_id": "hipas_138",
+      "voxels": 7090
+    },
+    {
+      "case_id": "hipas_139",
+      "voxels": 7468
+    },
+    {
+      "case_id": "hipas_140",
+      "voxels": 4741
+    },
+    {
+      "case_id": "hipas_141",
+      "voxels": 4873
+    },
+    {
+      "case_id": "hipas_142",
+      "voxels": 5742
+    },
+    {
+      "case_id": "hipas_143",
+      "voxels": 5294
+    },
+    {
+      "case_id": "hipas_144",
+      "voxels": 4788
+    },
+    {
+      "case_id": "hipas_145",
+      "voxels": 7105
+    },
+    {
+      "case_id": "hipas_146",
+      "voxels": 7272
+    },
+    {
+      "case_id": "hipas_147",
+      "voxels": 4061
+    },
+    {
+      "case_id": "hipas_148",
+      "voxels": 6845
+    },
+    {
+      "case_id": "hipas_149",
+      "voxels": 7432
+    },
+    {
+      "case_id": "hipas_150",
+      "voxels": 3576
+    },
+    {
+      "case_id": "hipas_151",
+      "voxels": 3898
+    },
+    {
+      "case_id": "hipas_152",
+      "voxels": 4888
+    },
+    {
+      "case_id": "hipas_153",
+      "voxels": 5534
+    },
+    {
+      "case_id": "hipas_154",
+      "voxels": 3540
+    },
+    {
+      "case_id": "hipas_155",
+      "voxels": 6669
+    },
+    {
+      "case_id": "hipas_156",
+      "voxels": 17580
+    },
+    {
+      "case_id": "hipas_157",
+      "voxels": 6107
+    },
+    {
+      "case_id": "hipas_158",
+      "voxels": 3831
+    },
+    {
+      "case_id": "hipas_159",
+      "voxels": 5419
+    },
+    {
+      "case_id": "hipas_160",
+      "voxels": 2209
+    },
+    {
+      "case_id": "hipas_161",
+      "voxels": 7071
+    },
+    {
+      "case_id": "hipas_162",
+      "voxels": 2716
+    },
+    {
+      "case_id": "hipas_163",
+      "voxels": 5658
+    },
+    {
+      "case_id": "hipas_164",
+      "voxels": 5656
+    },
+    {
+      "case_id": "hipas_165",
+      "voxels": 3246
+    },
+    {
+      "case_id": "hipas_166",
+      "voxels": 7710
+    },
+    {
+      "case_id": "hipas_167",
+      "voxels": 3363
+    },
+    {
+      "case_id": "hipas_168",
+      "voxels": 5678
+    },
+    {
+      "case_id": "hipas_169",
+      "voxels": 2748
+    },
+    {
+      "case_id": "hipas_170",
+      "voxels": 10470
+    },
+    {
+      "case_id": "hipas_171",
+      "voxels": 5193
+    },
+    {
+      "case_id": "hipas_172",
+      "voxels": 2901
+    },
+    {
+      "case_id": "hipas_173",
+      "voxels": 8394
+    },
+    {
+      "case_id": "hipas_174",
+      "voxels": 7895
+    },
+    {
+      "case_id": "hipas_175",
+      "voxels": 5263
+    },
+    {
+      "case_id": "hipas_176",
+      "voxels": 10424
+    },
+    {
+      "case_id": "hipas_177",
+      "voxels": 4372
+    },
+    {
+      "case_id": "hipas_178",
+      "voxels": 5951
+    },
+    {
+      "case_id": "hipas_179",
+      "voxels": 8465
+    },
+    {
+      "case_id": "hipas_180",
+      "voxels": 3462
+    },
+    {
+      "case_id": "hipas_181",
+      "voxels": 8062
+    },
+    {
+      "case_id": "hipas_182",
+      "voxels": 4020
+    },
+    {
+      "case_id": "hipas_183",
+      "voxels": 4695
+    },
+    {
+      "case_id": "hipas_184",
+      "voxels": 4363
+    },
+    {
+      "case_id": "hipas_185",
+      "voxels": 2820
+    },
+    {
+      "case_id": "hipas_186",
+      "voxels": 2898
+    },
+    {
+      "case_id": "hipas_187",
+      "voxels": 1901
+    },
+    {
+      "case_id": "hipas_188",
+      "voxels": 3849
+    },
+    {
+      "case_id": "hipas_189",
+      "voxels": 2194
+    },
+    {
+      "case_id": "hipas_190",
+      "voxels": 2396
+    },
+    {
+      "case_id": "hipas_191",
+      "voxels": 5265
+    },
+    {
+      "case_id": "hipas_192",
+      "voxels": 5579
+    },
+    {
+      "case_id": "hipas_193",
+      "voxels": 8780
+    },
+    {
+      "case_id": "hipas_194",
+      "voxels": 5018
+    },
+    {
+      "case_id": "hipas_195",
+      "voxels": 8511
+    },
+    {
+      "case_id": "hipas_196",
+      "voxels": 10485
+    },
+    {
+      "case_id": "hipas_197",
+      "voxels": 8825
+    },
+    {
+      "case_id": "hipas_198",
+      "voxels": 12935
+    },
+    {
+      "case_id": "hipas_199",
+      "voxels": 10071
+    },
+    {
+      "case_id": "hipas_200",
+      "voxels": 8202
+    },
+    {
+      "case_id": "hipas_201",
+      "voxels": 8174
+    },
+    {
+      "case_id": "hipas_202",
+      "voxels": 12951
+    },
+    {
+      "case_id": "hipas_203",
+      "voxels": 11509
+    },
+    {
+      "case_id": "hipas_204",
+      "voxels": 6593
+    },
+    {
+      "case_id": "hipas_205",
+      "voxels": 13932
+    },
+    {
+      "case_id": "hipas_206",
+      "voxels": 8248
+    },
+    {
+      "case_id": "hipas_207",
+      "voxels": 13656
+    },
+    {
+      "case_id": "hipas_208",
+      "voxels": 17176
+    },
+    {
+      "case_id": "hipas_209",
+      "voxels": 9237
+    },
+    {
+      "case_id": "hipas_210",
+      "voxels": 6652
+    },
+    {
+      "case_id": "hipas_211",
+      "voxels": 6419
+    },
+    {
+      "case_id": "hipas_212",
+      "voxels": 16948
+    },
+    {
+      "case_id": "hipas_213",
+      "voxels": 11591
+    },
+    {
+      "case_id": "hipas_214",
+      "voxels": 21756
+    },
+    {
+      "case_id": "hipas_215",
+      "voxels": 11948
+    },
+    {
+      "case_id": "hipas_216",
+      "voxels": 9721
+    },
+    {
+      "case_id": "hipas_217",
+      "voxels": 7483
+    },
+    {
+      "case_id": "hipas_218",
+      "voxels": 14468
+    },
+    {
+      "case_id": "hipas_219",
+      "voxels": 7116
+    },
+    {
+      "case_id": "hipas_220",
+      "voxels": 7211
+    },
+    {
+      "case_id": "hipas_221",
+      "voxels": 5764
+    },
+    {
+      "case_id": "hipas_222",
+      "voxels": 7735
+    },
+    {
+      "case_id": "hipas_223",
+      "voxels": 12814
+    },
+    {
+      "case_id": "hipas_224",
+      "voxels": 9514
+    },
+    {
+      "case_id": "hipas_225",
+      "voxels": 8893
+    },
+    {
+      "case_id": "hipas_226",
+      "voxels": 4134
+    },
+    {
+      "case_id": "hipas_227",
+      "voxels": 11441
+    },
+    {
+      "case_id": "hipas_228",
+      "voxels": 7596
+    },
+    {
+      "case_id": "hipas_229",
+      "voxels": 5101
+    },
+    {
+      "case_id": "hipas_230",
+      "voxels": 6115
+    },
+    {
+      "case_id": "hipas_231",
+      "voxels": 5644
+    },
+    {
+      "case_id": "hipas_232",
+      "voxels": 7973
+    },
+    {
+      "case_id": "hipas_233",
+      "voxels": 16089
+    },
+    {
+      "case_id": "hipas_234",
+      "voxels": 28530
+    },
+    {
+      "case_id": "hipas_235",
+      "voxels": 8907
+    },
+    {
+      "case_id": "hipas_236",
+      "voxels": 26791
+    },
+    {
+      "case_id": "hipas_237",
+      "voxels": 5943
+    },
+    {
+      "case_id": "hipas_238",
+      "voxels": 9491
+    },
+    {
+      "case_id": "hipas_239",
+      "voxels": 13950
+    },
+    {
+      "case_id": "hipas_240",
+      "voxels": 15935
+    },
+    {
+      "case_id": "hipas_241",
+      "voxels": 8077
+    },
+    {
+      "case_id": "hipas_242",
+      "voxels": 8409
+    },
+    {
+      "case_id": "hipas_243",
+      "voxels": 11300
+    },
+    {
+      "case_id": "hipas_244",
+      "voxels": 22510
+    },
+    {
+      "case_id": "hipas_245",
+      "voxels": 14364
+    },
+    {
+      "case_id": "hipas_246",
+      "voxels": 15181
+    },
+    {
+      "case_id": "hipas_247",
+      "voxels": 9900
+    },
+    {
+      "case_id": "hipas_248",
+      "voxels": 5790
+    },
+    {
+      "case_id": "hipas_249",
+      "voxels": 10611
+    },
+    {
+      "case_id": "hipas_250",
+      "voxels": 7953
+    }
+  ],
+  "airway_gt_available": false
+}

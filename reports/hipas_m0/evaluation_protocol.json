@@ -1,0 +1,2639 @@
+{
+  "protocol_id": "airrc-m0-hipas-public-v1",
+  "state": "done",
+  "code_commit": "ed9d7d949f39a3aab983a8d38c7a107709b3cea9",
+  "source": {
+    "source_record": "https://zenodo.org/records/14879605",
+    "source_repository": "https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation",
+    "evaluation_role": "frozen_model_external_evaluation"
+  },
+  "cohort_definition": "All 250 publicly downloadable cases in pinned Zenodo record14879605; external frozen-model evaluation; not full1073 or official held-out198",
+  "n_patients": 250,
+  "cases": [
+    {
+      "case_id": "hipas_001",
+      "source_id": "001",
+      "source_filename": "001.npz",
+      "spacing_xyz_mm": [
+        0.6464844,
+        0.6464844,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_002",
+      "source_id": "002",
+      "source_filename": "002.npz",
+      "spacing_xyz_mm": [
+        0.64453125,
+        0.64453125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_003",
+      "source_id": "003",
+      "source_filename": "003.npz",
+      "spacing_xyz_mm": [
+        0.60546875,
+        0.60546875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_004",
+      "source_id": "004",
+      "source_filename": "004.npz",
+      "spacing_xyz_mm": [
+        0.5527344,
+        0.5527344,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_005",
+      "source_id": "005",
+      "source_filename": "005.npz",
+      "spacing_xyz_mm": [
+        0.7109375,
+        0.7109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_006",
+      "source_id": "006",
+      "source_filename": "006.npz",
+      "spacing_xyz_mm": [
+        0.65625,
+        0.65625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_007",
+      "source_id": "007",
+      "source_filename": "007.npz",
+      "spacing_xyz_mm": [
+        0.70703125,
+        0.70703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_008",
+      "source_id": "008",
+      "source_filename": "008.npz",
+      "spacing_xyz_mm": [
+        0.67578125,
+        0.67578125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_009",
+      "source_id": "009",
+      "source_filename": "009.npz",
+      "spacing_xyz_mm": [
+        0.65625,
+        0.65625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_010",
+      "source_id": "010",
+      "source_filename": "010.npz",
+      "spacing_xyz_mm": [
+        0.6796875,
+        0.6796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_011",
+      "source_id": "011",
+      "source_filename": "011.npz",
+      "spacing_xyz_mm": [
+        0.82421875,
+        0.82421875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_012",
+      "source_id": "012",
+      "source_filename": "012.npz",
+      "spacing_xyz_mm": [
+        0.59765625,
+        0.59765625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_013",
+      "source_id": "013",
+      "source_filename": "013.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_014",
+      "source_id": "014",
+      "source_filename": "014.npz",
+      "spacing_xyz_mm": [
+        0.58984375,
+        0.58984375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_015",
+      "source_id": "015",
+      "source_filename": "015.npz",
+      "spacing_xyz_mm": [
+        0.6503906,
+        0.6503906,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_016",
+      "source_id": "016",
+      "source_filename": "016.npz",
+      "spacing_xyz_mm": [
+        0.6621094,
+        0.6621094,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_017",
+      "source_id": "017",
+      "source_filename": "017.npz",
+      "spacing_xyz_mm": [
+        0.66796875,
+        0.66796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_018",
+      "source_id": "018",
+      "source_filename": "018.npz",
+      "spacing_xyz_mm": [
+        0.671875,
+        0.671875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_019",
+      "source_id": "019",
+      "source_filename": "019.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_020",
+      "source_id": "020",
+      "source_filename": "020.npz",
+      "spacing_xyz_mm": [
+        0.72265625,
+        0.72265625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_021",
+      "source_id": "021",
+      "source_filename": "021.npz",
+      "spacing_xyz_mm": [
+        0.6875,
+        0.6875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_022",
+      "source_id": "022",
+      "source_filename": "022.npz",
+      "spacing_xyz_mm": [
+        0.50390625,
+        0.50390625,
+        0.8
+      ]
+    },
+    {
+      "case_id": "hipas_023",
+      "source_id": "023",
+      "source_filename": "023.npz",
+      "spacing_xyz_mm": [
+        0.87109375,
+        0.87109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_024",
+      "source_id": "024",
+      "source_filename": "024.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_025",
+      "source_id": "025",
+      "source_filename": "025.npz",
+      "spacing_xyz_mm": [
+        0.5371094,
+        0.5371094,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_026",
+      "source_id": "026",
+      "source_filename": "026.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_027",
+      "source_id": "027",
+      "source_filename": "027.npz",
+      "spacing_xyz_mm": [
+        0.64453125,
+        0.64453125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_028",
+      "source_id": "028",
+      "source_filename": "028.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_029",
+      "source_id": "029",
+      "source_filename": "029.npz",
+      "spacing_xyz_mm": [
+        0.625,
+        0.625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_030",
+      "source_id": "030",
+      "source_filename": "030.npz",
+      "spacing_xyz_mm": [
+        0.7402344,
+        0.7402344,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_031",
+      "source_id": "031",
+      "source_filename": "031.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_032",
+      "source_id": "032",
+      "source_filename": "032.npz",
+      "spacing_xyz_mm": [
+        0.5605469,
+        0.5605469,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_033",
+      "source_id": "033",
+      "source_filename": "033.npz",
+      "spacing_xyz_mm": [
+        0.61328125,
+        0.61328125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_034",
+      "source_id": "034",
+      "source_filename": "034.npz",
+      "spacing_xyz_mm": [
+        0.58203125,
+        0.58203125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_035",
+      "source_id": "035",
+      "source_filename": "035.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_036",
+      "source_id": "036",
+      "source_filename": "036.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_037",
+      "source_id": "037",
+      "source_filename": "037.npz",
+      "spacing_xyz_mm": [
+        0.609375,
+        0.609375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_038",
+      "source_id": "038",
+      "source_filename": "038.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_039",
+      "source_id": "039",
+      "source_filename": "039.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_040",
+      "source_id": "040",
+      "source_filename": "040.npz",
+      "spacing_xyz_mm": [
+        0.8066406,
+        0.8066406,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_041",
+      "source_id": "041",
+      "source_filename": "041.npz",
+      "spacing_xyz_mm": [
+        0.734375,
+        0.734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_042",
+      "source_id": "042",
+      "source_filename": "042.npz",
+      "spacing_xyz_mm": [
+        0.6484375,
+        0.6484375,
+        0.9999999
+      ]
+    },
+    {
+      "case_id": "hipas_043",
+      "source_id": "043",
+      "source_filename": "043.npz",
+      "spacing_xyz_mm": [
+        0.80078125,
+        0.80078125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_044",
+      "source_id": "044",
+      "source_filename": "044.npz",
+      "spacing_xyz_mm": [
+        0.671875,
+        0.671875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_045",
+      "source_id": "045",
+      "source_filename": "045.npz",
+      "spacing_xyz_mm": [
+        0.6015625,
+        0.6015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_046",
+      "source_id": "046",
+      "source_filename": "046.npz",
+      "spacing_xyz_mm": [
+        0.71875,
+        0.71875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_047",
+      "source_id": "047",
+      "source_filename": "047.npz",
+      "spacing_xyz_mm": [
+        0.7597656,
+        0.7597656,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_048",
+      "source_id": "048",
+      "source_filename": "048.npz",
+      "spacing_xyz_mm": [
+        0.65625,
+        0.65625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_049",
+      "source_id": "049",
+      "source_filename": "049.npz",
+      "spacing_xyz_mm": [
+        0.5859375,
+        0.5859375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_050",
+      "source_id": "050",
+      "source_filename": "050.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_051",
+      "source_id": "051",
+      "source_filename": "051.npz",
+      "spacing_xyz_mm": [
+        0.6484375,
+        0.6484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_052",
+      "source_id": "052",
+      "source_filename": "052.npz",
+      "spacing_xyz_mm": [
+        0.59375,
+        0.59375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_053",
+      "source_id": "053",
+      "source_filename": "053.npz",
+      "spacing_xyz_mm": [
+        0.7265625,
+        0.7265625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_054",
+      "source_id": "054",
+      "source_filename": "054.npz",
+      "spacing_xyz_mm": [
+        0.609375,
+        0.609375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_055",
+      "source_id": "055",
+      "source_filename": "055.npz",
+      "spacing_xyz_mm": [
+        0.61328125,
+        0.61328125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_056",
+      "source_id": "056",
+      "source_filename": "056.npz",
+      "spacing_xyz_mm": [
+        0.6484375,
+        0.6484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_057",
+      "source_id": "057",
+      "source_filename": "057.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_058",
+      "source_id": "058",
+      "source_filename": "058.npz",
+      "spacing_xyz_mm": [
+        0.609375,
+        0.609375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_059",
+      "source_id": "059",
+      "source_filename": "059.npz",
+      "spacing_xyz_mm": [
+        0.9238281,
+        0.9238281,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_060",
+      "source_id": "060",
+      "source_filename": "060.npz",
+      "spacing_xyz_mm": [
+        0.5566406,
+        0.5566406,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_061",
+      "source_id": "061",
+      "source_filename": "061.npz",
+      "spacing_xyz_mm": [
+        0.671875,
+        0.671875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_062",
+      "source_id": "062",
+      "source_filename": "062.npz",
+      "spacing_xyz_mm": [
+        0.6640625,
+        0.6640625,
+        0.99999976
+      ]
+    },
+    {
+      "case_id": "hipas_063",
+      "source_id": "063",
+      "source_filename": "063.npz",
+      "spacing_xyz_mm": [
+        0.71875,
+        0.71875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_064",
+      "source_id": "064",
+      "source_filename": "064.npz",
+      "spacing_xyz_mm": [
+        0.7734375,
+        0.7734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_065",
+      "source_id": "065",
+      "source_filename": "065.npz",
+      "spacing_xyz_mm": [
+        0.6328125,
+        0.6328125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_066",
+      "source_id": "066",
+      "source_filename": "066.npz",
+      "spacing_xyz_mm": [
+        0.734375,
+        0.734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_067",
+      "source_id": "067",
+      "source_filename": "067.npz",
+      "spacing_xyz_mm": [
+        0.82421875,
+        0.82421875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_068",
+      "source_id": "068",
+      "source_filename": "068.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_069",
+      "source_id": "069",
+      "source_filename": "069.npz",
+      "spacing_xyz_mm": [
+        0.7109375,
+        0.7109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_070",
+      "source_id": "070",
+      "source_filename": "070.npz",
+      "spacing_xyz_mm": [
+        0.6972656,
+        0.6972656,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_071",
+      "source_id": "071",
+      "source_filename": "071.npz",
+      "spacing_xyz_mm": [
+        0.64453125,
+        0.64453125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_072",
+      "source_id": "072",
+      "source_filename": "072.npz",
+      "spacing_xyz_mm": [
+        0.60546875,
+        0.60546875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_073",
+      "source_id": "073",
+      "source_filename": "073.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_074",
+      "source_id": "074",
+      "source_filename": "074.npz",
+      "spacing_xyz_mm": [
+        0.6875,
+        0.6875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_075",
+      "source_id": "075",
+      "source_filename": "075.npz",
+      "spacing_xyz_mm": [
+        0.6328125,
+        0.6328125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_076",
+      "source_id": "076",
+      "source_filename": "076.npz",
+      "spacing_xyz_mm": [
+        0.71484375,
+        0.71484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_077",
+      "source_id": "077",
+      "source_filename": "077.npz",
+      "spacing_xyz_mm": [
+        0.59375,
+        0.59375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_078",
+      "source_id": "078",
+      "source_filename": "078.npz",
+      "spacing_xyz_mm": [
+        0.63671875,
+        0.63671875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_079",
+      "source_id": "079",
+      "source_filename": "079.npz",
+      "spacing_xyz_mm": [
+        0.6269531,
+        0.6269531,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_080",
+      "source_id": "080",
+      "source_filename": "080.npz",
+      "spacing_xyz_mm": [
+        0.625,
+        0.625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_081",
+      "source_id": "081",
+      "source_filename": "081.npz",
+      "spacing_xyz_mm": [
+        0.7675781,
+        0.7675781,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_082",
+      "source_id": "082",
+      "source_filename": "082.npz",
+      "spacing_xyz_mm": [
+        0.76953125,
+        0.76953125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_083",
+      "source_id": "083",
+      "source_filename": "083.npz",
+      "spacing_xyz_mm": [
+        0.7441406,
+        0.7441406,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_084",
+      "source_id": "084",
+      "source_filename": "084.npz",
+      "spacing_xyz_mm": [
+        0.796875,
+        0.796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_085",
+      "source_id": "085",
+      "source_filename": "085.npz",
+      "spacing_xyz_mm": [
+        0.64453125,
+        0.64453125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_086",
+      "source_id": "086",
+      "source_filename": "086.npz",
+      "spacing_xyz_mm": [
+        0.74609375,
+        0.74609375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_087",
+      "source_id": "087",
+      "source_filename": "087.npz",
+      "spacing_xyz_mm": [
+        0.6464844,
+        0.6464844,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_088",
+      "source_id": "088",
+      "source_filename": "088.npz",
+      "spacing_xyz_mm": [
+        0.75,
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_089",
+      "source_id": "089",
+      "source_filename": "089.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_090",
+      "source_id": "090",
+      "source_filename": "090.npz",
+      "spacing_xyz_mm": [
+        0.7109375,
+        0.7109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_091",
+      "source_id": "091",
+      "source_filename": "091.npz",
+      "spacing_xyz_mm": [
+        0.82421875,
+        0.82421875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_092",
+      "source_id": "092",
+      "source_filename": "092.npz",
+      "spacing_xyz_mm": [
+        0.640625,
+        0.640625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_093",
+      "source_id": "093",
+      "source_filename": "093.npz",
+      "spacing_xyz_mm": [
+        0.640625,
+        0.640625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_094",
+      "source_id": "094",
+      "source_filename": "094.npz",
+      "spacing_xyz_mm": [
+        0.7753906,
+        0.7753906,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_095",
+      "source_id": "095",
+      "source_filename": "095.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_096",
+      "source_id": "096",
+      "source_filename": "096.npz",
+      "spacing_xyz_mm": [
+        0.6796875,
+        0.6796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_097",
+      "source_id": "097",
+      "source_filename": "097.npz",
+      "spacing_xyz_mm": [
+        0.67578125,
+        0.67578125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_098",
+      "source_id": "098",
+      "source_filename": "098.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_099",
+      "source_id": "099",
+      "source_filename": "099.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_100",
+      "source_id": "100",
+      "source_filename": "100.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_101",
+      "source_id": "101",
+      "source_filename": "101.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_102",
+      "source_id": "102",
+      "source_filename": "102.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_103",
+      "source_id": "103",
+      "source_filename": "103.npz",
+      "spacing_xyz_mm": [
+        0.6015625,
+        0.6015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_104",
+      "source_id": "104",
+      "source_filename": "104.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_105",
+      "source_id": "105",
+      "source_filename": "105.npz",
+      "spacing_xyz_mm": [
+        0.685546875,
+        0.685546875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_106",
+      "source_id": "106",
+      "source_filename": "106.npz",
+      "spacing_xyz_mm": [
+        0.79101563,
+        0.79101563,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_107",
+      "source_id": "107",
+      "source_filename": "107.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_108",
+      "source_id": "108",
+      "source_filename": "108.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_109",
+      "source_id": "109",
+      "source_filename": "109.npz",
+      "spacing_xyz_mm": [
+        0.595,
+        0.595,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_110",
+      "source_id": "110",
+      "source_filename": "110.npz",
+      "spacing_xyz_mm": [
+        0.7109375,
+        0.7109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_111",
+      "source_id": "111",
+      "source_filename": "111.npz",
+      "spacing_xyz_mm": [
+        0.580078125,
+        0.580078125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_112",
+      "source_id": "112",
+      "source_filename": "112.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_113",
+      "source_id": "113",
+      "source_filename": "113.npz",
+      "spacing_xyz_mm": [
+        0.763672,
+        0.763672,
+        1.25
+      ]
+    },
+    {
+      "case_id": "hipas_114",
+      "source_id": "114",
+      "source_filename": "114.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_115",
+      "source_id": "115",
+      "source_filename": "115.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_116",
+      "source_id": "116",
+      "source_filename": "116.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_117",
+      "source_id": "117",
+      "source_filename": "117.npz",
+      "spacing_xyz_mm": [
+        0.976563,
+        0.976563,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_118",
+      "source_id": "118",
+      "source_filename": "118.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_119",
+      "source_id": "119",
+      "source_filename": "119.npz",
+      "spacing_xyz_mm": [
+        0.66796875,
+        0.66796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_120",
+      "source_id": "120",
+      "source_filename": "120.npz",
+      "spacing_xyz_mm": [
+        0.683,
+        0.683,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_121",
+      "source_id": "121",
+      "source_filename": "121.npz",
+      "spacing_xyz_mm": [
+        0.805,
+        0.805,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_122",
+      "source_id": "122",
+      "source_filename": "122.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_123",
+      "source_id": "123",
+      "source_filename": "123.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_124",
+      "source_id": "124",
+      "source_filename": "124.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_125",
+      "source_id": "125",
+      "source_filename": "125.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_126",
+      "source_id": "126",
+      "source_filename": "126.npz",
+      "spacing_xyz_mm": [
+        0.78125,
+        0.78125,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_127",
+      "source_id": "127",
+      "source_filename": "127.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_128",
+      "source_id": "128",
+      "source_filename": "128.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_129",
+      "source_id": "129",
+      "source_filename": "129.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_130",
+      "source_id": "130",
+      "source_filename": "130.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_131",
+      "source_id": "131",
+      "source_filename": "131.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_132",
+      "source_id": "132",
+      "source_filename": "132.npz",
+      "spacing_xyz_mm": [
+        0.67578125,
+        0.67578125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_133",
+      "source_id": "133",
+      "source_filename": "133.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_134",
+      "source_id": "134",
+      "source_filename": "134.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_135",
+      "source_id": "135",
+      "source_filename": "135.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_136",
+      "source_id": "136",
+      "source_filename": "136.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_137",
+      "source_id": "137",
+      "source_filename": "137.npz",
+      "spacing_xyz_mm": [
+        0.77734375,
+        0.77734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_138",
+      "source_id": "138",
+      "source_filename": "138.npz",
+      "spacing_xyz_mm": [
+        0.900390625,
+        0.900390625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_139",
+      "source_id": "139",
+      "source_filename": "139.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_140",
+      "source_id": "140",
+      "source_filename": "140.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_141",
+      "source_id": "141",
+      "source_filename": "141.npz",
+      "spacing_xyz_mm": [
+        0.8046875,
+        0.8046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_142",
+      "source_id": "142",
+      "source_filename": "142.npz",
+      "spacing_xyz_mm": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_143",
+      "source_id": "143",
+      "source_filename": "143.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_144",
+      "source_id": "144",
+      "source_filename": "144.npz",
+      "spacing_xyz_mm": [
+        0.77539063,
+        0.77539063,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_145",
+      "source_id": "145",
+      "source_filename": "145.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_146",
+      "source_id": "146",
+      "source_filename": "146.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_147",
+      "source_id": "147",
+      "source_filename": "147.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_148",
+      "source_id": "148",
+      "source_filename": "148.npz",
+      "spacing_xyz_mm": [
+        0.544921875,
+        0.544921875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_149",
+      "source_id": "149",
+      "source_filename": "149.npz",
+      "spacing_xyz_mm": [
+        0.634765625,
+        0.634765625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_150",
+      "source_id": "150",
+      "source_filename": "150.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_151",
+      "source_id": "151",
+      "source_filename": "151.npz",
+      "spacing_xyz_mm": [
+        0.5625,
+        0.5625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_152",
+      "source_id": "152",
+      "source_filename": "152.npz",
+      "spacing_xyz_mm": [
+        0.650390625,
+        0.650390625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_153",
+      "source_id": "153",
+      "source_filename": "153.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_154",
+      "source_id": "154",
+      "source_filename": "154.npz",
+      "spacing_xyz_mm": [
+        0.6015625,
+        0.6015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_155",
+      "source_id": "155",
+      "source_filename": "155.npz",
+      "spacing_xyz_mm": [
+        0.80664063,
+        0.80664063,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_156",
+      "source_id": "156",
+      "source_filename": "156.npz",
+      "spacing_xyz_mm": [
+        0.595703125,
+        0.595703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_157",
+      "source_id": "157",
+      "source_filename": "157.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_158",
+      "source_id": "158",
+      "source_filename": "158.npz",
+      "spacing_xyz_mm": [
+        0.767578125,
+        0.767578125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_159",
+      "source_id": "159",
+      "source_filename": "159.npz",
+      "spacing_xyz_mm": [
+        0.708984375,
+        0.708984375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_160",
+      "source_id": "160",
+      "source_filename": "160.npz",
+      "spacing_xyz_mm": [
+        0.851562,
+        0.851562,
+        1.25
+      ]
+    },
+    {
+      "case_id": "hipas_161",
+      "source_id": "161",
+      "source_filename": "161.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_162",
+      "source_id": "162",
+      "source_filename": "162.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_163",
+      "source_id": "163",
+      "source_filename": "163.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_164",
+      "source_id": "164",
+      "source_filename": "164.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_165",
+      "source_id": "165",
+      "source_filename": "165.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_166",
+      "source_id": "166",
+      "source_filename": "166.npz",
+      "spacing_xyz_mm": [
+        0.5859375,
+        0.5859375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_167",
+      "source_id": "167",
+      "source_filename": "167.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_168",
+      "source_id": "168",
+      "source_filename": "168.npz",
+      "spacing_xyz_mm": [
+        0.78125,
+        0.78125,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_169",
+      "source_id": "169",
+      "source_filename": "169.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_170",
+      "source_id": "170",
+      "source_filename": "170.npz",
+      "spacing_xyz_mm": [
+        0.78125,
+        0.78125,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_171",
+      "source_id": "171",
+      "source_filename": "171.npz",
+      "spacing_xyz_mm": [
+        0.71484375,
+        0.71484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_172",
+      "source_id": "172",
+      "source_filename": "172.npz",
+      "spacing_xyz_mm": [
+        0.738,
+        0.738,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_173",
+      "source_id": "173",
+      "source_filename": "173.npz",
+      "spacing_xyz_mm": [
+        0.972656,
+        0.972656,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_174",
+      "source_id": "174",
+      "source_filename": "174.npz",
+      "spacing_xyz_mm": [
+        0.878906,
+        0.878906,
+        0.625
+      ]
+    },
+    {
+      "case_id": "hipas_175",
+      "source_id": "175",
+      "source_filename": "175.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_176",
+      "source_id": "176",
+      "source_filename": "176.npz",
+      "spacing_xyz_mm": [
+        0.8125,
+        0.8125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_177",
+      "source_id": "177",
+      "source_filename": "177.npz",
+      "spacing_xyz_mm": [
+        0.845703125,
+        0.845703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_178",
+      "source_id": "178",
+      "source_filename": "178.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_179",
+      "source_id": "179",
+      "source_filename": "179.npz",
+      "spacing_xyz_mm": [
+        0.732421875,
+        0.732421875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_180",
+      "source_id": "180",
+      "source_filename": "180.npz",
+      "spacing_xyz_mm": [
+        0.828125,
+        0.828125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_181",
+      "source_id": "181",
+      "source_filename": "181.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_182",
+      "source_id": "182",
+      "source_filename": "182.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_183",
+      "source_id": "183",
+      "source_filename": "183.npz",
+      "spacing_xyz_mm": [
+        0.6953125,
+        0.6953125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_184",
+      "source_id": "184",
+      "source_filename": "184.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_185",
+      "source_id": "185",
+      "source_filename": "185.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_186",
+      "source_id": "186",
+      "source_filename": "186.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_187",
+      "source_id": "187",
+      "source_filename": "187.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_188",
+      "source_id": "188",
+      "source_filename": "188.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_189",
+      "source_id": "189",
+      "source_filename": "189.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_190",
+      "source_id": "190",
+      "source_filename": "190.npz",
+      "spacing_xyz_mm": [
+        0.72265625,
+        0.72265625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_191",
+      "source_id": "191",
+      "source_filename": "191.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_192",
+      "source_id": "192",
+      "source_filename": "192.npz",
+      "spacing_xyz_mm": [
+        0.75,
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_193",
+      "source_id": "193",
+      "source_filename": "193.npz",
+      "spacing_xyz_mm": [
+        0.568359375,
+        0.568359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_194",
+      "source_id": "194",
+      "source_filename": "194.npz",
+      "spacing_xyz_mm": [
+        0.761,
+        0.761,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_195",
+      "source_id": "195",
+      "source_filename": "195.npz",
+      "spacing_xyz_mm": [
+        0.740234375,
+        0.740234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_196",
+      "source_id": "196",
+      "source_filename": "196.npz",
+      "spacing_xyz_mm": [
+        0.583984375,
+        0.583984375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_197",
+      "source_id": "197",
+      "source_filename": "197.npz",
+      "spacing_xyz_mm": [
+        0.6253,
+        0.6253,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_198",
+      "source_id": "198",
+      "source_filename": "198.npz",
+      "spacing_xyz_mm": [
+        0.6253,
+        0.6253,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_199",
+      "source_id": "199",
+      "source_filename": "199.npz",
+      "spacing_xyz_mm": [
+        0.6253,
+        0.6253,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_200",
+      "source_id": "200",
+      "source_filename": "200.npz",
+      "spacing_xyz_mm": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_201",
+      "source_id": "201",
+      "source_filename": "201.npz",
+      "spacing_xyz_mm": [
+        0.71484375,
+        0.71484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_202",
+      "source_id": "202",
+      "source_filename": "202.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_203",
+      "source_id": "203",
+      "source_filename": "203.npz",
+      "spacing_xyz_mm": [
+        0.66796875,
+        0.66796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_204",
+      "source_id": "204",
+      "source_filename": "204.npz",
+      "spacing_xyz_mm": [
+        0.80859375,
+        0.80859375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_205",
+      "source_id": "205",
+      "source_filename": "205.npz",
+      "spacing_xyz_mm": [
+        0.69921875,
+        0.69921875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_206",
+      "source_id": "206",
+      "source_filename": "206.npz",
+      "spacing_xyz_mm": [
+        0.7578125,
+        0.7578125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_207",
+      "source_id": "207",
+      "source_filename": "207.npz",
+      "spacing_xyz_mm": [
+        0.59765625,
+        0.59765625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_208",
+      "source_id": "208",
+      "source_filename": "208.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_209",
+      "source_id": "209",
+      "source_filename": "209.npz",
+      "spacing_xyz_mm": [
+        0.734375,
+        0.734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_210",
+      "source_id": "210",
+      "source_filename": "210.npz",
+      "spacing_xyz_mm": [
+        0.560546875,
+        0.560546875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_211",
+      "source_id": "211",
+      "source_filename": "211.npz",
+      "spacing_xyz_mm": [
+        0.7265625,
+        0.7265625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_212",
+      "source_id": "212",
+      "source_filename": "212.npz",
+      "spacing_xyz_mm": [
+        0.66796875,
+        0.66796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_213",
+      "source_id": "213",
+      "source_filename": "213.npz",
+      "spacing_xyz_mm": [
+        0.720703125,
+        0.720703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_214",
+      "source_id": "214",
+      "source_filename": "214.npz",
+      "spacing_xyz_mm": [
+        0.677734375,
+        0.677734375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_215",
+      "source_id": "215",
+      "source_filename": "215.npz",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_216",
+      "source_id": "216",
+      "source_filename": "216.npz",
+      "spacing_xyz_mm": [
+        0.640625,
+        0.640625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_217",
+      "source_id": "217",
+      "source_filename": "217.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_218",
+      "source_id": "218",
+      "source_filename": "218.npz",
+      "spacing_xyz_mm": [
+        0.58203125,
+        0.58203125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_219",
+      "source_id": "219",
+      "source_filename": "219.npz",
+      "spacing_xyz_mm": [
+        0.759765625,
+        0.759765625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_220",
+      "source_id": "220",
+      "source_filename": "220.npz",
+      "spacing_xyz_mm": [
+        0.69140625,
+        0.69140625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_221",
+      "source_id": "221",
+      "source_filename": "221.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_222",
+      "source_id": "222",
+      "source_filename": "222.npz",
+      "spacing_xyz_mm": [
+        0.6484375,
+        0.6484375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_223",
+      "source_id": "223",
+      "source_filename": "223.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_224",
+      "source_id": "224",
+      "source_filename": "224.npz",
+      "spacing_xyz_mm": [
+        0.6171875,
+        0.6171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_225",
+      "source_id": "225",
+      "source_filename": "225.npz",
+      "spacing_xyz_mm": [
+        0.7109375,
+        0.7109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_226",
+      "source_id": "226",
+      "source_filename": "226.npz",
+      "spacing_xyz_mm": [
+        0.625,
+        0.625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_227",
+      "source_id": "227",
+      "source_filename": "227.npz",
+      "spacing_xyz_mm": [
+        0.70703125,
+        0.70703125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_228",
+      "source_id": "228",
+      "source_filename": "228.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_229",
+      "source_id": "229",
+      "source_filename": "229.npz",
+      "spacing_xyz_mm": [
+        0.68359375,
+        0.68359375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_230",
+      "source_id": "230",
+      "source_filename": "230.npz",
+      "spacing_xyz_mm": [
+        0.71875,
+        0.71875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_231",
+      "source_id": "231",
+      "source_filename": "231.npz",
+      "spacing_xyz_mm": [
+        0.87109375,
+        0.87109375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_232",
+      "source_id": "232",
+      "source_filename": "232.npz",
+      "spacing_xyz_mm": [
+        0.65234375,
+        0.65234375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_233",
+      "source_id": "233",
+      "source_filename": "233.npz",
+      "spacing_xyz_mm": [
+        0.759765625,
+        0.759765625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_234",
+      "source_id": "234",
+      "source_filename": "234.npz",
+      "spacing_xyz_mm": [
+        0.66015625,
+        0.66015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_235",
+      "source_id": "235",
+      "source_filename": "235.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_236",
+      "source_id": "236",
+      "source_filename": "236.npz",
+      "spacing_xyz_mm": [
+        0.76171875,
+        0.76171875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_237",
+      "source_id": "237",
+      "source_filename": "237.npz",
+      "spacing_xyz_mm": [
+        0.5859375,
+        0.5859375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_238",
+      "source_id": "238",
+      "source_filename": "238.npz",
+      "spacing_xyz_mm": [
+        0.6796875,
+        0.6796875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_239",
+      "source_id": "239",
+      "source_filename": "239.npz",
+      "spacing_xyz_mm": [
+        0.66015625,
+        0.66015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_240",
+      "source_id": "240",
+      "source_filename": "240.npz",
+      "spacing_xyz_mm": [
+        0.609375,
+        0.609375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_241",
+      "source_id": "241",
+      "source_filename": "241.npz",
+      "spacing_xyz_mm": [
+        0.65625,
+        0.65625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_242",
+      "source_id": "242",
+      "source_filename": "242.npz",
+      "spacing_xyz_mm": [
+        0.6015625,
+        0.6015625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_243",
+      "source_id": "243",
+      "source_filename": "243.npz",
+      "spacing_xyz_mm": [
+        0.658203125,
+        0.658203125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_244",
+      "source_id": "244",
+      "source_filename": "244.npz",
+      "spacing_xyz_mm": [
+        0.59375,
+        0.59375,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_245",
+      "source_id": "245",
+      "source_filename": "245.npz",
+      "spacing_xyz_mm": [
+        0.62890625,
+        0.62890625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_246",
+      "source_id": "246",
+      "source_filename": "246.npz",
+      "spacing_xyz_mm": [
+        0.65625,
+        0.65625,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_247",
+      "source_id": "247",
+      "source_filename": "247.npz",
+      "spacing_xyz_mm": [
+        0.64453125,
+        0.64453125,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_248",
+      "source_id": "248",
+      "source_filename": "248.npz",
+      "spacing_xyz_mm": [
+        0.833984,
+        0.833984,
+        1.25
+      ]
+    },
+    {
+      "case_id": "hipas_249",
+      "source_id": "249",
+      "source_filename": "249.npz",
+      "spacing_xyz_mm": [
+        0.63671875,
+        0.63671875,
+        1.0
+      ]
+    },
+    {
+      "case_id": "hipas_250",
+      "source_id": "250",
+      "source_filename": "250.npz",
+      "spacing_xyz_mm": [
+        0.73046875,
+        0.73046875,
+        1.0
+      ]
+    }
+  ],
+  "runtime": {
+    "python": "3.8.12",
+    "torch": "2.1.0",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "numpy": "1.24.3",
+    "scipy": "1.10.1",
+    "scikit-image": "0.21.0",
+    "SimpleITK": "2.1.1",
+    "nibabel": "5.2.1",
+    "mamba-ssm": "1.2.0.post1",
+    "causal-conv1d": "1.2.0.post1",
+    "nnunetv2": "2.1.1 (U-Mamba source)",
+    "dynamic-network-architectures": "0.2",
+    "batchgenerators": "0.25"
+  },
+  "model": {
+    "model_id": "AirRC_M0",
+    "training_steps": 100000,
+    "checkpoint_epoch": 400,
+    "checkpoint": "<AIRRC_M0_MODEL_ROOT>/fold_0/checkpoint_best.pth",
+    "selected_using": "AirRC validation only; no HiPaS model selection or fine-tuning"
+  },
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1,
+    "pulmonary_vein": 2,
+    "airway_lumen_prediction_only": 3
+  },
+  "source_gt": "Separate binary artery and vein NPZ references; originals unchanged",
+  "overlap": {
+    "rule": "artery priority per explicit author recommendation in GitHub issue #10; original binary NPZs unchanged",
+    "author_source": "https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation/issues/10",
+    "counts": "av_confusion_counts.csv:overlap_voxels_assigned_artery"
+  },
+  "space": {
+    "source_layout": "YXZ",
+    "sitk_array_layout": "ZYX via transpose(2,0,1)",
+    "spacing": "Per-case XYZ Resolution from original metadata.xlsx",
+    "origin_lps_mm": [
+      0,
+      0,
+      0
+    ],
+    "direction": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "patient_origin_direction_available": false,
+    "interpretation": "Canonical shared LPS benchmark frame, not recovered patient-world geometry",
+    "prediction_export": "Existing nnU-Net inverse preprocessing to reference grid; same shape/spacing/origin/direction required"
+  },
+  "intensity": "Actual NPZ is raw HU; no normalized-example inverse conversion",
+  "inference": {
+    "function": "evaluate_airrc.predict_case",
+    "spacing_mm": 1.0,
+    "tile_step_size": 0.5,
+    "use_gaussian": true,
+    "use_mirroring": false,
+    "retraining": false
+  },
+  "metrics": {
+    "function": "evaluate_airrc.score_class",
+    "skeleton": "scikit-image0.21.0 Lee skeletonize; legacy clDice unchanged",
+    "hd95": "Maximum of directional95th percentile nearest-surface distances in mm; existing implementation unchanged",
+    "av_function": "evaluation.av_metrics.compute_av_metrics",
+    "av_formulas": {
+      "av_mcs": "(a_to_v + v_to_a) / (gt_artery + gt_vein + pred_artery + pred_vein)",
+      "artery_to_vein_rate": "a_to_v / gt_artery",
+      "vein_to_artery_rate": "v_to_a / gt_vein",
+      "merged_vessel_dice": "2 * vessel_tp / (gt_vessel + pred_vessel)",
+      "merged_vessel_precision": "vessel_tp / pred_vessel",
+      "merged_vessel_recall": "vessel_tp / gt_vessel"
+    },
+    "av_mcs_note": "Cross A/V voxel errors divided by predicted+GT vessel voxel counts; no extra factor2; not asserted identical to author HiPaS code",
+    "airway_evaluated": false,
+    "reason": "No airway GT"
+  },
+  "aggregation": {
+    "level": "Patient macro mean",
+    "sample_std_ddof": 1,
+    "also_report": [
+      "median",
+      "n_valid"
+    ],
+    "nan_policy": "Exclude undefined values only; record separately, never replace by0",
+    "voxel_pooled_primary": false
+  },
+  "empty_mask_policy": "Preserve score_class: both masks empty => null metrics; one empty =>0 overlap/precision/recall/clDice and full-field diagonal HD95; none occurred",
+  "completion": {
+    "downloaded": 250,
+    "evaluated": 250,
+    "durable_predictions": 250,
+    "durable_gt": 250,
+    "final_failed_cases": [],
+    "undefined_metrics": [],
+    "excluded_cases": [],
+    "local_header_grid_checks_passed": 250,
+    "per_case_csv_rows": 500,
+    "confusion_count_rows": 250
+  },
+  "input_read_recovery": {
+    "cases": [
+      "hipas_108",
+      "hipas_148",
+      "hipas_151",
+      "hipas_155",
+      "hipas_199"
+    ],
+    "details_file": "evaluation_exceptions.csv",
+    "policy": "At most3 normal CRC-valid archive reads; persistent errors raise; restage same unchanged original only. No checksum bypass or bulk checksum pass."
+  },
+  "paths": {
+    "source_root": "<HIPAS_SOURCE_ROOT>",
+    "predictions": "<HIPAS_RESULT_ROOT>/predictions",
+    "unified_gt": "<HIPAS_SOURCE_ROOT>/prepared/labels",
+    "durable_metadata_copy": "<DURABLE_METADATA_ROOT>"
+  }
+}

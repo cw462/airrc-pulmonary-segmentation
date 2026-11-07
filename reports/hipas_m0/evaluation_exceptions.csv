@@ -1,0 +1,6 @@
+case_id,category,status,excluded_from_analysis,detail
+hipas_108,transient_input_read,recovered,False,Normal reread of unchanged original and remote files succeeded; original queue resumed.
+hipas_148,staged_ct_archive_read,recovered,False,Same original CT atomically restaged; normal archive read succeeded.
+hipas_151,transient_input_read,recovered,False,Unchanged files reread successfully; bounded normal archive read retry introduced.
+hipas_155,pending_staged_ct_archive_read,recovered,False,Invalid queued CT copy replaced by the same unchanged original before evaluation.
+hipas_199,staged_ct_archive_read,recovered,False,Same original CT atomically restaged after three normal reader failures; normal read succeeded.

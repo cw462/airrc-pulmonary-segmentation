@@ -1,14 +1,46 @@
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
+import zipfile
 
 import numpy as np
 import SimpleITK as sitk
 
-from evaluation.hipas_external import prepare_case
+from evaluation.hipas_external import prepare_case, read_npz_data
 
 
 class HiPaSPreparationTests(unittest.TestCase):
+    def test_transient_archive_read_reopens_original_without_changing_values(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'ct.npz'
+            expected = np.arange(24, dtype=np.int16).reshape(2, 3, 4)
+            np.savez_compressed(path, data=expected)
+            original_load = np.load
+            attempts = []
+
+            def flaky_load(*args, **kwargs):
+                attempts.append(1)
+                if len(attempts) == 1:
+                    raise zipfile.BadZipFile('simulated transient archive read')
+                return original_load(*args, **kwargs)
+
+            with patch('evaluation.hipas_external.np.load', side_effect=flaky_load), \
+                    patch('evaluation.hipas_external.time.sleep'):
+                np.testing.assert_array_equal(read_npz_data(path), expected)
+            self.assertEqual(len(attempts), 2)
+
+    def test_persistently_invalid_archive_is_never_accepted(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'ct.npz'
+            path.write_bytes(b'invalid ZIP archive')
+            with patch('evaluation.hipas_external.np.load',
+                       side_effect=zipfile.BadZipFile('invalid archive')) as loader, \
+                    patch('evaluation.hipas_external.time.sleep'):
+                with self.assertRaises(zipfile.BadZipFile):
+                    read_npz_data(path)
+            self.assertEqual(loader.call_count, 3)
+
     def test_raw_hu_axis_spacing_and_author_overlap_rule(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import math
 from pathlib import Path
 import time
+import zipfile
 
 import numpy as np
 import SimpleITK as sitk
@@ -21,10 +22,27 @@ from .av_metrics import compute_av_metrics
 from .label_geometry import geometry, same_grid
 
 
+def read_npz_data(path):
+    """Retry transient archive reads; every attempt retains NumPy's CRC check.
+
+    A persistently invalid archive still fails the job. No data are repaired,
+    substituted, or accepted without a successful normal archive read.
+    """
+    for attempt in range(1, 4):
+        try:
+            with np.load(path, allow_pickle=False) as archive:
+                return archive['data']
+        except zipfile.BadZipFile as error:
+            print(f'INPUT_READ_ERROR {Path(path).parent.name}/{Path(path).name} '
+                  f'attempt={attempt}/3 {error}', flush=True)
+            if attempt == 3:
+                raise
+            time.sleep(1)
+
+
 def prepare_case(case, inputs, temporary, label_path):
     def load(name):
-        with np.load(inputs / name, allow_pickle=False) as archive:
-            return archive['data']
+        return read_npz_data(inputs / name)
 
     ct, artery, vein = load('ct.npz'), load('artery.npz'), load('vein.npz')
     if ct.ndim != 3 or ct.shape != artery.shape or ct.shape != vein.shape:

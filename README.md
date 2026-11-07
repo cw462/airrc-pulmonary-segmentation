@@ -21,13 +21,22 @@
 | 测试 | 肺静脉 | 96.48 ± 0.91 | 97.59 ± 0.63 | 1.11 ± 0.66 |
 | 测试 | 气道腔 | 95.29 ± 2.93 | 93.62 ± 2.66 | 1.04 ± 0.15 |
 
-[逐例结果](reports/airrc_m0/per_case.csv) · [完整汇总](reports/airrc_m0/summary.json) · [50 次完整验证记录](reports/airrc_m0/validation_history.csv)
+[逐例结果](reports/airrc_m0/per_case.csv) · [完整汇总](reports/airrc_m0/summary.json) · [400 个 epoch 训练记录](reports/airrc_m0/training_history.csv) · [50 次完整验证记录](reports/airrc_m0/validation_history.csv)
 
 ![训练曲线](figures/airrc_m0_training.png)
 
 ## PARSE2022 外部测试
 
-PARSE2022 外部评估正在进行，当前已完成 **80/100** 例。最新状态见 [status.json](reports/parse2022/status.json)。
+| 指标 | 肺动脉外部测试，100 例 |
+|---|---:|
+| Dice（%） | 80.67 ± 3.42 |
+| IoU（%） | 67.74 ± 4.73 |
+| Precision（%） | 73.14 ± 6.99 |
+| Recall（%） | 90.97 ± 5.47 |
+| clDice（%） | 79.15 ± 7.24 |
+| HD95（mm） | 7.51 ± 3.61 |
+
+[逐例结果](reports/parse2022/per_case.csv) · [完整汇总](reports/parse2022/summary.json)
 
 PARSE2022 的目标标签为肺动脉。预测取 M0 原三类 argmax 输出中的类别 1，并恢复至原始 PARSE2022 标签网格计分。该实验的权重、归一化及推理设置由 AirRC 实验确定。[PARSE2022 数据说明](https://parse2022.grand-challenge.org/Dataset/)
 

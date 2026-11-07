@@ -20,6 +20,8 @@ The patch size is 128 × 128 × 128 with physical batch size 2. Training uses 40
 
 Full-volume validation runs every 2,000 iterations on the same 38 patients. The checkpoint with the highest three-class mean validation Dice is selected. Patch-based pseudo Dice and its moving average are diagnostic training curves. This run uses one random seed.
 
+The 400-epoch training history is exported from the framework's text log, preserving its printed precision. It includes training and patch-validation loss, learning rate, epoch duration and class-wise pseudo Dice. The separate 50-record full-volume validation history contains the scores used for model selection.
+
 ## Inference
 
 Inference uses the frozen training normalization, 1 mm processing spacing, 128-cube windows, 50% overlap, Gaussian blending and a single prediction pass. Predictions are restored to the reference image grid through the saved image geometry.

@@ -1,0 +1,19 @@
+{
+  "protocol": "airrc-m0-parse2022-external-v1",
+  "dataset": "PARSE2022",
+  "subset": "public_labeled_training_subset",
+  "evaluation_role": "external_test",
+  "structure": "pulmonary_artery",
+  "patients": 100,
+  "checkpoint": "https://github.com/cw462/airrc-pulmonary-segmentation/releases/download/v0.1.0/checkpoint_best.pth",
+  "checkpoint_sha256": "643ea0dda6b351d62601ad9fa9a2eb06ad1d5cb184f8d8ab029af422a56ce2bd",
+  "checkpoint_step": 100000,
+  "manifest_sha256": "da7d80e934ffd74c9dd11b1a0d5bfd3bceacc1428efa84fef70c5e8a7a20949d",
+  "inference": "Frozen AirRC normalization and 1 mm preprocessing, 128-cube windows, 50% overlap, Gaussian blending, no TTA",
+  "prediction": "Pulmonary artery is class 1 of the original three-class argmax",
+  "evaluation_grid": "Original PARSE2022 CT and label grid",
+  "hd95": "Maximum of directed 95th percentiles, 6-connected boundary voxel centers, physical mm",
+  "cldice": "3D Lee skeletonization and harmonic mean of centerline precision and sensitivity",
+  "aggregation": "Per-patient metrics, arithmetic mean and sample standard deviation",
+  "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95"
+}

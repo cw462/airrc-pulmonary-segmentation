@@ -1,0 +1,15 @@
+{
+  "protocol": "airrc-m0-v1",
+  "checkpoint": "https://github.com/cw462/airrc-pulmonary-segmentation/releases/download/v0.1.0/checkpoint_best.pth",
+  "checkpoint_sha256": "643ea0dda6b351d62601ad9fa9a2eb06ad1d5cb184f8d8ab029af422a56ce2bd",
+  "checkpoint_epoch": 400,
+  "checkpoint_step": 100000,
+  "training_steps_completed": 100000,
+  "split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7",
+  "selection_macro_dice": 0.9626252054272207,
+  "inference": "1 mm reference grid, 128-cube sliding windows, 50% overlap, Gaussian blending, no TTA",
+  "hd95": "Maximum of directed 95th percentiles, 6-connected boundary voxel centers, physical mm",
+  "cldice": "3D Lee skeletonization and harmonic mean of centerline precision and sensitivity",
+  "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95",
+  "aggregation": "Per-patient metrics, arithmetic mean and sample standard deviation"
+}

@@ -1,0 +1,16 @@
+{
+  "python": "3.8.12",
+  "torch": "2.1.0",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "numpy": "1.24.3",
+  "scipy": "1.10.1",
+  "scikit-image": "0.21.0",
+  "SimpleITK": "2.1.1",
+  "nibabel": "5.2.1",
+  "mamba-ssm": "1.2.0.post1",
+  "causal-conv1d": "1.2.0.post1",
+  "nnunetv2": "2.1.1 (U-Mamba source)",
+  "dynamic-network-architectures": "0.2",
+  "batchgenerators": "0.25"
+}

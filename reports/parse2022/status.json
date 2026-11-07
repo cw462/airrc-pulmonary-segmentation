@@ -1,0 +1,10 @@
+{
+  "dataset": "PARSE2022",
+  "subset": "public_labeled_training_subset",
+  "structure": "pulmonary_artery",
+  "patients_total": 100,
+  "patients_completed": 80,
+  "state": "running",
+  "updated_at": "2026-11-07T20:55:28+08:00",
+  "initialization": "AirRC-only M0 best checkpoint at iteration 100000"
+}

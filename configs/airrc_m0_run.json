@@ -1,0 +1,17 @@
+{
+  "mode": "full",
+  "seed": 2026,
+  "epochs": 400,
+  "steps_per_epoch": 250,
+  "volume_validation_every_steps": 2000,
+  "patch": [
+    128,
+    128,
+    128
+  ],
+  "batch": 2,
+  "split_sha256": "e809e467e36e4fa5f0f97dc4213c77d0cc98678c783cf3a3bd8c12aa92d46f84",
+  "torch": "2.1.0",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 3090"
+}

@@ -1,0 +1,200 @@
+{
+  "protocol": "airrc-m0-v1",
+  "checkpoint": "https://github.com/cw462/airrc-pulmonary-segmentation/releases/download/v0.1.0/checkpoint_best.pth",
+  "checkpoint_sha256": "643ea0dda6b351d62601ad9fa9a2eb06ad1d5cb184f8d8ab029af422a56ce2bd",
+  "checkpoint_epoch": 400,
+  "checkpoint_step": 100000,
+  "training_steps_completed": 100000,
+  "split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7",
+  "selection_macro_dice": 0.9626252054272207,
+  "inference": "1 mm reference grid, 128-cube sliding windows, 50% overlap, Gaussian blending, no TTA",
+  "hd95": "Maximum of directed 95th percentiles, 6-connected boundary voxel centers, physical mm",
+  "cldice": "3D Lee skeletonization and harmonic mean of centerline precision and sensitivity",
+  "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95",
+  "aggregation": "Per-patient metrics, arithmetic mean and sample standard deviation",
+  "patient_counts": {
+    "val": 38,
+    "test": 38
+  },
+  "max_validation_dice_delta": 0.0,
+  "scores": {
+    "val": {
+      "pulmonary_artery": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9631732035705692,
+          "sd": 0.007931943001042552
+        },
+        "iou": {
+          "mean": 0.9290708272962223,
+          "sd": 0.014544940400326003
+        },
+        "precision": {
+          "mean": 0.9646872508508778,
+          "sd": 0.015873851790649752
+        },
+        "recall": {
+          "mean": 0.9618530870606726,
+          "sd": 0.0072849831324631725
+        },
+        "cldice": {
+          "mean": 0.9723152894179612,
+          "sd": 0.010479954576560903
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sd": 0.06719431273979923
+        }
+      },
+      "pulmonary_vein": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9652752258571028,
+          "sd": 0.007007769888310614
+        },
+        "iou": {
+          "mean": 0.9329666342898717,
+          "sd": 0.012965540005881876
+        },
+        "precision": {
+          "mean": 0.969530628568502,
+          "sd": 0.008873625656823146
+        },
+        "recall": {
+          "mean": 0.9611612558154428,
+          "sd": 0.010997999085594111
+        },
+        "cldice": {
+          "mean": 0.9751618428689101,
+          "sd": 0.01095582278747968
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sd": 0.06719431273979923
+        }
+      },
+      "airway_lumen": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9594271868539901,
+          "sd": 0.021037228037725737
+        },
+        "iou": {
+          "mean": 0.9227456486252259,
+          "sd": 0.036956304635282204
+        },
+        "precision": {
+          "mean": 0.9672953461102786,
+          "sd": 0.014307556668729985
+        },
+        "recall": {
+          "mean": 0.951871405624282,
+          "sd": 0.028743219222959155
+        },
+        "cldice": {
+          "mean": 0.94453162008822,
+          "sd": 0.01984267986829982
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sd": 0.06719431273979923
+        }
+      }
+    },
+    "test": {
+      "pulmonary_artery": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9643200698725466,
+          "sd": 0.004314927034711899
+        },
+        "iou": {
+          "mean": 0.9311310913988975,
+          "sd": 0.008024594501710603
+        },
+        "precision": {
+          "mean": 0.9654494762080938,
+          "sd": 0.008110364153727396
+        },
+        "recall": {
+          "mean": 0.9632556830612637,
+          "sd": 0.005780520810450483
+        },
+        "cldice": {
+          "mean": 0.974289739250488,
+          "sd": 0.005470537107617807
+        },
+        "hd95_mm": {
+          "mean": 1.0,
+          "sd": 0.0
+        }
+      },
+      "pulmonary_vein": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9648376968565378,
+          "sd": 0.009137504842102713
+        },
+        "iou": {
+          "mean": 0.932205449720203,
+          "sd": 0.01644018720563464
+        },
+        "precision": {
+          "mean": 0.9682278806592111,
+          "sd": 0.008817367573175704
+        },
+        "recall": {
+          "mean": 0.9617349369864819,
+          "sd": 0.01805704847967639
+        },
+        "cldice": {
+          "mean": 0.975932363234432,
+          "sd": 0.006296603839209711
+        },
+        "hd95_mm": {
+          "mean": 1.1078689345682313,
+          "sd": 0.6649487707377484
+        }
+      },
+      "airway_lumen": {
+        "patients": 38,
+        "both_empty": 0,
+        "one_empty": 0,
+        "dice": {
+          "mean": 0.9528741048286482,
+          "sd": 0.029253779836216597
+        },
+        "iou": {
+          "mean": 0.9113682382700787,
+          "sd": 0.050676357767203195
+        },
+        "precision": {
+          "mean": 0.960580402473289,
+          "sd": 0.021499118853927423
+        },
+        "recall": {
+          "mean": 0.9455514437682357,
+          "sd": 0.03808964588772714
+        },
+        "cldice": {
+          "mean": 0.9361708525871133,
+          "sd": 0.026600544854970015
+        },
+        "hd95_mm": {
+          "mean": 1.0410652087451333,
+          "sd": 0.1484116611701215
+        }
+      }
+    }
+  }
+}

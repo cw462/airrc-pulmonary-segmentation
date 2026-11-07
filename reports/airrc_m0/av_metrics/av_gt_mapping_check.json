@@ -1,0 +1,22 @@
+{
+  "case_id": "LIDC-IDRI-0004",
+  "split": "test",
+  "raw_gt_path": "<AIRRC_SOURCE>/dataset/LIDC-IDRI-0004/label/1.3.6.1.4.1.14519.5.2.1.6279.6001.323541312620128092852212458228.nii",
+  "prepared_gt_path": "<GT_ROOT>/labelsTs/LIDC-IDRI-0004.nii.gz",
+  "raw_gt_labels": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "prepared_gt_labels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "same_shape": true,
+  "same_affine": true,
+  "existing_label_mapping_equals_prepared_gt": true
+}

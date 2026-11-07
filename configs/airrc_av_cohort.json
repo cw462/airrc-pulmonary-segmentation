@@ -1,0 +1,393 @@
+{
+  "protocol": "av-metrics-v1",
+  "dataset": "AirRC",
+  "fixed_split": "data/splits/airrc_seed2026.json",
+  "split_seed": 2026,
+  "gt_av_complete": true,
+  "gt_label_encoding": "unified",
+  "prediction_label_encoding": "unified",
+  "prediction_space": "physical_label_image",
+  "label_mapping_source": "prepare_airrc.py: LABEL_MAP=[0,3,0,1,2]",
+  "cases": [
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0036",
+      "gt_path": "labelsVa/LIDC-IDRI-0036.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0091",
+      "gt_path": "labelsVa/LIDC-IDRI-0091.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0109",
+      "gt_path": "labelsVa/LIDC-IDRI-0109.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0118",
+      "gt_path": "labelsVa/LIDC-IDRI-0118.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0211",
+      "gt_path": "labelsVa/LIDC-IDRI-0211.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0309",
+      "gt_path": "labelsVa/LIDC-IDRI-0309.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0375",
+      "gt_path": "labelsVa/LIDC-IDRI-0375.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0407",
+      "gt_path": "labelsVa/LIDC-IDRI-0407.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0416",
+      "gt_path": "labelsVa/LIDC-IDRI-0416.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0424",
+      "gt_path": "labelsVa/LIDC-IDRI-0424.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0445",
+      "gt_path": "labelsVa/LIDC-IDRI-0445.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0456",
+      "gt_path": "labelsVa/LIDC-IDRI-0456.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0462",
+      "gt_path": "labelsVa/LIDC-IDRI-0462.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0469",
+      "gt_path": "labelsVa/LIDC-IDRI-0469.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0470",
+      "gt_path": "labelsVa/LIDC-IDRI-0470.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0481",
+      "gt_path": "labelsVa/LIDC-IDRI-0481.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0490",
+      "gt_path": "labelsVa/LIDC-IDRI-0490.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0491",
+      "gt_path": "labelsVa/LIDC-IDRI-0491.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0521",
+      "gt_path": "labelsVa/LIDC-IDRI-0521.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0555",
+      "gt_path": "labelsVa/LIDC-IDRI-0555.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0556",
+      "gt_path": "labelsVa/LIDC-IDRI-0556.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0617",
+      "gt_path": "labelsVa/LIDC-IDRI-0617.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0651",
+      "gt_path": "labelsVa/LIDC-IDRI-0651.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0658",
+      "gt_path": "labelsVa/LIDC-IDRI-0658.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0705",
+      "gt_path": "labelsVa/LIDC-IDRI-0705.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0733",
+      "gt_path": "labelsVa/LIDC-IDRI-0733.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0743",
+      "gt_path": "labelsVa/LIDC-IDRI-0743.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0775",
+      "gt_path": "labelsVa/LIDC-IDRI-0775.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0776",
+      "gt_path": "labelsVa/LIDC-IDRI-0776.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0788",
+      "gt_path": "labelsVa/LIDC-IDRI-0788.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0791",
+      "gt_path": "labelsVa/LIDC-IDRI-0791.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0810",
+      "gt_path": "labelsVa/LIDC-IDRI-0810.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0859",
+      "gt_path": "labelsVa/LIDC-IDRI-0859.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0933",
+      "gt_path": "labelsVa/LIDC-IDRI-0933.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0973",
+      "gt_path": "labelsVa/LIDC-IDRI-0973.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-0999",
+      "gt_path": "labelsVa/LIDC-IDRI-0999.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-1001",
+      "gt_path": "labelsVa/LIDC-IDRI-1001.nii.gz"
+    },
+    {
+      "split": "val",
+      "case_id": "LIDC-IDRI-1003",
+      "gt_path": "labelsVa/LIDC-IDRI-1003.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0004",
+      "gt_path": "labelsTs/LIDC-IDRI-0004.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0012",
+      "gt_path": "labelsTs/LIDC-IDRI-0012.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0097",
+      "gt_path": "labelsTs/LIDC-IDRI-0097.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0128",
+      "gt_path": "labelsTs/LIDC-IDRI-0128.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0129",
+      "gt_path": "labelsTs/LIDC-IDRI-0129.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0137",
+      "gt_path": "labelsTs/LIDC-IDRI-0137.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0164",
+      "gt_path": "labelsTs/LIDC-IDRI-0164.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0344",
+      "gt_path": "labelsTs/LIDC-IDRI-0344.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0358",
+      "gt_path": "labelsTs/LIDC-IDRI-0358.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0406",
+      "gt_path": "labelsTs/LIDC-IDRI-0406.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0427",
+      "gt_path": "labelsTs/LIDC-IDRI-0427.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0515",
+      "gt_path": "labelsTs/LIDC-IDRI-0515.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0530",
+      "gt_path": "labelsTs/LIDC-IDRI-0530.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0542",
+      "gt_path": "labelsTs/LIDC-IDRI-0542.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0583",
+      "gt_path": "labelsTs/LIDC-IDRI-0583.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0594",
+      "gt_path": "labelsTs/LIDC-IDRI-0594.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0602",
+      "gt_path": "labelsTs/LIDC-IDRI-0602.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0628",
+      "gt_path": "labelsTs/LIDC-IDRI-0628.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0634",
+      "gt_path": "labelsTs/LIDC-IDRI-0634.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0649",
+      "gt_path": "labelsTs/LIDC-IDRI-0649.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0659",
+      "gt_path": "labelsTs/LIDC-IDRI-0659.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0674",
+      "gt_path": "labelsTs/LIDC-IDRI-0674.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0696",
+      "gt_path": "labelsTs/LIDC-IDRI-0696.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0700",
+      "gt_path": "labelsTs/LIDC-IDRI-0700.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0712",
+      "gt_path": "labelsTs/LIDC-IDRI-0712.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0801",
+      "gt_path": "labelsTs/LIDC-IDRI-0801.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0813",
+      "gt_path": "labelsTs/LIDC-IDRI-0813.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0822",
+      "gt_path": "labelsTs/LIDC-IDRI-0822.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0826",
+      "gt_path": "labelsTs/LIDC-IDRI-0826.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0827",
+      "gt_path": "labelsTs/LIDC-IDRI-0827.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0836",
+      "gt_path": "labelsTs/LIDC-IDRI-0836.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0860",
+      "gt_path": "labelsTs/LIDC-IDRI-0860.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0871",
+      "gt_path": "labelsTs/LIDC-IDRI-0871.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0898",
+      "gt_path": "labelsTs/LIDC-IDRI-0898.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0913",
+      "gt_path": "labelsTs/LIDC-IDRI-0913.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0928",
+      "gt_path": "labelsTs/LIDC-IDRI-0928.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-0985",
+      "gt_path": "labelsTs/LIDC-IDRI-0985.nii.gz"
+    },
+    {
+      "split": "test",
+      "case_id": "LIDC-IDRI-1004",
+      "gt_path": "labelsTs/LIDC-IDRI-1004.nii.gz"
+    }
+  ]
+}

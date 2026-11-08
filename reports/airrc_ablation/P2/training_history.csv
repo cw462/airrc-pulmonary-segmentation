@@ -1,1 +1,2 @@
-epoch,iterations,train_loss,patch_validation_loss
+epoch,iterations,successful_optimizer_updates,amp_skips,train_loss,patch_validation_loss,epoch_seconds_without_full_validation,full_validation_seconds,learning_rate,peak_allocated_gib,peak_reserved_gib,delta_abs_mean,delta_abs_p50,delta_abs_p90,delta_abs_p99
+1,250,247,3,-0.0948437973856926,-0.4810836911201477,294.60898317804094,0.0,0.01,10.21185827255249,12.3046875,0.22641386091709137,0.24991923570632935,0.27789756655693054,0.6716557145118713

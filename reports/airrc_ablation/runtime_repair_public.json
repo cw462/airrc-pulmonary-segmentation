@@ -1,5 +1,5 @@
 {
-  "state": "kernel_witness_passed_full_smokes_running",
+  "state": "kernel_and_full_model_smokes_passed_formal_training_running",
   "version": "2.1.0",
   "CUDA": "12.1",
   "source_package": "pytorch-original.tar.bz2",

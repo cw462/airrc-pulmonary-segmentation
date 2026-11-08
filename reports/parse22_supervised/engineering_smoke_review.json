@@ -1,0 +1,95 @@
+{
+  "state": "passed",
+  "reviewed_unix": 1794124237.572075,
+  "groups": [
+    {
+      "group": "P0",
+      "state": "passed",
+      "optimizer_steps": 50,
+      "peak_training_memory": {
+        "allocated_gib": 9.364363670349121,
+        "reserved_gib": 11.046875
+      },
+      "reload_max_difference": 0.0,
+      "native_grid_verified": true,
+      "refiner_gradients": null,
+      "initialization": {
+        "group": "P0",
+        "classes": 2,
+        "backbone_initial_sha256": "0e48a57245ae4b662587066f3fbbc55f8caafc12b56a5499e7ca7ca60574677c",
+        "seed": 2026,
+        "refiner_seed": null,
+        "loaded_pretrained_checkpoint": false,
+        "parameters": 42120394,
+        "trainable_parameters": 42120394,
+        "refiner_parameters": 0,
+        "optimizer_includes_all_refiner_parameters": null
+      }
+    },
+    {
+      "group": "P1",
+      "state": "passed",
+      "optimizer_steps": 50,
+      "peak_training_memory": {
+        "allocated_gib": 9.380110740661621,
+        "reserved_gib": 11.0625
+      },
+      "reload_max_difference": 0.0,
+      "native_grid_verified": true,
+      "refiner_gradients": null,
+      "initialization": {
+        "group": "P1",
+        "classes": 2,
+        "backbone_initial_sha256": "0e48a57245ae4b662587066f3fbbc55f8caafc12b56a5499e7ca7ca60574677c",
+        "seed": 2026,
+        "refiner_seed": null,
+        "loaded_pretrained_checkpoint": false,
+        "parameters": 42120394,
+        "trainable_parameters": 42120394,
+        "refiner_parameters": 0,
+        "optimizer_includes_all_refiner_parameters": null
+      }
+    },
+    {
+      "group": "P2",
+      "state": "passed",
+      "optimizer_steps": 50,
+      "peak_training_memory": {
+        "allocated_gib": 10.03688097000122,
+        "reserved_gib": 11.677734375
+      },
+      "reload_max_difference": 0.0,
+      "native_grid_verified": true,
+      "refiner_gradients": {
+        "head_abs_sum": 2.368532657623291,
+        "features_abs_sum_after_head_update": 2.3059544563293457
+      },
+      "initialization": {
+        "group": "P2",
+        "classes": 2,
+        "backbone_initial_sha256": "0e48a57245ae4b662587066f3fbbc55f8caafc12b56a5499e7ca7ca60574677c",
+        "seed": 2026,
+        "refiner_seed": 2026,
+        "loaded_pretrained_checkpoint": false,
+        "parameters": 42129964,
+        "trainable_parameters": 42129964,
+        "refiner_parameters": 9570,
+        "optimizer_includes_all_refiner_parameters": true
+      }
+    }
+  ],
+  "shared_backbone_initialization_equal": true,
+  "initial_sample_stream_equal": true,
+  "formal_checkpoint_initialization": "all groups from scratch; smoke weights never loaded",
+  "training_source_hashes_matched": {
+    "train_airrc.py": "55a38cfa9e2844f31e09ff5bc8e949280117f07194ccf93a91aa41905a788a80",
+    "models/ct_local_refiner.py": "1a5fb6e4f33ffeb25ef439fc17b41c9ca2c8c19d9460140785f9fa748d8cdddc",
+    "parse22_supervised/preprocess.py": "e5c86b7c51f9acb6a813e328395baf8e9628ab5375807bc51af051b0995e2992",
+    "parse22_supervised/trainer.py": "e8eb2864fdf32a0fa4e854fc6b3d6f1c33ec56511059f05667a76709f263dc3d",
+    "parse22_supervised/skeleton_recall.py": "0bb69f3aa1c3816871355cac1794c09e2d674ab0ff1a9bbe8eacc54dff641667",
+    "parse22_supervised/config.py": "984479ae942851d49627dab57d35392f4330c80cc394ae82b72bfda3bb06d19a",
+    "parse22_supervised/train.py": "155fb3632cf8d38f407a066d85b02dcc307a102d4ad6e1ed74a735d09da09416"
+  },
+  "source_pairs_checked": 100,
+  "report_only_change_after_P0_smoke": "Comparison Markdown handles undefined sample standard deviation; no training code or measured smoke outputs changed"
+}

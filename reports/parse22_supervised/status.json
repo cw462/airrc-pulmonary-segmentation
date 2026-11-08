@@ -1,0 +1,31 @@
+{
+  "observed_unix": 1794124350.2992783,
+  "pipeline": {
+    "state": "training",
+    "group": "P0",
+    "started_unix": 1794124243.2279284
+  },
+  "groups": {
+    "P0": {
+      "optimizer_steps": 0,
+      "epochs": 0,
+      "training_complete": false,
+      "evaluation_state": "not_evaluated",
+      "log_age_seconds": 97.48394274711609
+    },
+    "P1": {
+      "optimizer_steps": 0,
+      "epochs": 0,
+      "training_complete": false,
+      "evaluation_state": "not_evaluated",
+      "log_age_seconds": 259.17854404449463
+    },
+    "P2": {
+      "optimizer_steps": 0,
+      "epochs": 0,
+      "training_complete": false,
+      "evaluation_state": "not_evaluated",
+      "log_age_seconds": 143.19993567466736
+    }
+  }
+}

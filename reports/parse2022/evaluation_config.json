@@ -15,5 +15,8 @@
   "hd95": "Maximum of directed 95th percentiles, 6-connected boundary voxel centers, physical mm",
   "cldice": "3D Lee skeletonization and harmonic mean of centerline precision and sensitivity",
   "aggregation": "Per-patient metrics, arithmetic mean and sample standard deviation",
-  "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95"
+  "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95",
+  "experiment_family": "airrc_m0_to_parse22",
+  "comparison_role": "cross_dataset",
+  "included_in_parse22_supervised_comparison": false
 }

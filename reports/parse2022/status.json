@@ -6,5 +6,8 @@
   "patients_completed": 100,
   "state": "complete",
   "updated_at": "2026-11-07T21:07:55+08:00",
-  "initialization": "AirRC-only M0 best checkpoint at iteration 100000"
+  "initialization": "AirRC-only M0 best checkpoint at iteration 100000",
+  "experiment_family": "airrc_m0_to_parse22",
+  "comparison_role": "cross_dataset",
+  "included_in_parse22_supervised_comparison": false
 }

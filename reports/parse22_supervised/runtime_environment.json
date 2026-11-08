@@ -1,0 +1,20 @@
+{
+  "python": "3.8.12",
+  "torch": "2.1.0",
+  "cuda": "12.1",
+  "gpu_model": "NVIDIA GeForce RTX3090",
+  "scikit_image": "0.21.0",
+  "scipy": "1.10.1",
+  "SimpleITK": "2.1.1",
+  "mamba_ssm": "1.2.0.post1",
+  "UMamba_git_commit": null,
+  "UMamba_checkout_limit": "Installed source checkout has no Git metadata; record source-file digests instead",
+  "UMamba_source_sha256": {
+    "nnUNetTrainerUMambaBot.py": "3e47c2a7466bdd393895f04cd89fbc5f734a7f9f6ac7396d9e8fc8f8bcbee7e1",
+    "UMambaBot_3d.py": "358bccc6417f5b1251ddefa706584db97a94a6d4ae43a58118188b20e689ab7d"
+  },
+  "training_processes_per_group": 1,
+  "DDP": false,
+  "network_compile": false,
+  "augmentation_processes": 0
+}

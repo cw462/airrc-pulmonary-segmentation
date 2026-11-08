@@ -123,3 +123,7 @@ bash scripts/evaluate_parse.sh "$PARSE_RUN/manifest.json" "$MODEL" "$PARSE_RUN/r
 图像和标签由数据提供方获取。实验定义、标签转换、实际优化器设置、评价口径及引用见 [实验协议](docs/experiment_protocol.md) 和 [第三方来源](THIRD_PARTY_NOTICES.md)。
 
 对新 CT 使用已有权重并导出原始空间标签，见 [独立推理说明](docs/inference.md)。
+
+## PARSE22 independent supervised experiments
+
+A separate binary U-Mamba P0/P1/P2 family uses a frozen64/16/20 split and100000 optimizer updates per group, all from scratch. P2 uses the supplied CT-guided residual refiner. See the [protocol](docs/parse22_supervised_protocol.md) and [current reports](reports/parse22_supervised/README.md). Historical [AirRC→PARSE22](reports/parse2022/) scores remain a separate cross-dataset evaluation and are excluded from this comparison.

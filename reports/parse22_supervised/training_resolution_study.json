@@ -1,0 +1,293 @@
+{
+  "state": "frozen",
+  "training_cases": [
+    "PA000024",
+    "PA000026",
+    "PA000036",
+    "PA000038",
+    "PA000042",
+    "PA000046",
+    "PA000047",
+    "PA000053",
+    "PA000060",
+    "PA000070",
+    "PA000073",
+    "PA000074",
+    "PA000078",
+    "PA000080",
+    "PA000082",
+    "PA000092",
+    "PA000100",
+    "PA000109",
+    "PA000115",
+    "PA000116",
+    "PA000118",
+    "PA000120",
+    "PA000121",
+    "PA000125",
+    "PA000128",
+    "PA000132",
+    "PA000133",
+    "PA000138",
+    "PA000147",
+    "PA000148",
+    "PA000150",
+    "PA000157",
+    "PA000162",
+    "PA000168",
+    "PA000183",
+    "PA000190",
+    "PA000198",
+    "PA000202",
+    "PA000203",
+    "PA000209",
+    "PA000212",
+    "PA000217",
+    "PA000226",
+    "PA000234",
+    "PA000235",
+    "PA000236",
+    "PA000237",
+    "PA000239",
+    "PA000242",
+    "PA000245",
+    "PA000247",
+    "PA000255",
+    "PA000261",
+    "PA000282",
+    "PA000284",
+    "PA000285",
+    "PA000286",
+    "PA000292",
+    "PA000296",
+    "PA000298",
+    "PA000300",
+    "PA000301",
+    "PA000303",
+    "PA000314"
+  ],
+  "spacing_xyz_mm": {
+    "min": [
+      0.552734375,
+      0.552734375,
+      0.9999997615814209
+    ],
+    "median": [
+      0.65234375,
+      0.65234375,
+      1.0
+    ],
+    "max": [
+      0.923828125,
+      0.923828125,
+      1.0
+    ]
+  },
+  "representative_training_cases": [
+    "PA000026",
+    "PA000245",
+    "PA000284",
+    "PA000300",
+    "PA000226",
+    "PA000239",
+    "PA000301",
+    "PA000212"
+  ],
+  "selection_rule": "Coarsest candidate among1.0,0.8,0.75mm with8 training-case mean GT centerline NN-roundtrip retention>=0.95 and minimum>=0.90; no validation/test images or scores used",
+  "label_interpolation": "nearest_neighbor",
+  "target_spacing_xyz_mm": [
+    0.8,
+    0.8,
+    0.8
+  ],
+  "measurements": [
+    {
+      "target_spacing_mm": 1.0,
+      "cases": [
+        {
+          "case_id": "PA000026",
+          "native_spacing_xyz_mm": [
+            0.552734375,
+            0.552734375,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9470034670629024,
+          "foreground_physical_volume_ratio": 1.0013116432421323
+        },
+        {
+          "case_id": "PA000245",
+          "native_spacing_xyz_mm": [
+            0.60546875,
+            0.60546875,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9505890052356021,
+          "foreground_physical_volume_ratio": 0.999575198653779
+        },
+        {
+          "case_id": "PA000284",
+          "native_spacing_xyz_mm": [
+            0.626953125,
+            0.626953125,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9273348251089388,
+          "foreground_physical_volume_ratio": 1.0019308966239422
+        },
+        {
+          "case_id": "PA000300",
+          "native_spacing_xyz_mm": [
+            0.64453125,
+            0.64453125,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9079311211664153,
+          "foreground_physical_volume_ratio": 1.0001902810196508
+        },
+        {
+          "case_id": "PA000226",
+          "native_spacing_xyz_mm": [
+            0.6640625,
+            0.6640625,
+            0.9999997615814209
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9438382220442487,
+          "foreground_physical_volume_ratio": 1.001303601961368
+        },
+        {
+          "case_id": "PA000239",
+          "native_spacing_xyz_mm": [
+            0.697265625,
+            0.697265625,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9153406351174485,
+          "foreground_physical_volume_ratio": 1.000456910377331
+        },
+        {
+          "case_id": "PA000301",
+          "native_spacing_xyz_mm": [
+            0.74609375,
+            0.74609375,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9560408394781622,
+          "foreground_physical_volume_ratio": 1.000364170169234
+        },
+        {
+          "case_id": "PA000212",
+          "native_spacing_xyz_mm": [
+            0.923828125,
+            0.923828125,
+            1.0
+          ],
+          "target_spacing_mm": 1.0,
+          "roundtrip_gt_skeleton_recall": 0.9792881560426302,
+          "foreground_physical_volume_ratio": 1.0026858854834857
+        }
+      ],
+      "retention_rule_passed": false
+    },
+    {
+      "target_spacing_mm": 0.8,
+      "cases": [
+        {
+          "case_id": "PA000026",
+          "native_spacing_xyz_mm": [
+            0.552734375,
+            0.552734375,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9634472511144131,
+          "foreground_physical_volume_ratio": 0.9966727619469369
+        },
+        {
+          "case_id": "PA000245",
+          "native_spacing_xyz_mm": [
+            0.60546875,
+            0.60546875,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9710405759162304,
+          "foreground_physical_volume_ratio": 0.9981808474695624
+        },
+        {
+          "case_id": "PA000284",
+          "native_spacing_xyz_mm": [
+            0.626953125,
+            0.626953125,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9613708632669886,
+          "foreground_physical_volume_ratio": 1.0013660977712486
+        },
+        {
+          "case_id": "PA000300",
+          "native_spacing_xyz_mm": [
+            0.64453125,
+            0.64453125,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9511689291101055,
+          "foreground_physical_volume_ratio": 0.9982067333594539
+        },
+        {
+          "case_id": "PA000226",
+          "native_spacing_xyz_mm": [
+            0.6640625,
+            0.6640625,
+            0.9999997615814209
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9685654219641606,
+          "foreground_physical_volume_ratio": 1.0001553448197833
+        },
+        {
+          "case_id": "PA000239",
+          "native_spacing_xyz_mm": [
+            0.697265625,
+            0.697265625,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9670042019701041,
+          "foreground_physical_volume_ratio": 0.9999140119840751
+        },
+        {
+          "case_id": "PA000301",
+          "native_spacing_xyz_mm": [
+            0.74609375,
+            0.74609375,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 0.9846851956891662,
+          "foreground_physical_volume_ratio": 0.995258069296792
+        },
+        {
+          "case_id": "PA000212",
+          "native_spacing_xyz_mm": [
+            0.923828125,
+            0.923828125,
+            1.0
+          ],
+          "target_spacing_mm": 0.8,
+          "roundtrip_gt_skeleton_recall": 1.0,
+          "foreground_physical_volume_ratio": 1.0007999844489013
+        }
+      ],
+      "retention_rule_passed": true
+    }
+  ]
+}

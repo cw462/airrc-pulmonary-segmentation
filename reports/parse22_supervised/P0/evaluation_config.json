@@ -1,0 +1,26 @@
+{
+  "state": "pending_training",
+  "group": "P0",
+  "inference": {
+    "tile_step_size": 0.5,
+    "overlap_fraction": 0.5,
+    "gaussian_weighting": true,
+    "TTA": false,
+    "postprocessing": "none",
+    "grid": "original GT physical grid after existing inverse preprocessing",
+    "ct_local_refiner_enabled": false,
+    "refiner_stage": null
+  },
+  "checkpoint_selection": {
+    "metric": "mean_per_patient_pulmonary_artery_Dice",
+    "partition": "val16",
+    "full_validation_every_steps": 2000,
+    "tie_rule": "retain earlier checkpoint",
+    "test_used": false,
+    "latest_checkpoint_every_steps": 250
+  },
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1
+  }
+}

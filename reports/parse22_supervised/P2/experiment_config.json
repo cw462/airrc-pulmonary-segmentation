@@ -1,0 +1,130 @@
+{
+  "experiment_family": "parse22_supervised",
+  "dataset": "Dataset930_PARSE22Supervised",
+  "role": "within_dataset_supervised",
+  "split_file": "data/splits/parse22_seed2026.json",
+  "split_sha256": "b1fc47e360539f00b8a12bb756f8caf4ec916c0658e0d5117fdd39544d1b3a36",
+  "patient_counts": {
+    "train": 64,
+    "val": 16,
+    "test": 20
+  },
+  "backbone": "U-Mamba bottleneck3D",
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1
+  },
+  "output_channels": 2,
+  "seed": 2026,
+  "data_sampling_seed": 2026,
+  "initialization": "from_scratch_no_AirRC_or_other_trained_checkpoint",
+  "shared_backbone_initialization_verified_by_tensor_hash": true,
+  "target_spacing_xyz_mm": [
+    0.8,
+    0.8,
+    0.8
+  ],
+  "patch": [
+    128,
+    128,
+    128
+  ],
+  "batch_size": 2,
+  "normalization": {
+    "0": {
+      "max": 1821.0,
+      "mean": 37.769432067871094,
+      "median": 188.0,
+      "min": -1024.0,
+      "percentile_00_5": -769.0,
+      "percentile_99_5": 418.0,
+      "std": 305.53717041015625
+    }
+  },
+  "normalization_fitted_on": "train64_only",
+  "automatic_planning_fitted_on": "train64_only",
+  "data_cache": {
+    "CT": "float16",
+    "segmentation": "int8"
+  },
+  "ct_interpolation": {
+    "is_seg": false,
+    "order": 3,
+    "order_z": 0,
+    "force_separate_z": null
+  },
+  "label_interpolation": "nearest_neighbor_order0",
+  "training_label_augmentation_interpolation": "nearest_neighbor_order0",
+  "augmentation": "Existing nnU-Net/U-Mamba pipeline; resolved parameter snapshot saved separately",
+  "augmentation_processes": 0,
+  "augmentation_order": "deterministic SingleThreadedAugmenter; same seed for all groups",
+  "foreground_oversampling_fraction": 0.33,
+  "optimizer": {
+    "name": "SGD",
+    "initial_lr": 0.01,
+    "momentum": 0.99,
+    "nesterov": true,
+    "weight_decay": 3e-05,
+    "gradient_clip_norm": 12,
+    "schedule": "existing polynomial learning-rate scheduler over400epochs"
+  },
+  "optimizer_steps": 100000,
+  "epochs": 400,
+  "steps_per_epoch": 250,
+  "amp": true,
+  "amp_overflow_policy": "Retry same batch after normal GradScaler backoff; count only successful optimizer updates",
+  "base_loss": "Existing foreground Dice + cross entropy, original deep-supervision weights",
+  "checkpoint_selection": {
+    "metric": "mean_per_patient_pulmonary_artery_Dice",
+    "partition": "val16",
+    "full_validation_every_steps": 2000,
+    "tie_rule": "retain earlier checkpoint",
+    "test_used": false,
+    "latest_checkpoint_every_steps": 250
+  },
+  "inference": {
+    "tile_step_size": 0.5,
+    "overlap_fraction": 0.5,
+    "gaussian_weighting": true,
+    "TTA": false,
+    "postprocessing": "none",
+    "grid": "original GT physical grid after existing inverse preprocessing",
+    "ct_local_refiner_enabled": true,
+    "refiner_stage": "per_normalized_patch_before_Gaussian_fusion"
+  },
+  "prior_exposure": "All100 cases previously evaluated using frozen AirRC M0. Test20 is a new supervised holdout, not study-wide never-viewed blind data.",
+  "not_a_precise_vesmamba_training_reproduction": true,
+  "source_code_sha256": {
+    "train_airrc.py": "55a38cfa9e2844f31e09ff5bc8e949280117f07194ccf93a91aa41905a788a80",
+    "models/ct_local_refiner.py": "1a5fb6e4f33ffeb25ef439fc17b41c9ca2c8c19d9460140785f9fa748d8cdddc",
+    "parse22_supervised/preprocess.py": "e5c86b7c51f9acb6a813e328395baf8e9628ab5375807bc51af051b0995e2992",
+    "parse22_supervised/trainer.py": "e8eb2864fdf32a0fa4e854fc6b3d6f1c33ec56511059f05667a76709f263dc3d",
+    "parse22_supervised/skeleton_recall.py": "0bb69f3aa1c3816871355cac1794c09e2d674ab0ff1a9bbe8eacc54dff641667",
+    "parse22_supervised/config.py": "984479ae942851d49627dab57d35392f4330c80cc394ae82b72bfda3bb06d19a",
+    "parse22_supervised/train.py": "155fb3632cf8d38f407a066d85b02dcc307a102d4ad6e1ed74a735d09da09416",
+    "parse22_supervised/evaluate.py": "0767c42b3062b6731b06cc648db9de68d71179ac55619c66a75825c90536091d",
+    "parse22_supervised/compare.py": "e47b08698fe6790a20d67775943fadb7bc19f2db7c4937399fd8d2d7bbd08fb5"
+  },
+  "group": "P2",
+  "run_kind": "full",
+  "formal_budget_optimizer_steps": 100000,
+  "skeleton_recall_weight": 1,
+  "ct_local_refiner": {
+    "hidden_channels": 16,
+    "max_delta": 1.0,
+    "gate_floor": 0.25,
+    "refiner_dtype": "FP32 under AMP",
+    "refiner_seed": 2026,
+    "conditions": "normalizedCT + detached probabilities + detached normalized entropy",
+    "output": "highest-resolution logits only; before Gaussian patch fusion",
+    "initial_residual": "exact_zero",
+    "extra_residual_regularization": false,
+    "locality_limit": "7x7x7 convolution path; GroupNorm spatial statistics mean full module is not strictly finite-neighbourhood"
+  },
+  "skeleton_recall_protocol": {
+    "reference": "MIC-DKFZ/Skeleton-Recall@c7bac3c72ca7bb4f3d891235f051f0c4d07d7229",
+    "training_tube": "Lee GT skeleton,2-voxel Manhattan dilation intersectGT, after augmentation",
+    "smooth": 1e-05,
+    "deep_supervision": "highest-resolution target only; original DS weights retained"
+  }
+}

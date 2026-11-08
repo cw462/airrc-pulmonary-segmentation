@@ -1,0 +1,37 @@
+{
+  "state": "passed",
+  "group": "P1",
+  "optimizer_steps": 50,
+  "initial_fit_loss": 11.087428092956543,
+  "final_fit_loss": -1.2293728590011597,
+  "seconds_per_update_including_sampling": 1.3203536299010739,
+  "gradient_norm_min": 1.1588329076766968,
+  "gradient_norm_max": 112.33396911621094,
+  "amp_retries": 4,
+  "peak_training_memory": {
+    "allocated_gib": 9.380110740661621,
+    "reserved_gib": 11.0625
+  },
+  "patch_validation_loss": -0.4420164227485657,
+  "checkpoint_reload_max_absolute_difference": 0.0,
+  "native_grid_validation": {
+    "macro_dice": 0.09348698419861538,
+    "mean_dice": {
+      "1": 0.09348698419861538
+    },
+    "cases": [
+      {
+        "case": "PA000016",
+        "seconds": 33.75886189599987,
+        "dice": {
+          "1": 0.09348698419861538
+        }
+      }
+    ],
+    "selection_metric": "mean patient pulmonary-artery Dice on frozen16 cases",
+    "optimizer_steps": 50
+  },
+  "classes": 2,
+  "refiner_gradients": null,
+  "used_for_formal_initialization": false
+}

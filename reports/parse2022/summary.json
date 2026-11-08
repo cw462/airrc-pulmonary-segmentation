@@ -44,5 +44,8 @@
       "mean": 7.513776344701586,
       "sd": 3.612652059076755
     }
-  }
+  },
+  "experiment_family": "airrc_m0_to_parse22",
+  "comparison_role": "cross_dataset",
+  "included_in_parse22_supervised_comparison": false
 }

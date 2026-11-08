@@ -1,0 +1,12 @@
+{
+  "group": "P0",
+  "classes": 2,
+  "backbone_initial_sha256": "0e48a57245ae4b662587066f3fbbc55f8caafc12b56a5499e7ca7ca60574677c",
+  "seed": 2026,
+  "refiner_seed": null,
+  "loaded_pretrained_checkpoint": false,
+  "parameters": 42120394,
+  "trainable_parameters": 42120394,
+  "refiner_parameters": 0,
+  "optimizer_includes_all_refiner_parameters": null
+}

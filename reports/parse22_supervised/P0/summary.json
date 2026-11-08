@@ -1,0 +1,11 @@
+{
+  "state": "not_evaluated",
+  "group": "P0",
+  "role": "within_dataset_supervised",
+  "patient_counts": {
+    "train": 64,
+    "val": 16,
+    "test": 20
+  },
+  "scores": null
+}

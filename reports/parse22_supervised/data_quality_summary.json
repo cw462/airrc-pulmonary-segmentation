@@ -1,0 +1,33 @@
+{
+  "state": "checked",
+  "patients": 100,
+  "duplicate_scan_groups": [],
+  "failed_cases": [],
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1
+  },
+  "prior_public_100_case_external_evaluation": true,
+  "HU_warning_cases_reviewed": [
+    "PA000056",
+    "PA000128",
+    "PA000133",
+    "PA000148",
+    "PA000150",
+    "PA000233",
+    "PA000237",
+    "PA000296",
+    "PA000307",
+    "PA000309",
+    "PA000310"
+  ],
+  "visual_review": "3 native axial CT/GT overlays per warning case; no gross global displacement observed; original GT and all100 cases retained; no claim of full anatomical verification",
+  "server_source_correction": {
+    "case_id": "PA000157",
+    "issue": "old cached CT copy decoded outside checked rawHU ranges",
+    "resolution": "fresh checked original CT copy in independent supervised source mapping; train-only stats and normalized caches regenerated; fixed labels and split retained",
+    "historical_external_results": "preserved; current cached-file anomaly alone cannot date corruption relative to historical inference"
+  },
+  "patient_identity_limit": "No cross-ID patient linkage available; content duplicate check supplements published case IDs.",
+  "split_sha256": "b1fc47e360539f00b8a12bb756f8caf4ec916c0658e0d5117fdd39544d1b3a36"
+}

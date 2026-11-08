@@ -1,0 +1,507 @@
+{
+  "state": "done",
+  "patients": 100,
+  "cases": [
+    {
+      "case_id": "PA000005",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 293043
+    },
+    {
+      "case_id": "PA000016",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 264804
+    },
+    {
+      "case_id": "PA000024",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 280478
+    },
+    {
+      "case_id": "PA000026",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 363809
+    },
+    {
+      "case_id": "PA000027",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 321837
+    },
+    {
+      "case_id": "PA000036",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 288037
+    },
+    {
+      "case_id": "PA000038",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 199269
+    },
+    {
+      "case_id": "PA000042",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 204041
+    },
+    {
+      "case_id": "PA000046",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 208936
+    },
+    {
+      "case_id": "PA000047",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 294238
+    },
+    {
+      "case_id": "PA000053",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 367165
+    },
+    {
+      "case_id": "PA000056",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 526538
+    },
+    {
+      "case_id": "PA000060",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 305697
+    },
+    {
+      "case_id": "PA000063",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 260982
+    },
+    {
+      "case_id": "PA000070",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 251747
+    },
+    {
+      "case_id": "PA000073",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 291472
+    },
+    {
+      "case_id": "PA000074",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 260238
+    },
+    {
+      "case_id": "PA000078",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 336012
+    },
+    {
+      "case_id": "PA000080",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 250707
+    },
+    {
+      "case_id": "PA000082",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 322749
+    },
+    {
+      "case_id": "PA000090",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 212487
+    },
+    {
+      "case_id": "PA000091",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 300546
+    },
+    {
+      "case_id": "PA000092",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 249502
+    },
+    {
+      "case_id": "PA000096",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 568109
+    },
+    {
+      "case_id": "PA000099",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 161571
+    },
+    {
+      "case_id": "PA000100",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 405555
+    },
+    {
+      "case_id": "PA000106",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 380889
+    },
+    {
+      "case_id": "PA000107",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 365125
+    },
+    {
+      "case_id": "PA000109",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 288987
+    },
+    {
+      "case_id": "PA000115",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 338612
+    },
+    {
+      "case_id": "PA000116",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 296446
+    },
+    {
+      "case_id": "PA000118",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 298981
+    },
+    {
+      "case_id": "PA000120",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 399321
+    },
+    {
+      "case_id": "PA000121",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 439600
+    },
+    {
+      "case_id": "PA000124",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 394491
+    },
+    {
+      "case_id": "PA000125",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 386797
+    },
+    {
+      "case_id": "PA000127",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 378192
+    },
+    {
+      "case_id": "PA000128",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 313995
+    },
+    {
+      "case_id": "PA000132",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 242969
+    },
+    {
+      "case_id": "PA000133",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 484694
+    },
+    {
+      "case_id": "PA000137",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 269363
+    },
+    {
+      "case_id": "PA000138",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 324655
+    },
+    {
+      "case_id": "PA000144",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 337861
+    },
+    {
+      "case_id": "PA000147",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 234351
+    },
+    {
+      "case_id": "PA000148",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 380748
+    },
+    {
+      "case_id": "PA000150",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 313351
+    },
+    {
+      "case_id": "PA000157",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 307216
+    },
+    {
+      "case_id": "PA000162",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 396838
+    },
+    {
+      "case_id": "PA000168",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 245047
+    },
+    {
+      "case_id": "PA000169",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 361460
+    },
+    {
+      "case_id": "PA000174",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 293757
+    },
+    {
+      "case_id": "PA000183",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 256319
+    },
+    {
+      "case_id": "PA000190",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 250713
+    },
+    {
+      "case_id": "PA000194",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 367096
+    },
+    {
+      "case_id": "PA000195",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 320561
+    },
+    {
+      "case_id": "PA000198",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 253921
+    },
+    {
+      "case_id": "PA000201",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 285539
+    },
+    {
+      "case_id": "PA000202",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 367515
+    },
+    {
+      "case_id": "PA000203",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 251724
+    },
+    {
+      "case_id": "PA000207",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 312354
+    },
+    {
+      "case_id": "PA000209",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 342980
+    },
+    {
+      "case_id": "PA000212",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 140070
+    },
+    {
+      "case_id": "PA000217",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 375093
+    },
+    {
+      "case_id": "PA000223",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 276595
+    },
+    {
+      "case_id": "PA000226",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 299583
+    },
+    {
+      "case_id": "PA000229",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 226111
+    },
+    {
+      "case_id": "PA000233",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 458900
+    },
+    {
+      "case_id": "PA000234",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 380076
+    },
+    {
+      "case_id": "PA000235",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 270684
+    },
+    {
+      "case_id": "PA000236",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 260795
+    },
+    {
+      "case_id": "PA000237",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 434692
+    },
+    {
+      "case_id": "PA000238",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 244818
+    },
+    {
+      "case_id": "PA000239",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 443909
+    },
+    {
+      "case_id": "PA000242",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 327593
+    },
+    {
+      "case_id": "PA000245",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 444950
+    },
+    {
+      "case_id": "PA000247",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 280008
+    },
+    {
+      "case_id": "PA000255",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 294320
+    },
+    {
+      "case_id": "PA000261",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 337441
+    },
+    {
+      "case_id": "PA000263",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 376300
+    },
+    {
+      "case_id": "PA000273",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 255373
+    },
+    {
+      "case_id": "PA000282",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 244286
+    },
+    {
+      "case_id": "PA000284",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 251345
+    },
+    {
+      "case_id": "PA000285",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 374754
+    },
+    {
+      "case_id": "PA000286",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 126821
+    },
+    {
+      "case_id": "PA000292",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 197728
+    },
+    {
+      "case_id": "PA000296",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 298587
+    },
+    {
+      "case_id": "PA000297",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 294521
+    },
+    {
+      "case_id": "PA000298",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 255338
+    },
+    {
+      "case_id": "PA000300",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 306318
+    },
+    {
+      "case_id": "PA000301",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 346368
+    },
+    {
+      "case_id": "PA000302",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 218330
+    },
+    {
+      "case_id": "PA000303",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 321167
+    },
+    {
+      "case_id": "PA000305",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 239518
+    },
+    {
+      "case_id": "PA000307",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 388878
+    },
+    {
+      "case_id": "PA000309",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 237438
+    },
+    {
+      "case_id": "PA000310",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 342249
+    },
+    {
+      "case_id": "PA000313",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 274784
+    },
+    {
+      "case_id": "PA000314",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 294825
+    },
+    {
+      "case_id": "PA000315",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 216305
+    },
+    {
+      "case_id": "PA000317",
+      "state": "geometry_and_gt_foreground_count_match_checked_source",
+      "foreground_voxels": 381877
+    }
+  ],
+  "full_voxel_checksum_comparison": false
+}

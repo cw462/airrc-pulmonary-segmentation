@@ -14,7 +14,7 @@ State: **training**. Pending summaries contain no measured scores.
 
 | Group | Saved optimizer updates |
 |---|---:|
-| P0 | 0 |
+| P0 | 250 |
 | P1 | 0 |
 | P2 | 0 |
 

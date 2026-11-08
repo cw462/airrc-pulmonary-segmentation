@@ -1,0 +1,13 @@
+{
+  "schedule": "P0_then_P1_P2_parallel",
+  "GPU_assignment": {
+    "P0": "RTX3090 GPU0",
+    "P1": "RTX3090 GPU0",
+    "P2": "RTX3090 GPU1"
+  },
+  "one_gpu_per_model": true,
+  "DDP": false,
+  "batch_size_per_model": 2,
+  "optimizer_steps_per_group": 100000,
+  "busy_gpu_policy": "wait; do not cancel other jobs"
+}

@@ -87,11 +87,9 @@ def main():
     from .trainer import Parse22Trainer, seed_everything
     config = make_config(root, args.group, args.mode)
     split = read_json(root / 'parse22_seed2026.json')
-    if args.group != 'P0' and args.mode == 'full':
-        previous = 'P0' if args.group == 'P1' else 'P1'
-        completed = root / previous / 'training_complete.json'
-        if not completed.exists() or read_json(completed)['optimizer_steps'] != 100000:
-            raise ValueError('Formal experiment order is P0 thenP1 thenP2; previous group not complete.')
+    if args.mode == 'full':
+        from .scheduling import require_completed_baseline
+        require_completed_baseline(root, args.group)
     if args.mode == 'full':
         quality = read_json(root / 'server_source_pair_verification.json')
         if quality.get('state') != 'done' or quality.get('patients') != 100:

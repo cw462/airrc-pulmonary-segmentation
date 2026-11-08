@@ -20,7 +20,7 @@ def export(source, target):
     root_names = ['experiment_matrix.json', 'experiment_matrix_smoke_candidate.json', 'parse22_seed2026.json',
                   'comparison.csv', 'comparison.md', 'comparison_metadata.json', 'engineering_smoke_review.json',
                   'data_quality_summary.json', 'status.json', 'server_source_pair_verification.json',
-                  'runtime_environment.json', 'source_version.json']
+                  'runtime_environment.json', 'source_version.json', 'execution_schedule_public.json', 'execution_revision.json']
     group_names = ['experiment_config.json', 'split_manifest.json', 'training_history.csv', 'validation_history.csv',
                    'evaluation_config.json', 'per_case.csv', 'summary.json', 'prediction_manifest.json',
                    'validation_per_case.csv', 'branch_evaluation_protocol.json', 'evaluation_exceptions.csv',
@@ -50,6 +50,7 @@ def export(source, target):
     rows = ['# PARSE22 independent supervised experiments', '',
             'This family is separate from AirRC M0 → PARSE22 cross-dataset evaluation in `reports/parse2022/`.', '',
             'Frozen patient-case split:64 train /16 validation /20 test; seed2026. Binary output:0 background,1 pulmonary artery. All formal groups start from scratch and use100000 successful optimizer updates.', '',
+            'Schedule: finish P0 on GPU0, then run P1 on GPU0 and P2 on GPU1 concurrently. Each model uses one RTX3090, batch2 and the same frozen training/validation conditions; this is independent-run parallelism, not DDP.', '',
             '| Group | Method |', '|---|---|', '| P0 | U-Mamba Dice + CE baseline |',
             '| P1 | P0 + Skeleton Recall Loss |', '| P2 | P1 + supplied CT-guided residual refiner |', '',
             'State: **' + ('complete' if complete else str(state.get('pipeline', {}).get('state', 'engineering_checks'))) + '**. Pending summaries contain no measured scores.', '',

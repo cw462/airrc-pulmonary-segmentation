@@ -16,7 +16,8 @@ def make_config(root, group, kind):
     files = ['train_airrc.py', 'models/ct_local_refiner.py', 'parse22_supervised/preprocess.py',
              'parse22_supervised/trainer.py', 'parse22_supervised/skeleton_recall.py',
              'parse22_supervised/config.py', 'parse22_supervised/train.py',
-             'parse22_supervised/evaluate.py', 'parse22_supervised/compare.py']
+             'parse22_supervised/evaluate.py', 'parse22_supervised/compare.py',
+             'parse22_supervised/scheduling.py', 'parse22_supervised/pipeline.py']
     sources = {name: hashlib.sha256((base / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() for name in files}
     common = {
         'experiment_family': 'parse22_supervised', 'dataset': DATASET, 'role': 'within_dataset_supervised',
@@ -62,9 +63,12 @@ def make_config(root, group, kind):
         'comparison_boundary': 'P1-P0 SRL increment; P2-P1 refiner increment conditional onSRL; P2-P0 full method; no standalone-refiner or complementarity claim'}
     frozen_path = root / 'experiment_matrix.json'
     path = root / 'experiment_matrix_smoke_candidate.json' if kind == 'smoke' and not frozen_path.exists() else frozen_path
-    if path.exists() and path == frozen_path and read_json(path) != matrix:
-        raise ValueError('Frozen experimental conditions or source changed; do not silently mix runs.')
-    write_json(path, matrix)
+    if path.exists() and path == frozen_path:
+        if read_json(path) != matrix:
+            raise ValueError('Frozen experimental conditions or source changed; do not silently mix runs.')
+        # Matched frozen metadata is read-only during concurrent P1/P2 startup.
+    else:
+        write_json(path, matrix)
     return {**common, 'group': group, 'run_kind': kind, 'optimizer_steps': 50 if kind == 'smoke' else 100000,
             'formal_budget_optimizer_steps': 100000, **matrix['groups'][group],
             'inference': {**common['inference'], 'ct_local_refiner_enabled': group == 'P2',

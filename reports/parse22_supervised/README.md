@@ -4,6 +4,8 @@ This family is separate from AirRC M0 → PARSE22 cross-dataset evaluation in `r
 
 Frozen patient-case split:64 train /16 validation /20 test; seed2026. Binary output:0 background,1 pulmonary artery. All formal groups start from scratch and use100000 successful optimizer updates.
 
+Schedule: finish P0 on GPU0, then run P1 on GPU0 and P2 on GPU1 concurrently. Each model uses one RTX3090, batch2 and the same frozen training/validation conditions; this is independent-run parallelism, not DDP.
+
 | Group | Method |
 |---|---|
 | P0 | U-Mamba Dice + CE baseline |
@@ -14,7 +16,7 @@ State: **training**. Pending summaries contain no measured scores.
 
 | Group | Saved optimizer updates |
 |---|---:|
-| P0 | 250 |
+| P0 | 1000 |
 | P1 | 0 |
 | P2 | 0 |
 

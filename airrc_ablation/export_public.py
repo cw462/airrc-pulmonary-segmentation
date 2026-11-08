@@ -7,14 +7,15 @@ from .common import read_json, write_json
 
 JSON_FILES = ['experiment_config.json', 'split_manifest.json', 'summary.json', 'evaluation_config.json',
               'prediction_manifest.json', 'initialization.json', 'resolved_training_config.json',
-              'training_complete.json', 'evaluation_protocol.json']
+              'training_complete.json', 'evaluation_protocol.json', 'pause_state.json']
 CSV_FILES = ['training_history.csv', 'validation_history.csv', 'per_case.csv', 'av_metrics_per_case.csv',
              'av_confusion_counts.csv', 'evaluation_exceptions.csv', 'branch_details.csv']
 
 
 def sanitize(value):
     if isinstance(value, dict):
-        return {key: sanitize(item) for key, item in value.items() if key not in ('pid', 'gpu', 'cuda_visible_devices', 'queue_pid')}
+        return {key: sanitize(item) for key, item in value.items() if key not in (
+            'pid', 'gpu', 'cuda_visible_devices', 'queue_pid', 'pid_before_pause', 'adopted_training_pid')}
     if isinstance(value, list):
         return [sanitize(item) for item in value]
     if isinstance(value, str) and (value.startswith('/') or (len(value)>2 and value[1:3] in (':/', ':\\'))):
@@ -38,7 +39,8 @@ def export(source, destination):
         if (work/'smoke/smoke_report.json').exists():
             write_json(target/'engineering_smoke_report.json', sanitize(read_json(work/'smoke/smoke_report.json')))
     for name in ('experiment_matrix.json', 'engineering_review.json', 'execution_schedule_public.json',
-                 'runtime_repair_public.json', 'source_version.json', 'status.json', 'comparison_protocol.json'):
+                 'runtime_repair_public.json', 'source_version.json', 'status.json', 'comparison_protocol.json',
+                 'user_control.json', 'execution_revision_pause_public.json'):
         if (source/name).exists():
             write_json(destination/name, sanitize(read_json(source/name)))
     for name in ('comparison.csv', 'comparison.md'):
@@ -55,4 +57,8 @@ def export(source, destination):
     status = source/'status.json'
     if status.exists():
         text.append('Current pipeline state: **{}**.'.format(read_json(status)['pipeline']['state']))
+    policy = source/'user_control.json'
+    if policy.exists() and read_json(policy).get('paused_groups'):
+        text.append('User requested pause: **{}**. GPU1 is reserved for the user’s other experiments. P1 continues; P2 will resume only after explicit user instruction.'.format(
+            ', '.join(sorted(read_json(policy)['paused_groups']))))
     (destination/'README.md').write_text('\n\n'.join(text)+'\n', encoding='utf-8')

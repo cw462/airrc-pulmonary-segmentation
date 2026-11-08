@@ -32,6 +32,13 @@ and AMP skips. M0 did not record this distinction; no claim is made that it
 completed100000 *successful* updates. P1/P2 each use one3090, batch2, noDDP.
 Parallel dispatch changes scheduling only. Other jobs are allowed to finish.
 
+On2026-11-08 the user reserved GPU1 for other experiments. P2 was paused at
+the8500-iteration checkpoint(8497 successful updates plus3AMP skips), while
+the existing P1 process continued on GPU0. The dispatcher honors a persistent
+user pause flag and cannot automatically start P2 even if GPU1 becomes idle.
+Restoring P2 requires explicit user instruction. This scheduling change does
+not alter the split, scientific configuration, saved state or training budget.
+
 Full validation uses all38 patients every2000 iterations. The selection score
 matches M0: patient mean Dice for each of the three classes, then mean across
 classes. The highest score wins, with earlier checkpoint retained on ties.

@@ -1,0 +1,14 @@
+{
+  "paused_groups": {
+    "P2": {
+      "state": "paused_by_user",
+      "requested_unix": 1794141804.051996,
+      "reason": "User reserves GPU1 for other experiments",
+      "automatic_resume": false
+    }
+  },
+  "reserved_gpu_indices": [
+    1
+  ],
+  "resume_requires_explicit_user_instruction": true
+}

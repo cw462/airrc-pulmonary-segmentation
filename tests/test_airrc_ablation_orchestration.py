@@ -76,6 +76,42 @@ class AirRCOrchestrationTests(unittest.TestCase):
             self.assertEqual([child.returncode for child in processes], [1, 0])
             self.assertIn('P1', read_json(root/'pipeline_state.json')['failures'])
 
+    @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
+    def test_user_paused_group_never_queries_or_uses_reserved_gpu(self):
+        from airrc_ablation.pipeline import run_parallel, training_args
+        class EndObservation(Exception):
+            pass
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_json(root/'P1/training_complete.json', {'training_iterations': 100000, 'group': 'P1'})
+            write_json(root/'user_control.json', {'paused_groups': {'P2': {'automatic_resume': False}}})
+            with self.assertRaisesRegex(RuntimeError, 'paused_by_user'):
+                training_args(root, 'P2', 'full')
+            with patch('airrc_ablation.pipeline.gpu_available', side_effect=AssertionError('Reserved GPU must not be queried for dispatch')), \
+                 patch('airrc_ablation.pipeline.launch', side_effect=AssertionError('Paused group must not launch')), \
+                 patch('airrc_ablation.pipeline.time.sleep', side_effect=EndObservation):
+                with self.assertRaises(EndObservation):
+                    run_parallel(root, {'P1': 'gpu-A', 'P2': 'gpu-B'}, 'full')
+            state = read_json(root/'pipeline_state.json')
+            self.assertEqual(state['state'], 'waiting_user_resume')
+            self.assertEqual(state['paused_groups'], ['P2'])
+            self.assertEqual(state['failures'], {})
+
+    @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
+    def test_adoption_observes_existing_pid_without_restarting_or_signaling_it(self):
+        from airrc_ablation.pipeline import wait_for_existing_training
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            code = ("import time,json;from pathlib import Path;time.sleep(.2);"
+                    "p=Path({!r})/'P1';p.mkdir();"
+                    "(p/'training_complete.json').write_text(json.dumps({{'training_iterations':100000,'group':'P1'}}))").format(str(root))
+            child = subprocess.Popen([sys.executable, '-c', code, 'airrc_ablation.train', str(root), '--group', 'P1'])
+            ticks = (Path('/proc')/str(child.pid)/'stat').read_text().rsplit(')', 1)[1].split()[19]
+            with patch('airrc_ablation.pipeline.launch', side_effect=AssertionError('Adoption must not launch')), \
+                 patch('airrc_ablation.pipeline.os.kill', side_effect=AssertionError('Adoption must not signal')):
+                wait_for_existing_training(root, 'P1', child.pid, ticks, poll_seconds=.01)
+            self.assertEqual(child.wait(), 0)
+
 
 if __name__ == '__main__':
     unittest.main()

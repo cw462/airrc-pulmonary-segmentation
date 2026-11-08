@@ -13,11 +13,15 @@ from .common import read_json, write_json
 LOCK_FD = None
 
 
-def process_matches(pid, module, root, group=None):
+def process_matches(pid, module, root, group=None, start_ticks=None):
     try:
         args = (Path('/proc')/str(pid)/'cmdline').read_bytes().decode().split('\0')
-        return module in args and str(root) in args and (group is None or
+        matching = module in args and str(root) in args and (group is None or
             ('--group' in args and args[args.index('--group')+1] == group))
+        if matching and start_ticks is not None:
+            actual = (Path('/proc')/str(pid)/'stat').read_text().rsplit(')', 1)[1].split()[19]
+            matching = str(start_ticks) == actual
+        return matching
     except (FileNotFoundError, ProcessLookupError):
         return False
 
@@ -27,7 +31,14 @@ def trained(root, group):
     return path.exists() and read_json(path).get('training_iterations') == 100000 and read_json(path).get('group') == group
 
 
+def paused_groups(root):
+    path = root/'user_control.json'
+    return sorted(read_json(path).get('paused_groups', {})) if path.exists() else []
+
+
 def training_args(root, group, mode):
+    if group in paused_groups(root):
+        raise RuntimeError(group+' is paused_by_user; explicit user instruction is required to resume.')
     arguments = ['--root', str(root), '--group', group, '--mode', mode]
     if mode == 'full' and not trained(root, group):
         checkpoints = list((root/group/'results').glob('*/AirRCVariantTrainer__nnUNetPlans__3d_fullres/fold_0/checkpoint_latest.pth'))
@@ -65,20 +76,24 @@ def run_parallel(root, assignments, mode, poll_seconds=5):
                (root/g/'smoke/smoke_report.json').exists() and read_json(root/g/'smoke/smoke_report.json')['state'] == 'passed')]
     processes, failures = {}, {}
     while pending or processes:
+        paused = paused_groups(root)
         for group in list(pending):
-            if gpu_available(assignments[group]):
+            if group not in paused and gpu_available(assignments[group]):
                 processes[group] = launch(root, 'airrc_ablation.train', training_args(root, group, mode),
                     group+'_'+mode+'.log', group, assignments[group])
                 pending.remove(group)
         for group, child in list(processes.items()):
             if child.poll() is not None:
                 complete = trained(root, group) if mode == 'full' else (root/group/'smoke/smoke_report.json').exists()
-                if child.returncode or not complete:
+                if group in paused and not complete:
+                    pending.append(group)
+                elif child.returncode or not complete:
                     failures[group] = {'exit_code': child.returncode, 'log': group+'_'+mode+'.log'}
                 del processes[group]
         write_json(root/'pipeline_state.json', {'state': 'training_partial_failure' if failures else
-            ('training' if mode == 'full' else 'engineering_smokes'), 'groups': list(processes),
-            'waiting_for_gpu': pending, 'failures': failures, 'pid': os.getpid(),
+            ('waiting_user_resume' if not processes and pending and all(g in paused for g in pending) else
+             'training' if mode == 'full' else 'engineering_smokes'), 'groups': list(processes),
+            'paused_groups': paused, 'waiting_for_gpu': [g for g in pending if g not in paused], 'failures': failures, 'pid': os.getpid(),
             'completed_groups': [g for g in ('P1', 'P2') if trained(root, g)], 'PARSE22': 'paused_by_user'})
         if pending or processes:
             time.sleep(poll_seconds)
@@ -86,16 +101,35 @@ def run_parallel(root, assignments, mode, poll_seconds=5):
         raise RuntimeError('Failed groups {}; healthy peers were allowed to continue.'.format(failures))
 
 
+def wait_for_existing_training(root, group, pid, start_ticks, poll_seconds=10):
+    # The adopted trainer holds the previous controller's inherited file lock.
+    # Wait by identity, without signaling it or opening a second training run.
+    while process_matches(pid, 'airrc_ablation.train', root, group, start_ticks):
+        write_json(root/'pipeline_state.json', {'state': 'training', 'groups': [group],
+            'paused_groups': paused_groups(root), 'adopted_training_pid': pid,
+            'failures': {}, 'pid': os.getpid(), 'PARSE22': 'paused_by_user'})
+        time.sleep(poll_seconds)
+    if not trained(root, group):
+        raise RuntimeError('Adopted '+group+' exited before completing its fixed training budget.')
+
+
 def main():
     global LOCK_FD
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', required=True, type=Path)
     parser.add_argument('--mode', required=True, choices=['smoke', 'formal'])
+    parser.add_argument('--adopt-group', choices=['P1', 'P2'])
+    parser.add_argument('--adopt-pid', type=int)
+    parser.add_argument('--adopt-start-ticks')
     args = parser.parse_args(); root = args.root.resolve()
+    if any([args.adopt_group, args.adopt_pid, args.adopt_start_ticks]) and not all([args.adopt_group, args.adopt_pid, args.adopt_start_ticks]):
+        parser.error('Adoption requires group, PID and process start ticks together.')
     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
     with (root/'pipeline.lock').open('a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB); LOCK_FD = lock.fileno()
         try:
+            if args.adopt_pid:
+                wait_for_existing_training(root, args.adopt_group, args.adopt_pid, args.adopt_start_ticks)
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB); LOCK_FD = lock.fileno()
             assignments = read_json(root/'execution_schedule.json')['cuda_visible_devices']
             assert set(assignments) == {'P1', 'P2'} and len(set(assignments.values())) == 2
             assert read_json(root/'shared/preprocessing_config.json')['state'] == 'done'

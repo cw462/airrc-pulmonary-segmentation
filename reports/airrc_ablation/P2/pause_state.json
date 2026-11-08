@@ -1,0 +1,13 @@
+{
+  "state": "paused_by_user",
+  "group": "P2",
+  "iterations": 8500,
+  "successful_optimizer_updates": 8497,
+  "amp_skips": 3,
+  "checkpoint": "checkpoint_latest.pth",
+  "pause_snapshot": "checkpoint_paused_at_008500.pth",
+  "checkpoint_bytes": 337296978,
+  "reason": "GPU1 released for user other experiments",
+  "automatic_resume": false,
+  "unix": 1794141805.6076317
+}

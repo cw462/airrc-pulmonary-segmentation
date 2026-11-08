@@ -1,32 +1,36 @@
 {
-  "observed_unix": 1794137488.8859406,
+  "observed_unix": 1794142115.3340867,
   "pipeline": {
     "state": "training",
     "groups": [
-      "P1",
+      "P1"
+    ],
+    "paused_groups": [
       "P2"
     ],
-    "waiting_for_gpu": [],
     "failures": {},
-    "completed_groups": [],
     "PARSE22": "paused_by_user"
   },
   "groups": {
     "P1": {
-      "training_iterations": 5500,
-      "epochs": 22,
-      "successful_optimizer_updates": 5497,
+      "training_iterations": 9000,
+      "epochs": 36,
+      "successful_optimizer_updates": 8997,
+      "paused_by_user": false,
+      "pause_checkpoint_iterations": null,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 114.76364088058472
+      "log_age_seconds": 114.3377046585083
     },
     "P2": {
-      "training_iterations": 5250,
-      "epochs": 21,
-      "successful_optimizer_updates": 5247,
+      "training_iterations": 8500,
+      "epochs": 34,
+      "successful_optimizer_updates": 8497,
+      "paused_by_user": true,
+      "pause_checkpoint_iterations": 8500,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 264.7632896900177
+      "log_age_seconds": 420.6708273887634
     }
   }
 }

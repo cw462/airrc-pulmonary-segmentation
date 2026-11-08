@@ -1,0 +1,10 @@
+{
+  "purpose": "User requested GPU1 for other experiments; pause only P2 and preserve running P1",
+  "P2_paused_iterations": 8500,
+  "resume_requires_explicit_user_instruction": true,
+  "scientific_training_source_sha256_unchanged": true,
+  "training_configs_changed": false,
+  "orchestration_tests_passed": 6,
+  "unix": 1794141998.069414,
+  "P1_process_unchanged": true
+}

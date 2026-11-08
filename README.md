@@ -135,3 +135,5 @@ This family is currently paused at the PARSE22 P0 step1750 checkpoint by user in
 Reuse the completed M0 as P0_M0. AirRC-P1 adds three-foreground-class Skeleton Recall Loss; AirRC-P2 adds the supplied four-class CT residual refiner to P1. Both variants start independently from scratch on separate GPUs, retaining M0's178/38/38 split,1mm plan,128³ patch,batch2, original4/2 augmentation workers and100000 training-iteration budget. Validation selects the mean patient Dice across PA/PV/airway lumen. All three structures receive the frozen basic and skeleton/branch metrics, with AV confusion metrics for PA/PV.
 
 See the [AirRC variant protocol](docs/airrc_ablation_protocol.md) and [current reports](reports/airrc_ablation/README.md). Original M0 and cross-dataset result files are retained unchanged. AirRC group names and directories are independent of the paused PARSE22 supervised family.
+
+Current resource arrangement(2026-11-08): the user requested GPU1 for other experiments. AirRC-P2 is saved and paused at8500 training iterations; AirRC-P1 continues on GPU0. P2 will resume only after explicit user instruction.

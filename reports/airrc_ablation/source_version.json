@@ -1,0 +1,8 @@
+{
+  "implementation_git_commit": "02e13b7",
+  "repository": "https://github.com/cw462/airrc-pulmonary-segmentation",
+  "training_source_digests": "experiment_matrix.json/training_source_sha256",
+  "scientific_conditions_frozen": true,
+  "runtime": "original Python3.8.12/PyTorch2.1.0/CUDA12.1; task-private pristine same-package CUDA library overlay",
+  "report_commits_do_not_change_training_source": true
+}

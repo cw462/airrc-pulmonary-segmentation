@@ -35,6 +35,13 @@ EXTRA = ('excluded_short_branch_total_length_mm', 'degenerate_structure_count',
          'gt_skeleton_voxel_count', 'pred_skeleton_voxel_count')
 
 
+def selected_classes(core):
+    names = core.get('evaluated_classes', list(CLASSES.values()))
+    if not names or len(names) != len(set(names)) or not set(names).issubset(CLASSES.values()):
+        raise ValueError('Invalid or duplicate evaluated classes.')
+    return {label: name for label, name in CLASSES.items() if name in names}
+
+
 def clean(value):
     if isinstance(value, dict):
         return {key: clean(item) for key, item in value.items()}
@@ -159,8 +166,12 @@ def evaluate_one(task):
     sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
     started = time.monotonic()
     case_id, split = case['case_id'], case['split']
+    classes = selected_classes(core)
     gt_path = gt_root / case['gt_path']
-    prediction_path = pred_root / split / f'{case_id}.nii.gz'
+    relative_prediction = Path(case.get('prediction_path', str(Path(split) / f'{case_id}.nii.gz')))
+    if relative_prediction.is_absolute() or '..' in relative_prediction.parts:
+        raise ValueError('Prediction paths must remain relative to the fixed prediction root.')
+    prediction_path = pred_root / relative_prediction
     payload = {'case_id': case_id, 'split': split, 'gt_path': str(gt_path),
                'prediction_path': str(prediction_path), 'rows': [], 'details': [], 'exceptions': []}
     try:
@@ -170,8 +181,10 @@ def evaluate_one(task):
         pred_image, alignment = align_prediction(pred_image, gt_image)
         payload['geometry'] = alignment
         gt, pred = sitk.GetArrayViewFromImage(gt_image), sitk.GetArrayViewFromImage(pred_image)
+        if 'gt_allowed_labels' in core and not set(np.unique(gt)).issubset(core['gt_allowed_labels']):
+            raise ValueError('GT contains labels outside the declared dataset reference encoding.')
         ref_geometry = geometry(gt_image)
-        for value, name in CLASSES.items():
+        for value, name in classes.items():
             base = {'case_id': case_id, 'split': split, 'class': name}
             try:
                 g, p = gt == value, pred == value
@@ -203,7 +216,7 @@ def evaluate_one(task):
                 payload['rows'].append({**base, **dict.fromkeys(METRICS + EXTRA), 'status': 'failed'})
                 payload['exceptions'].append({**base, 'metric': 'all', 'reason': f'{type(error).__name__}: {error}'})
     except Exception as error:
-        for name in CLASSES.values():
+        for name in classes.values():
             base = {'case_id': case_id, 'split': split, 'class': name}
             payload['rows'].append({**base, **dict.fromkeys(METRICS + EXTRA), 'status': 'missing' if isinstance(error, FileNotFoundError) else 'failed'})
             payload['exceptions'].append({**base, 'metric': 'all', 'reason': f'{type(error).__name__}: {error}'})
@@ -242,9 +255,9 @@ def aggregate(output, cases, core):
                'exception_count': len(exceptions),
                'maximum_cldice_absolute_difference': max((row['cldice_absolute_difference'] for row in rows
                                                          if row.get('cldice_absolute_difference') is not None), default=None)}
-    for split in ('val', 'test'):
+    for split in sorted({case['split'] for case in cases}):
         summary['scores'][split] = {}
-        for name in CLASSES.values():
+        for name in selected_classes(core).values():
             selected = [row for row in rows if row['split'] == split and row['class'] == name]
             summary['scores'][split][name] = {metric: stats([row.get(metric) for row in selected]) for metric in METRICS + EXTRA}
     write_json(output / 'skeleton_branch_summary.json', clean(summary))

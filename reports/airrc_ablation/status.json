@@ -1,5 +1,5 @@
 {
-  "observed_unix": 1794142115.3340867,
+  "observed_unix": 1794146144.4346871,
   "pipeline": {
     "state": "training",
     "groups": [
@@ -13,14 +13,14 @@
   },
   "groups": {
     "P1": {
-      "training_iterations": 9000,
-      "epochs": 36,
-      "successful_optimizer_updates": 8997,
+      "training_iterations": 12250,
+      "epochs": 49,
+      "successful_optimizer_updates": 12247,
       "paused_by_user": false,
       "pause_checkpoint_iterations": null,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 114.3377046585083
+      "log_age_seconds": 120.93533968925476
     },
     "P2": {
       "training_iterations": 8500,
@@ -30,7 +30,7 @@
       "pause_checkpoint_iterations": 8500,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 420.6708273887634
+      "log_age_seconds": 4449.7714407444
     }
   }
 }

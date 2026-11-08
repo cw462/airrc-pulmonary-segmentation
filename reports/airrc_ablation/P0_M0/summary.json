@@ -1,0 +1,1028 @@
+{
+  "state": "done",
+  "group": "P0_M0",
+  "experiment_family": "airrc_ablation",
+  "patient_counts": {
+    "val": 38,
+    "test": 38
+  },
+  "scores": {
+    "val": {
+      "pulmonary_artery": {
+        "dice": {
+          "mean": 0.9631732035705692,
+          "sample_std": 0.007931943001042552,
+          "median": 0.9648938266813689,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.9290708272962223,
+          "sample_std": 0.014544940400326003,
+          "median": 0.9321695914428905,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.9646872508508778,
+          "sample_std": 0.015873851790649752,
+          "median": 0.9697755415927498,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.9618530870606726,
+          "sample_std": 0.0072849831324631725,
+          "median": 0.9617425685203613,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.9723152894179612,
+          "sample_std": 0.010479954576560903,
+          "median": 0.9747788432366435,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sample_std": 0.06719431273979923,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9731970839296649,
+          "sample_std": 0.009663175453576601,
+          "median": 0.9746032880521183,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9716033705543768,
+          "sample_std": 0.017040484954792923,
+          "median": 0.9748386588671338,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.9723152894179612,
+          "sample_std": 0.010479954576560903,
+          "median": 0.9747788432366435,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9557957244955738,
+          "sample_std": 0.017834001783147795,
+          "median": 0.9581045436351133,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9306116959784493,
+          "sample_std": 0.024178457605233124,
+          "median": 0.931260242871478,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9716980869778421,
+          "sample_std": 0.011370649331656331,
+          "median": 0.9742255820305569,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 906.7631578947369,
+          "sample_std": 207.2061819763533,
+          "median": 893.5,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 866.3947368421053,
+          "sample_std": 195.98545719264467,
+          "median": 857.5,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 842.7894736842105,
+          "sample_std": 186.7051668959953,
+          "median": 827.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 71.86842105263158,
+          "sample_std": 19.622341173142935,
+          "median": 67.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 143.57550578930736,
+          "sample_std": 41.19972723835123,
+          "median": 137.47167919834538,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 20.31578947368421,
+          "sample_std": 8.20713355878763,
+          "median": 20.5,
+          "n_valid": 38
+        }
+      },
+      "pulmonary_vein": {
+        "dice": {
+          "mean": 0.9652752258571028,
+          "sample_std": 0.007007769888310614,
+          "median": 0.9667585275465632,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.9329666342898717,
+          "sample_std": 0.012965540005881876,
+          "median": 0.9356561817349635,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.969530628568502,
+          "sample_std": 0.008873625656823146,
+          "median": 0.9705180731744576,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.9611612558154428,
+          "sample_std": 0.010997999085594111,
+          "median": 0.9635242802785322,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.9751618428689101,
+          "sample_std": 0.01095582278747968,
+          "median": 0.9785110057291257,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sample_std": 0.06719431273979923,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9752290864975665,
+          "sample_std": 0.010934185269763324,
+          "median": 0.9770694894895482,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9752059779260988,
+          "sample_std": 0.015100858640681744,
+          "median": 0.9791575893205652,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.9751618428689101,
+          "sample_std": 0.01095582278747968,
+          "median": 0.9785110057291257,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9594463483807026,
+          "sample_std": 0.02015482428729092,
+          "median": 0.9615242494226328,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9385916116414301,
+          "sample_std": 0.022599742449468174,
+          "median": 0.9412701053486431,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9726435446127994,
+          "sample_std": 0.015425710299158357,
+          "median": 0.9760894055481126,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 851.8421052631579,
+          "sample_std": 165.51941607603254,
+          "median": 843.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 818.3421052631579,
+          "sample_std": 165.40340143497318,
+          "median": 807.5,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 800.3947368421053,
+          "sample_std": 161.1738258332061,
+          "median": 791.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 61.36842105263158,
+          "sample_std": 16.767763557995508,
+          "median": 60.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 125.93633357569892,
+          "sample_std": 37.81261196303731,
+          "median": 125.83636918688335,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 18.236842105263158,
+          "sample_std": 8.165299718192161,
+          "median": 17.0,
+          "n_valid": 38
+        }
+      },
+      "airway_lumen": {
+        "dice": {
+          "mean": 0.9594271868539901,
+          "sample_std": 0.021037228037725737,
+          "median": 0.9643273355416948,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.9227456486252259,
+          "sample_std": 0.036956304635282204,
+          "median": 0.9311122351746226,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.9672953461102786,
+          "sample_std": 0.014307556668729985,
+          "median": 0.9713608782170222,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.951871405624282,
+          "sample_std": 0.028743219222959155,
+          "median": 0.9595588806095544,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.94453162008822,
+          "sample_std": 0.01984267986829982,
+          "median": 0.948982572983967,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.0109003569045552,
+          "sample_std": 0.06719431273979923,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9338292018581332,
+          "sample_std": 0.03114701078890165,
+          "median": 0.943366163932654,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9559674445620777,
+          "sample_std": 0.014772318486282635,
+          "median": 0.9573934451362547,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.94453162008822,
+          "sample_std": 0.01984267986829982,
+          "median": 0.948982572983967,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.8896317373680311,
+          "sample_std": 0.056072903479836934,
+          "median": 0.9082849427677013,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.8312148451481121,
+          "sample_std": 0.0704858168904314,
+          "median": 0.8489541708291708,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9334378327865922,
+          "sample_std": 0.03198890276551148,
+          "median": 0.9420127174721511,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 339.2631578947368,
+          "sample_std": 85.51202988248521,
+          "median": 332.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 302.8157894736842,
+          "sample_std": 82.12411676703313,
+          "median": 297.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 283.57894736842104,
+          "sample_std": 80.04715893094566,
+          "median": 282.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 48.28947368421053,
+          "sample_std": 18.726925109046313,
+          "median": 48.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 94.01516938048837,
+          "sample_std": 40.47922096669301,
+          "median": 88.13618448287238,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 29.63157894736842,
+          "sample_std": 11.52065372730253,
+          "median": 28.5,
+          "n_valid": 38
+        }
+      }
+    },
+    "test": {
+      "pulmonary_artery": {
+        "dice": {
+          "mean": 0.9643200698725466,
+          "sample_std": 0.004314927034711899,
+          "median": 0.9650103250763343,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.9311310913988975,
+          "sample_std": 0.008024594501710603,
+          "median": 0.9323864754704112,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.9654494762080938,
+          "sample_std": 0.008110364153727396,
+          "median": 0.9665428924447399,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.9632556830612637,
+          "sample_std": 0.005780520810450483,
+          "median": 0.9621686669875019,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.974289739250488,
+          "sample_std": 0.005470537107617807,
+          "median": 0.974301047144257,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9760596378028416,
+          "sample_std": 0.006258228304283441,
+          "median": 0.9762066592522447,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9726005753036115,
+          "sample_std": 0.009733967206782393,
+          "median": 0.9732176546058618,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.974289739250488,
+          "sample_std": 0.005470537107617807,
+          "median": 0.974301047144257,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9607746690713502,
+          "sample_std": 0.012225834702275635,
+          "median": 0.962789309779837,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9349760693975251,
+          "sample_std": 0.017977917086992354,
+          "median": 0.9340348315557813,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9753308061921688,
+          "sample_std": 0.007299552594583495,
+          "median": 0.9758591488634121,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 909.0,
+          "sample_std": 251.09156292670005,
+          "median": 797.5,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 873.1315789473684,
+          "sample_std": 241.02059697255567,
+          "median": 767.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 849.1315789473684,
+          "sample_std": 232.6841230896085,
+          "median": 743.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 68.28947368421052,
+          "sample_std": 22.138272955342174,
+          "median": 66.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 136.81319655090476,
+          "sample_std": 46.00998957673874,
+          "median": 132.11830804721689,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 19.157894736842106,
+          "sample_std": 8.287164662946088,
+          "median": 18.5,
+          "n_valid": 38
+        }
+      },
+      "pulmonary_vein": {
+        "dice": {
+          "mean": 0.9648376968565378,
+          "sample_std": 0.009137504842102713,
+          "median": 0.9659618124486129,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.932205449720203,
+          "sample_std": 0.01644018720563464,
+          "median": 0.9341647395643589,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.9682278806592111,
+          "sample_std": 0.008817367573175704,
+          "median": 0.9698001171180899,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.9617349369864819,
+          "sample_std": 0.01805704847967639,
+          "median": 0.9650682847193663,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.975932363234432,
+          "sample_std": 0.006296603839209711,
+          "median": 0.9769173021770532,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.1078689345682313,
+          "sample_std": 0.6649487707377484,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9761880689601249,
+          "sample_std": 0.009464196724208949,
+          "median": 0.9774942820842742,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9757827480953254,
+          "sample_std": 0.009722902781571362,
+          "median": 0.9760517367448774,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.975932363234432,
+          "sample_std": 0.006296603839209711,
+          "median": 0.9769173021770532,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9623331565559422,
+          "sample_std": 0.016597749063155684,
+          "median": 0.9642980618969839,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9420482429290374,
+          "sample_std": 0.018989672991162124,
+          "median": 0.9449029590378571,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9750220894913963,
+          "sample_std": 0.010999898503171868,
+          "median": 0.9773060697319844,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 823.6842105263158,
+          "sample_std": 196.11208946887078,
+          "median": 823.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 793.2631578947369,
+          "sample_std": 191.69509633093318,
+          "median": 788.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 776.2631578947369,
+          "sample_std": 186.6576117156217,
+          "median": 771.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 58.78947368421053,
+          "sample_std": 16.814019077940372,
+          "median": 53.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 120.60163119122174,
+          "sample_std": 38.32878196503456,
+          "median": 110.92288458236928,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 14.973684210526315,
+          "sample_std": 6.042582417804508,
+          "median": 14.5,
+          "n_valid": 38
+        }
+      },
+      "airway_lumen": {
+        "dice": {
+          "mean": 0.9528741048286482,
+          "sample_std": 0.029253779836216597,
+          "median": 0.964553660784146,
+          "n_valid": 38
+        },
+        "iou": {
+          "mean": 0.9113682382700787,
+          "sample_std": 0.050676357767203195,
+          "median": 0.9315346525272932,
+          "n_valid": 38
+        },
+        "precision": {
+          "mean": 0.960580402473289,
+          "sample_std": 0.021499118853927423,
+          "median": 0.9670394491658753,
+          "n_valid": 38
+        },
+        "recall": {
+          "mean": 0.9455514437682357,
+          "sample_std": 0.03808964588772714,
+          "median": 0.959919970281019,
+          "n_valid": 38
+        },
+        "cldice": {
+          "mean": 0.9361708525871133,
+          "sample_std": 0.026600544854970015,
+          "median": 0.9436394581965184,
+          "n_valid": 38
+        },
+        "hd95_mm": {
+          "mean": 1.0410652087451333,
+          "sample_std": 0.1484116611701215,
+          "median": 1.0,
+          "n_valid": 38
+        },
+        "skeleton_recall": {
+          "mean": 0.9245111986146031,
+          "sample_std": 0.0394107778538426,
+          "median": 0.9326044293795515,
+          "n_valid": 38
+        },
+        "skeleton_precision": {
+          "mean": 0.9487968403180705,
+          "sample_std": 0.018417225042647492,
+          "median": 0.9503832812106834,
+          "n_valid": 38
+        },
+        "cldice_recomputed": {
+          "mean": 0.9361708525871133,
+          "sample_std": 0.026600544854970015,
+          "median": 0.9436394581965184,
+          "n_valid": 38
+        },
+        "cldice_absolute_difference": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.8755851106643869,
+          "sample_std": 0.06746480786794334,
+          "median": 0.8945066973605516,
+          "n_valid": 38
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.8137164331057251,
+          "sample_std": 0.07906673337937442,
+          "median": 0.8316530564236986,
+          "n_valid": 38
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9233462735415786,
+          "sample_std": 0.042453928056385155,
+          "median": 0.9340996648134652,
+          "n_valid": 38
+        },
+        "gt_branch_count": {
+          "mean": 340.42105263157896,
+          "sample_std": 98.92465917786431,
+          "median": 327.5,
+          "n_valid": 38
+        },
+        "detected_branch_count_80": {
+          "mean": 299.36842105263156,
+          "sample_std": 93.23304745625389,
+          "median": 290.0,
+          "n_valid": 38
+        },
+        "detected_branch_count_90": {
+          "mean": 278.89473684210526,
+          "sample_std": 89.99032664942058,
+          "median": 272.0,
+          "n_valid": 38
+        },
+        "excluded_short_branch_count": {
+          "mean": 48.5,
+          "sample_std": 16.93828224482652,
+          "median": 48.5,
+          "n_valid": 38
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 94.77431338263047,
+          "sample_std": 34.76729373777694,
+          "median": 94.63582000394285,
+          "n_valid": 38
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 38
+        },
+        "degenerate_structure_count": {
+          "mean": 28.657894736842106,
+          "sample_std": 9.459090624794735,
+          "median": 27.5,
+          "n_valid": 38
+        }
+      }
+    }
+  },
+  "av_scores": {
+    "val": {
+      "av_mcs": {
+        "mean": 0.002329059934652075,
+        "sample_std": 0.0013598160842156837,
+        "median": 0.0017766421668770917,
+        "n_valid": 38
+      },
+      "artery_to_vein_rate": {
+        "mean": 0.004369522918121517,
+        "sample_std": 0.0029346061766730293,
+        "median": 0.0037063415453459786,
+        "n_valid": 38
+      },
+      "vein_to_artery_rate": {
+        "mean": 0.005130593206680483,
+        "sample_std": 0.003705428716451592,
+        "median": 0.0038530201231761116,
+        "n_valid": 38
+      },
+      "merged_vessel_dice": {
+        "mean": 0.9689149599956464,
+        "sample_std": 0.005277529513905565,
+        "median": 0.9700578606031816,
+        "n_valid": 38
+      },
+      "merged_vessel_precision": {
+        "mean": 0.9715248341745559,
+        "sample_std": 0.009953903101972281,
+        "median": 0.9741619550031353,
+        "n_valid": 38
+      },
+      "merged_vessel_recall": {
+        "mean": 0.9664214517599938,
+        "sample_std": 0.007554920285158168,
+        "median": 0.9662273779123516,
+        "n_valid": 38
+      }
+    },
+    "test": {
+      "av_mcs": {
+        "mean": 0.002151357300711809,
+        "sample_std": 0.0010727198988001055,
+        "median": 0.0018764285810866032,
+        "n_valid": 38
+      },
+      "artery_to_vein_rate": {
+        "mean": 0.004114674673953825,
+        "sample_std": 0.002691273564672725,
+        "median": 0.003114046119900283,
+        "n_valid": 38
+      },
+      "vein_to_artery_rate": {
+        "mean": 0.00462963966131153,
+        "sample_std": 0.002719712682951599,
+        "median": 0.0037803639824248152,
+        "n_valid": 38
+      },
+      "merged_vessel_dice": {
+        "mean": 0.9690102264664654,
+        "sample_std": 0.005150325480132817,
+        "median": 0.9697145108962153,
+        "n_valid": 38
+      },
+      "merged_vessel_precision": {
+        "mean": 0.9711044914323705,
+        "sample_std": 0.00662568119792157,
+        "median": 0.9717691779711108,
+        "n_valid": 38
+      },
+      "merged_vessel_recall": {
+        "mean": 0.9670078730608843,
+        "sample_std": 0.00948866232515796,
+        "median": 0.9683192053045906,
+        "n_valid": 38
+      }
+    }
+  },
+  "source": "Existing reports/airrc_m0; metrics reused unchanged, no new baseline training or inference",
+  "historical_successful_optimizer_updates": null,
+  "historical_AMP_skips": "not recorded; original budget100000 training iterations",
+  "original_summary": {
+    "protocol": "airrc-m0-v1",
+    "checkpoint": "https://github.com/cw462/airrc-pulmonary-segmentation/releases/download/v0.1.0/checkpoint_best.pth",
+    "checkpoint_sha256": "643ea0dda6b351d62601ad9fa9a2eb06ad1d5cb184f8d8ab029af422a56ce2bd",
+    "checkpoint_epoch": 400,
+    "checkpoint_step": 100000,
+    "training_steps_completed": 100000,
+    "split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7",
+    "selection_macro_dice": 0.9626252054272207,
+    "inference": "1 mm reference grid, 128-cube sliding windows, 50% overlap, Gaussian blending, no TTA",
+    "hd95": "Maximum of directed 95th percentiles, 6-connected boundary voxel centers, physical mm",
+    "cldice": "3D Lee skeletonization and harmonic mean of centerline precision and sensitivity",
+    "empty_policy": "Both empty excluded, one empty overlap and clDice zero with full grid diagonal for HD95",
+    "aggregation": "Per-patient metrics, arithmetic mean and sample standard deviation",
+    "patient_counts": {
+      "val": 38,
+      "test": 38
+    },
+    "max_validation_dice_delta": 0.0,
+    "scores": {
+      "val": {
+        "pulmonary_artery": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9631732035705692,
+            "sd": 0.007931943001042552
+          },
+          "iou": {
+            "mean": 0.9290708272962223,
+            "sd": 0.014544940400326003
+          },
+          "precision": {
+            "mean": 0.9646872508508778,
+            "sd": 0.015873851790649752
+          },
+          "recall": {
+            "mean": 0.9618530870606726,
+            "sd": 0.0072849831324631725
+          },
+          "cldice": {
+            "mean": 0.9723152894179612,
+            "sd": 0.010479954576560903
+          },
+          "hd95_mm": {
+            "mean": 1.0109003569045552,
+            "sd": 0.06719431273979923
+          }
+        },
+        "pulmonary_vein": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9652752258571028,
+            "sd": 0.007007769888310614
+          },
+          "iou": {
+            "mean": 0.9329666342898717,
+            "sd": 0.012965540005881876
+          },
+          "precision": {
+            "mean": 0.969530628568502,
+            "sd": 0.008873625656823146
+          },
+          "recall": {
+            "mean": 0.9611612558154428,
+            "sd": 0.010997999085594111
+          },
+          "cldice": {
+            "mean": 0.9751618428689101,
+            "sd": 0.01095582278747968
+          },
+          "hd95_mm": {
+            "mean": 1.0109003569045552,
+            "sd": 0.06719431273979923
+          }
+        },
+        "airway_lumen": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9594271868539901,
+            "sd": 0.021037228037725737
+          },
+          "iou": {
+            "mean": 0.9227456486252259,
+            "sd": 0.036956304635282204
+          },
+          "precision": {
+            "mean": 0.9672953461102786,
+            "sd": 0.014307556668729985
+          },
+          "recall": {
+            "mean": 0.951871405624282,
+            "sd": 0.028743219222959155
+          },
+          "cldice": {
+            "mean": 0.94453162008822,
+            "sd": 0.01984267986829982
+          },
+          "hd95_mm": {
+            "mean": 1.0109003569045552,
+            "sd": 0.06719431273979923
+          }
+        }
+      },
+      "test": {
+        "pulmonary_artery": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9643200698725466,
+            "sd": 0.004314927034711899
+          },
+          "iou": {
+            "mean": 0.9311310913988975,
+            "sd": 0.008024594501710603
+          },
+          "precision": {
+            "mean": 0.9654494762080938,
+            "sd": 0.008110364153727396
+          },
+          "recall": {
+            "mean": 0.9632556830612637,
+            "sd": 0.005780520810450483
+          },
+          "cldice": {
+            "mean": 0.974289739250488,
+            "sd": 0.005470537107617807
+          },
+          "hd95_mm": {
+            "mean": 1.0,
+            "sd": 0.0
+          }
+        },
+        "pulmonary_vein": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9648376968565378,
+            "sd": 0.009137504842102713
+          },
+          "iou": {
+            "mean": 0.932205449720203,
+            "sd": 0.01644018720563464
+          },
+          "precision": {
+            "mean": 0.9682278806592111,
+            "sd": 0.008817367573175704
+          },
+          "recall": {
+            "mean": 0.9617349369864819,
+            "sd": 0.01805704847967639
+          },
+          "cldice": {
+            "mean": 0.975932363234432,
+            "sd": 0.006296603839209711
+          },
+          "hd95_mm": {
+            "mean": 1.1078689345682313,
+            "sd": 0.6649487707377484
+          }
+        },
+        "airway_lumen": {
+          "patients": 38,
+          "both_empty": 0,
+          "one_empty": 0,
+          "dice": {
+            "mean": 0.9528741048286482,
+            "sd": 0.029253779836216597
+          },
+          "iou": {
+            "mean": 0.9113682382700787,
+            "sd": 0.050676357767203195
+          },
+          "precision": {
+            "mean": 0.960580402473289,
+            "sd": 0.021499118853927423
+          },
+          "recall": {
+            "mean": 0.9455514437682357,
+            "sd": 0.03808964588772714
+          },
+          "cldice": {
+            "mean": 0.9361708525871133,
+            "sd": 0.026600544854970015
+          },
+          "hd95_mm": {
+            "mean": 1.0410652087451333,
+            "sd": 0.1484116611701215
+          }
+        }
+      }
+    }
+  }
+}

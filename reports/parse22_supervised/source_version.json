@@ -3,5 +3,6 @@
   "repository": "https://github.com/cw462/airrc-pulmonary-segmentation",
   "frozen_training_source_digests": "experiment_matrix.json/source_code_sha256",
   "later_report_commits_do_not_change_training_source": true,
-  "scheduling_revision": "execution_revision.json"
+  "scheduling_revision": "execution_revision.json",
+  "scheduling_git_commit": "1d2c314"
 }

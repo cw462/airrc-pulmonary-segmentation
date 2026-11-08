@@ -1,0 +1,10 @@
+{
+  "state": "pending_training",
+  "inference": {
+    "tile_step_size": 0.5,
+    "Gaussian": true,
+    "TTA": false,
+    "postprocessing": "none",
+    "grid": "same prepared1mm AirRC GT evaluation grid"
+  }
+}

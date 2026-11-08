@@ -1,32 +1,35 @@
 {
-  "observed_unix": 1794126260.5397258,
+  "observed_unix": 1794129975.2441926,
   "pipeline": {
-    "state": "training",
+    "state": "paused_by_user",
     "group": "P0",
-    "adopted_p0_pid": 2010668,
-    "schedule": "P0_then_P1_P2_parallel"
+    "saved_optimizer_steps": 1750,
+    "checkpoint": "checkpoint_latest.pth",
+    "reason": "Prioritize AirRC P1/P2 on both3090 GPUs",
+    "unix": 1794127695.8842964,
+    "cache_rebuild_required": true
   },
   "groups": {
     "P0": {
-      "optimizer_steps": 1000,
-      "epochs": 4,
+      "optimizer_steps": 1750,
+      "epochs": 7,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 59.90402936935425
+      "log_age_seconds": 2280.657405614853
     },
     "P1": {
       "optimizer_steps": 0,
       "epochs": 0,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 2169.418390750885
+      "log_age_seconds": 5884.123115539551
     },
     "P2": {
       "optimizer_steps": 0,
       "epochs": 0,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 2053.4402656555176
+      "log_age_seconds": 5768.1448040008545
     }
   }
 }

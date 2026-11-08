@@ -1,0 +1,32 @@
+{
+  "observed_unix": 1794130587.7388966,
+  "pipeline": {
+    "state": "training",
+    "groups": [
+      "P1",
+      "P2"
+    ],
+    "waiting_for_gpu": [],
+    "failures": {},
+    "completed_groups": [],
+    "PARSE22": "paused_by_user"
+  },
+  "groups": {
+    "P1": {
+      "training_iterations": 0,
+      "epochs": 0,
+      "successful_optimizer_updates": 0,
+      "training_complete": false,
+      "evaluation_state": "not_evaluated",
+      "log_age_seconds": 29.83672285079956
+    },
+    "P2": {
+      "training_iterations": 0,
+      "epochs": 0,
+      "successful_optimizer_updates": 0,
+      "training_complete": false,
+      "evaluation_state": "not_evaluated",
+      "log_age_seconds": 29.776926517486572
+    }
+  }
+}

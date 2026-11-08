@@ -1,6 +1,6 @@
 # AirRC pulmonary segmentation
 
-三维肺动脉、肺静脉和气道腔分割实验。当前主线为 AirRC 单源 U-Mamba M0 训练，以及 PARSE2022 肺动脉外部评估。
+三维肺动脉、肺静脉和气道腔分割实验。当前主线为 AirRC M0 基线上的 Skeleton Recall Loss（P1）及 CT 引导局部残差细化（P2）实验。PARSE22 独立监督实验已按用户要求保存检查点并暂停。
 
 ## 实验状态
 
@@ -127,3 +127,11 @@ bash scripts/evaluate_parse.sh "$PARSE_RUN/manifest.json" "$MODEL" "$PARSE_RUN/r
 ## PARSE22 independent supervised experiments
 
 A separate binary U-Mamba P0/P1/P2 family uses a frozen64/16/20 split and100000 optimizer updates per group, all from scratch. P2 uses the supplied CT-guided residual refiner. See the [protocol](docs/parse22_supervised_protocol.md) and [current reports](reports/parse22_supervised/README.md). Historical [AirRC→PARSE22](reports/parse2022/) scores remain a separate cross-dataset evaluation and are excluded from this comparison.
+
+This family is currently paused at the PARSE22 P0 step1750 checkpoint by user instruction. Its data, configuration and checkpoint are retained; AirRC now has priority on both GPUs.
+
+## AirRC M0 / P1 / P2
+
+Reuse the completed M0 as P0_M0. AirRC-P1 adds three-foreground-class Skeleton Recall Loss; AirRC-P2 adds the supplied four-class CT residual refiner to P1. Both variants start independently from scratch on separate GPUs, retaining M0's178/38/38 split,1mm plan,128³ patch,batch2, original4/2 augmentation workers and100000 training-iteration budget. Validation selects the mean patient Dice across PA/PV/airway lumen. All three structures receive the frozen basic and skeleton/branch metrics, with AV confusion metrics for PA/PV.
+
+See the [AirRC variant protocol](docs/airrc_ablation_protocol.md) and [current reports](reports/airrc_ablation/README.md). Original M0 and cross-dataset result files are retained unchanged. AirRC group names and directories are independent of the paused PARSE22 supervised family.

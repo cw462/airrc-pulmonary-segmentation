@@ -1,0 +1,10 @@
+{
+  "state": "kernel_witness_passed_full_smokes_running",
+  "version": "2.1.0",
+  "CUDA": "12.1",
+  "source_package": "pytorch-original.tar.bz2",
+  "original_shared_environment_modified": false,
+  "restored_library_expected_SHA256": "8df9c068e0fa6e487df5b48c6a1020a49b118e6d9a7a0dad257f74eb0205f55c",
+  "cause": "installed original libtorch_cuda.so differs from trusted original package record; historical corruption time unknown",
+  "kernel_witness": "CUDA conv3d and Mamba forward/backward,3 seeded repeats per GPU, independently repeated by doc-following worker"
+}

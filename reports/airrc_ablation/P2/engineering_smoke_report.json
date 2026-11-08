@@ -1,0 +1,24 @@
+{
+  "state": "passed",
+  "group": "P2",
+  "iterations": 250,
+  "timed_fresh_batch_iterations": 200,
+  "seconds_per_training_iteration": 0.95974620609486,
+  "initial_fixed_patch_loss": 8.243419647216797,
+  "final_fixed_patch_loss": -0.8749585151672363,
+  "successful_optimizer_updates": 247,
+  "AMP_skips": 3,
+  "peak_training_memory": {
+    "allocated_gib": 10.21185827255249,
+    "reserved_gib": 12.3046875
+  },
+  "checkpoint_reload_max_difference": 0.0,
+  "refiner_gradients": {
+    "head": 0.8449922204017639,
+    "features": 2.1364190578460693
+  },
+  "native_grid_case": "LIDC-IDRI-0658",
+  "native_grid_verified": true,
+  "native_grid_inference_seconds": 17.920057847048156,
+  "formal_initialization_uses_smoke_weights": false
+}

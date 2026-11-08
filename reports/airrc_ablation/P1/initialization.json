@@ -1,0 +1,9 @@
+{
+  "group": "P1",
+  "seed": 2026,
+  "labels": 4,
+  "backbone_initial_sha256": "cdaf73de8f709c99fd8d2c2178f8077d9a386969ce23ec7e357578528c3ac75a",
+  "loaded_trained_M0_weights": false,
+  "parameters": 42122004,
+  "refiner_parameters": 0
+}

@@ -1,0 +1,28 @@
+{
+  "optimizer": "SGD",
+  "optimizer_hyperparameters": {
+    "lr": 0.01,
+    "momentum": 0.99,
+    "dampening": 0,
+    "weight_decay": 3e-05,
+    "nesterov": true,
+    "maximize": false,
+    "foreach": null,
+    "differentiable": false,
+    "initial_lr": 0.01
+  },
+  "deep_supervision_weights": [
+    0.5333333333333333,
+    0.26666666666666666,
+    0.13333333333333333,
+    0.06666666666666667,
+    0.0
+  ],
+  "train_augmentation_workers": 4,
+  "validation_augmentation_workers": 2,
+  "foreground_oversampling": 0.33,
+  "worker_seeds": null,
+  "batch_arrival": "existing M0 NonDetMultiThreaded pipeline; not bitwise-replayable",
+  "iteration_budget": 100000,
+  "AMP_skip_policy": "same stock M0 behavior; record successful updates separately"
+}

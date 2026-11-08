@@ -1,0 +1,107 @@
+{
+  "experiment_family": "airrc_ablation",
+  "dataset": "Dataset926_AirRC",
+  "baseline": "completed AirRC M0, no new baseline training",
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1,
+    "pulmonary_vein": 2,
+    "airway_lumen": 3
+  },
+  "output_channels": 4,
+  "patient_counts": {
+    "train": 178,
+    "val": 38,
+    "test": 38
+  },
+  "patient_split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7",
+  "frozen_M0_plan_sha256": "9d37dfb66cc6d9a9ac498148ed361332964f4065417df4091889c1be870e5f01",
+  "normalization": "reuse frozen M0 training178 statistics; no refit",
+  "spacing_mm": [
+    1,
+    1,
+    1
+  ],
+  "patch": [
+    128,
+    128,
+    128
+  ],
+  "batch_size": 2,
+  "seed": 2026,
+  "initialization": "from_scratch",
+  "epochs": 400,
+  "iterations_per_epoch": 250,
+  "training_iterations": 100000,
+  "iteration_semantics": "exact stock M0 AMP iteration budget; successful optimizer updates/skips recorded separately; historical M0 skip count unavailable",
+  "optimizer": {
+    "name": "SGD",
+    "lr": 0.01,
+    "momentum": 0.99,
+    "nesterov": true,
+    "weight_decay": 3e-05,
+    "gradient_clip": 12,
+    "scheduler": "original polynomial400 epochs"
+  },
+  "base_loss": "original foreground Dice + cross entropy and unchanged deep-supervision weights",
+  "augmentation": "original AirRC M0 pipeline,4 training/2 validation workers, stock nondeterministic batch arrival",
+  "worker_seeds": null,
+  "foreground_oversampling": 0.33,
+  "AMP": true,
+  "DDP": false,
+  "network_compile": false,
+  "validation": {
+    "frequency_iterations": 2000,
+    "patients": 38,
+    "selection": "mean of three foreground-class patient-mean Dice",
+    "tie": "keep earlier"
+  },
+  "inference": {
+    "tile_step_size": 0.5,
+    "Gaussian": true,
+    "TTA": false,
+    "postprocessing": "none",
+    "grid": "same prepared1mm AirRC GT evaluation grid"
+  },
+  "skeleton_recall": {
+    "foreground_classes": [
+      1,
+      2,
+      3
+    ],
+    "weight": 1.0,
+    "class_weighting": "equal foreground macro",
+    "tube": "Lee skeleton,2-voxel Manhattan dilation intersect own GT, after spatial augmentation",
+    "smoothing": 1e-05,
+    "deep_supervision": "highest resolution only, retain original outer DS weights",
+    "reference": "MIC-DKFZ/Skeleton-Recall@c7bac3c72ca7bb4f3d891235f051f0c4d07d7229"
+  },
+  "training_source_sha256": {
+    "train_airrc.py": "55a38cfa9e2844f31e09ff5bc8e949280117f07194ccf93a91aa41905a788a80",
+    "models/ct_local_refiner.py": "1a5fb6e4f33ffeb25ef439fc17b41c9ca2c8c19d9460140785f9fa748d8cdddc",
+    "airrc_ablation/common.py": "33b587ae5fc2d3e9a331e3ffc868df812079cb7d87d71ab24c6f9d4422f66f62",
+    "airrc_ablation/skeleton_recall.py": "b41f3a20809980b193473c395a09df55c5efb55e9d69e43474f429638070d89a",
+    "airrc_ablation/trainer.py": "134c4ee4452b0ac63ee05b518c1343683c838b5af7b55831d00d32ea23dc9f10",
+    "airrc_ablation/config.py": "5dd569686e213d75eda77708881bdd78a1d17283cb18a659fb642ef1fd23d61d",
+    "airrc_ablation/train.py": "f8b6716ea3edce762284bf296d1c2cb87e74443fa6a3c746090d5286644e9b6e"
+  },
+  "groups": {
+    "P1": {
+      "refiner": false
+    },
+    "P2": {
+      "refiner": {
+        "source": "user supplied CT_Local_Refiner_Codex.md",
+        "num_classes": 4,
+        "hidden_channels": 16,
+        "max_delta": 1.0,
+        "gate_floor": 0.25,
+        "dtype": "FP32 under AMP",
+        "initial_residual": "zero",
+        "conditions_detached": true,
+        "stage": "highest-resolution patch logits before Gaussian fusion",
+        "extra_residual_regularizer": false
+      }
+    }
+  }
+}

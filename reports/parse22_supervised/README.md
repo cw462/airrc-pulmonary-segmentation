@@ -12,11 +12,11 @@ Schedule: finish P0 on GPU0, then run P1 on GPU0 and P2 on GPU1 concurrently. Ea
 | P1 | P0 + Skeleton Recall Loss |
 | P2 | P1 + supplied CT-guided residual refiner |
 
-State: **training**. Pending summaries contain no measured scores.
+State: **paused_by_user**. Pending summaries contain no measured scores.
 
 | Group | Saved optimizer updates |
 |---|---:|
-| P0 | 1000 |
+| P0 | 1750 |
 | P1 | 0 |
 | P2 | 0 |
 

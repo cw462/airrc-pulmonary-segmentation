@@ -1,0 +1,222 @@
+{
+  "state": "done",
+  "patients_expected": 250,
+  "patients_completed": 250,
+  "protocol_id": "airrc-skeleton-branch-v1",
+  "scores": {
+    "external": {
+      "pulmonary_artery": {
+        "skeleton_recall": {
+          "mean": 0.9570505933280752,
+          "sample_std": 0.061521483582228524,
+          "median": 0.9661631678939895,
+          "n_valid": 250
+        },
+        "skeleton_precision": {
+          "mean": 0.646532164315773,
+          "sample_std": 0.1133998941297218,
+          "median": 0.6499419666782141,
+          "n_valid": 250
+        },
+        "cldice_recomputed": {
+          "mean": 0.7658759367230602,
+          "sample_std": 0.08805054136015482,
+          "median": 0.7750820318048867,
+          "n_valid": 250
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9426319920546703,
+          "sample_std": 0.0670442188368845,
+          "median": 0.9541387826641172,
+          "n_valid": 250
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9262479580146015,
+          "sample_std": 0.07073914599502959,
+          "median": 0.9409911090861424,
+          "n_valid": 250
+        },
+        "branch_coverage_mean": {
+          "mean": 0.9598079083617522,
+          "sample_std": 0.0611512380329834,
+          "median": 0.9701894758834533,
+          "n_valid": 250
+        },
+        "gt_branch_count": {
+          "mean": 559.216,
+          "sample_std": 166.3759754436297,
+          "median": 549.0,
+          "n_valid": 250
+        },
+        "detected_branch_count_80": {
+          "mean": 525.696,
+          "sample_std": 157.0683847691059,
+          "median": 517.0,
+          "n_valid": 250
+        },
+        "detected_branch_count_90": {
+          "mean": 516.964,
+          "sample_std": 156.21101828274382,
+          "median": 509.0,
+          "n_valid": 250
+        },
+        "excluded_short_branch_count": {
+          "mean": 42.592,
+          "sample_std": 26.896826823487764,
+          "median": 37.0,
+          "n_valid": 250
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "median": 0.0,
+          "n_valid": 250
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 91.17151425852106,
+          "sample_std": 57.427558493675086,
+          "median": 79.63504253250812,
+          "n_valid": 250
+        },
+        "degenerate_structure_count": {
+          "mean": 1.988,
+          "sample_std": 5.739654216247557,
+          "median": 0.0,
+          "n_valid": 250
+        },
+        "junction_cluster_count": {
+          "mean": 287.448,
+          "sample_std": 88.6287284237342,
+          "median": 278.5,
+          "n_valid": 250
+        },
+        "suppressed_degree2_cluster_count": {
+          "mean": 0.772,
+          "sample_std": 1.25471640342033,
+          "median": 0.0,
+          "n_valid": 250
+        },
+        "gt_skeleton_voxel_count": {
+          "mean": 10997.564,
+          "sample_std": 5314.958063689602,
+          "median": 9628.5,
+          "n_valid": 250
+        },
+        "pred_skeleton_voxel_count": {
+          "mean": 13635.288,
+          "sample_std": 2537.532508952736,
+          "median": 13352.5,
+          "n_valid": 250
+        }
+      },
+      "pulmonary_vein": {
+        "skeleton_recall": {
+          "mean": 0.9572502446206818,
+          "sample_std": 0.062093217515007244,
+          "median": 0.9699886957226354,
+          "n_valid": 250
+        },
+        "skeleton_precision": {
+          "mean": 0.6689056098260153,
+          "sample_std": 0.11268142535973748,
+          "median": 0.6768807377010118,
+          "n_valid": 250
+        },
+        "cldice_recomputed": {
+          "mean": 0.781386100072141,
+          "sample_std": 0.08289418282780722,
+          "median": 0.7945332907708964,
+          "n_valid": 250
+        },
+        "branch_detection_rate_80": {
+          "mean": 0.9248871764173423,
+          "sample_std": 0.07964582352835373,
+          "median": 0.945779989309985,
+          "n_valid": 250
+        },
+        "branch_detection_rate_90": {
+          "mean": 0.9078441848311193,
+          "sample_std": 0.08463916662399748,
+          "median": 0.9297408979227162,
+          "n_valid": 250
+        },
+        "branch_coverage_mean": {
+          "mean": 0.946739534007482,
+          "sample_std": 0.06774294572317507,
+          "median": 0.9626467147641968,
+          "n_valid": 250
+        },
+        "gt_branch_count": {
+          "mean": 650.528,
+          "sample_std": 220.13311328890313,
+          "median": 616.0,
+          "n_valid": 250
+        },
+        "detected_branch_count_80": {
+          "mean": 593.344,
+          "sample_std": 175.52267803911863,
+          "median": 577.5,
+          "n_valid": 250
+        },
+        "detected_branch_count_90": {
+          "mean": 581.392,
+          "sample_std": 169.22432990360844,
+          "median": 571.5,
+          "n_valid": 250
+        },
+        "excluded_short_branch_count": {
+          "mean": 55.816,
+          "sample_std": 34.0601603356231,
+          "median": 49.5,
+          "n_valid": 250
+        },
+        "excluded_cycle_component_count": {
+          "mean": 0.012,
+          "sample_std": 0.10910368672886965,
+          "median": 0.0,
+          "n_valid": 250
+        },
+        "excluded_short_branch_total_length_mm": {
+          "mean": 121.0482742817814,
+          "sample_std": 72.95724357328868,
+          "median": 109.56262259535168,
+          "n_valid": 250
+        },
+        "degenerate_structure_count": {
+          "mean": 2.844,
+          "sample_std": 5.4178479403930195,
+          "median": 1.0,
+          "n_valid": 250
+        },
+        "junction_cluster_count": {
+          "mean": 335.988,
+          "sample_std": 118.72229694191675,
+          "median": 319.5,
+          "n_valid": 250
+        },
+        "suppressed_degree2_cluster_count": {
+          "mean": 0.356,
+          "sample_std": 0.6805266092251308,
+          "median": 0.0,
+          "n_valid": 250
+        },
+        "gt_skeleton_voxel_count": {
+          "mean": 9506.08,
+          "sample_std": 2529.8171659573923,
+          "median": 9317.5,
+          "n_valid": 250
+        },
+        "pred_skeleton_voxel_count": {
+          "mean": 14304.704,
+          "sample_std": 2400.716415910569,
+          "median": 14310.5,
+          "n_valid": 250
+        }
+      }
+    }
+  },
+  "failed_structure_rows": 0,
+  "legacy_cldice_mismatches": 0,
+  "exception_count": 0,
+  "maximum_cldice_absolute_difference": 0.0
+}

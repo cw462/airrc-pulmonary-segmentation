@@ -66,6 +66,8 @@
 
 [完整统计、动静脉错分、逐例结果及空间协议](reports/hipas_m0/README.md)。这是公开250例子集，无气道GT。
 
+[HiPaS250例骨架与分支补充结果](reports/hipas_m0/skeleton_branch/README.md)，复用现有预测及固定GT，沿用AirRC评价口径。
+
 ## PARSE2022 外部测试
 
 | 指标 | 肺动脉外部测试，100 例 |

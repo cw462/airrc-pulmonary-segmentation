@@ -1,0 +1,2316 @@
+{
+  "protocol_id": "airrc-skeleton-branch-v1",
+  "source_code_sha256": {
+    "evaluate_skeleton_branches.py": "771df329d045ca06088f0f9e0b005743e0297bf169ba880d2d40030d0c137bd4",
+    "branch_metrics.py": "f9b5827d3be8ae59b5f6f79df8b493b1c572e2b4440374ad00b0ff657edcc728",
+    "skeleton_metrics.py": "8bfd2a3087f6847cc207416bf0e38c96eb6af05dc4d6f85c167e01951eebaf21",
+    "evaluate_airrc.py": "97ecf3a3de3c9cb753feb184af579b20df472c6c244b9d37dadefd4649ffc7fa",
+    "evaluate_hipas_skeleton_branches.py": "4180ba7786205590b10064d6ed7fb581c42d8918fa48fb8e82191a75d6d49ed9"
+  },
+  "python": "3.8.12",
+  "skimage": "0.21.0",
+  "scipy": "1.10.1",
+  "skeleton_extractor": "evaluate_airrc.skeletonize(mask, method=lee).astype(bool)",
+  "skeleton_count_weighting": "voxel counts; no dilation or spatial tolerance",
+  "gt_cache": "GT-only tight bounding-box skeleton, stored in full reference ZYX indices; prediction independent",
+  "connectivity": 26,
+  "junction_cluster_rule": "26-connected degree>=3 voxel clusters; absorb degree2 local returns with both neighbours in same cluster",
+  "corner_rule": "clusters with exactly two external paths are nonbranching bends; join paths with shortest internal 26-neighbour connection",
+  "junction_internal_length": "excluded for true junction clusters; nonbranching bend connectors belong to the degree2 path",
+  "all_components": true,
+  "pure_cycle_components": "record and exclude, including closed degree2 quotient components",
+  "minimum_branch_length_mm": 3.0,
+  "main_coverage_threshold": 0.8,
+  "sensitivity_threshold": 0.9,
+  "coverage_weighting": "half physical edge length to each endpoint; branch-macro average within patient",
+  "coverage_numerics": "math.fsum numerator/denominator, roundoff-only clamp to [0,1]; thresholds unchanged, no epsilon added",
+  "physical_length": "norm(direction @ diag(spacing_xyz) @ delta_index_xyz); convert ZYX indices to XYZ",
+  "spatial_tolerance_mm": 0.0,
+  "labels": {
+    "0": "background",
+    "1": "pulmonary_artery",
+    "2": "pulmonary_vein",
+    "3": "airway_lumen_prediction_only_not_evaluated"
+  },
+  "gt_encoding": "existing unified HiPaS GT:0 background,1 artery,2 vein; original binary NPZs unchanged; overlap artery priority per author issue10",
+  "gt_empty": "skeleton_recall and BDR undefined; preserve old clDice both-empty NaN / one-empty zero",
+  "prediction_empty": "recall=0 if GT skeleton exists, precision=NaN, BDR=0 only if effective GT branches exist",
+  "no_valid_gt_branches": "BDR and coverage mean NaN, no zero/one imputation",
+  "cldice_legacy_policy": "both empty NaN; either empty zero; exact perfect nonempty mask one; otherwise max(1,skeleton count) harmonic",
+  "cldice_absolute_difference_tolerance": 1e-12,
+  "aggregation": "per-patient mean/sample_std ddof=1/median/n_valid, separately by split and class; no branch pooling",
+  "definition_limit": "unrooted topological GT branches, not anatomical names or branch levels; coverage BDR does not ensure continuity",
+  "fixed_cases": [
+    {
+      "case_id": "hipas_001",
+      "split": "external",
+      "gt_path": "hipas_001.nii.gz"
+    },
+    {
+      "case_id": "hipas_002",
+      "split": "external",
+      "gt_path": "hipas_002.nii.gz"
+    },
+    {
+      "case_id": "hipas_003",
+      "split": "external",
+      "gt_path": "hipas_003.nii.gz"
+    },
+    {
+      "case_id": "hipas_004",
+      "split": "external",
+      "gt_path": "hipas_004.nii.gz"
+    },
+    {
+      "case_id": "hipas_005",
+      "split": "external",
+      "gt_path": "hipas_005.nii.gz"
+    },
+    {
+      "case_id": "hipas_006",
+      "split": "external",
+      "gt_path": "hipas_006.nii.gz"
+    },
+    {
+      "case_id": "hipas_007",
+      "split": "external",
+      "gt_path": "hipas_007.nii.gz"
+    },
+    {
+      "case_id": "hipas_008",
+      "split": "external",
+      "gt_path": "hipas_008.nii.gz"
+    },
+    {
+      "case_id": "hipas_009",
+      "split": "external",
+      "gt_path": "hipas_009.nii.gz"
+    },
+    {
+      "case_id": "hipas_010",
+      "split": "external",
+      "gt_path": "hipas_010.nii.gz"
+    },
+    {
+      "case_id": "hipas_011",
+      "split": "external",
+      "gt_path": "hipas_011.nii.gz"
+    },
+    {
+      "case_id": "hipas_012",
+      "split": "external",
+      "gt_path": "hipas_012.nii.gz"
+    },
+    {
+      "case_id": "hipas_013",
+      "split": "external",
+      "gt_path": "hipas_013.nii.gz"
+    },
+    {
+      "case_id": "hipas_014",
+      "split": "external",
+      "gt_path": "hipas_014.nii.gz"
+    },
+    {
+      "case_id": "hipas_015",
+      "split": "external",
+      "gt_path": "hipas_015.nii.gz"
+    },
+    {
+      "case_id": "hipas_016",
+      "split": "external",
+      "gt_path": "hipas_016.nii.gz"
+    },
+    {
+      "case_id": "hipas_017",
+      "split": "external",
+      "gt_path": "hipas_017.nii.gz"
+    },
+    {
+      "case_id": "hipas_018",
+      "split": "external",
+      "gt_path": "hipas_018.nii.gz"
+    },
+    {
+      "case_id": "hipas_019",
+      "split": "external",
+      "gt_path": "hipas_019.nii.gz"
+    },
+    {
+      "case_id": "hipas_020",
+      "split": "external",
+      "gt_path": "hipas_020.nii.gz"
+    },
+    {
+      "case_id": "hipas_021",
+      "split": "external",
+      "gt_path": "hipas_021.nii.gz"
+    },
+    {
+      "case_id": "hipas_022",
+      "split": "external",
+      "gt_path": "hipas_022.nii.gz"
+    },
+    {
+      "case_id": "hipas_023",
+      "split": "external",
+      "gt_path": "hipas_023.nii.gz"
+    },
+    {
+      "case_id": "hipas_024",
+      "split": "external",
+      "gt_path": "hipas_024.nii.gz"
+    },
+    {
+      "case_id": "hipas_025",
+      "split": "external",
+      "gt_path": "hipas_025.nii.gz"
+    },
+    {
+      "case_id": "hipas_026",
+      "split": "external",
+      "gt_path": "hipas_026.nii.gz"
+    },
+    {
+      "case_id": "hipas_027",
+      "split": "external",
+      "gt_path": "hipas_027.nii.gz"
+    },
+    {
+      "case_id": "hipas_028",
+      "split": "external",
+      "gt_path": "hipas_028.nii.gz"
+    },
+    {
+      "case_id": "hipas_029",
+      "split": "external",
+      "gt_path": "hipas_029.nii.gz"
+    },
+    {
+      "case_id": "hipas_030",
+      "split": "external",
+      "gt_path": "hipas_030.nii.gz"
+    },
+    {
+      "case_id": "hipas_031",
+      "split": "external",
+      "gt_path": "hipas_031.nii.gz"
+    },
+    {
+      "case_id": "hipas_032",
+      "split": "external",
+      "gt_path": "hipas_032.nii.gz"
+    },
+    {
+      "case_id": "hipas_033",
+      "split": "external",
+      "gt_path": "hipas_033.nii.gz"
+    },
+    {
+      "case_id": "hipas_034",
+      "split": "external",
+      "gt_path": "hipas_034.nii.gz"
+    },
+    {
+      "case_id": "hipas_035",
+      "split": "external",
+      "gt_path": "hipas_035.nii.gz"
+    },
+    {
+      "case_id": "hipas_036",
+      "split": "external",
+      "gt_path": "hipas_036.nii.gz"
+    },
+    {
+      "case_id": "hipas_037",
+      "split": "external",
+      "gt_path": "hipas_037.nii.gz"
+    },
+    {
+      "case_id": "hipas_038",
+      "split": "external",
+      "gt_path": "hipas_038.nii.gz"
+    },
+    {
+      "case_id": "hipas_039",
+      "split": "external",
+      "gt_path": "hipas_039.nii.gz"
+    },
+    {
+      "case_id": "hipas_040",
+      "split": "external",
+      "gt_path": "hipas_040.nii.gz"
+    },
+    {
+      "case_id": "hipas_041",
+      "split": "external",
+      "gt_path": "hipas_041.nii.gz"
+    },
+    {
+      "case_id": "hipas_042",
+      "split": "external",
+      "gt_path": "hipas_042.nii.gz"
+    },
+    {
+      "case_id": "hipas_043",
+      "split": "external",
+      "gt_path": "hipas_043.nii.gz"
+    },
+    {
+      "case_id": "hipas_044",
+      "split": "external",
+      "gt_path": "hipas_044.nii.gz"
+    },
+    {
+      "case_id": "hipas_045",
+      "split": "external",
+      "gt_path": "hipas_045.nii.gz"
+    },
+    {
+      "case_id": "hipas_046",
+      "split": "external",
+      "gt_path": "hipas_046.nii.gz"
+    },
+    {
+      "case_id": "hipas_047",
+      "split": "external",
+      "gt_path": "hipas_047.nii.gz"
+    },
+    {
+      "case_id": "hipas_048",
+      "split": "external",
+      "gt_path": "hipas_048.nii.gz"
+    },
+    {
+      "case_id": "hipas_049",
+      "split": "external",
+      "gt_path": "hipas_049.nii.gz"
+    },
+    {
+      "case_id": "hipas_050",
+      "split": "external",
+      "gt_path": "hipas_050.nii.gz"
+    },
+    {
+      "case_id": "hipas_051",
+      "split": "external",
+      "gt_path": "hipas_051.nii.gz"
+    },
+    {
+      "case_id": "hipas_052",
+      "split": "external",
+      "gt_path": "hipas_052.nii.gz"
+    },
+    {
+      "case_id": "hipas_053",
+      "split": "external",
+      "gt_path": "hipas_053.nii.gz"
+    },
+    {
+      "case_id": "hipas_054",
+      "split": "external",
+      "gt_path": "hipas_054.nii.gz"
+    },
+    {
+      "case_id": "hipas_055",
+      "split": "external",
+      "gt_path": "hipas_055.nii.gz"
+    },
+    {
+      "case_id": "hipas_056",
+      "split": "external",
+      "gt_path": "hipas_056.nii.gz"
+    },
+    {
+      "case_id": "hipas_057",
+      "split": "external",
+      "gt_path": "hipas_057.nii.gz"
+    },
+    {
+      "case_id": "hipas_058",
+      "split": "external",
+      "gt_path": "hipas_058.nii.gz"
+    },
+    {
+      "case_id": "hipas_059",
+      "split": "external",
+      "gt_path": "hipas_059.nii.gz"
+    },
+    {
+      "case_id": "hipas_060",
+      "split": "external",
+      "gt_path": "hipas_060.nii.gz"
+    },
+    {
+      "case_id": "hipas_061",
+      "split": "external",
+      "gt_path": "hipas_061.nii.gz"
+    },
+    {
+      "case_id": "hipas_062",
+      "split": "external",
+      "gt_path": "hipas_062.nii.gz"
+    },
+    {
+      "case_id": "hipas_063",
+      "split": "external",
+      "gt_path": "hipas_063.nii.gz"
+    },
+    {
+      "case_id": "hipas_064",
+      "split": "external",
+      "gt_path": "hipas_064.nii.gz"
+    },
+    {
+      "case_id": "hipas_065",
+      "split": "external",
+      "gt_path": "hipas_065.nii.gz"
+    },
+    {
+      "case_id": "hipas_066",
+      "split": "external",
+      "gt_path": "hipas_066.nii.gz"
+    },
+    {
+      "case_id": "hipas_067",
+      "split": "external",
+      "gt_path": "hipas_067.nii.gz"
+    },
+    {
+      "case_id": "hipas_068",
+      "split": "external",
+      "gt_path": "hipas_068.nii.gz"
+    },
+    {
+      "case_id": "hipas_069",
+      "split": "external",
+      "gt_path": "hipas_069.nii.gz"
+    },
+    {
+      "case_id": "hipas_070",
+      "split": "external",
+      "gt_path": "hipas_070.nii.gz"
+    },
+    {
+      "case_id": "hipas_071",
+      "split": "external",
+      "gt_path": "hipas_071.nii.gz"
+    },
+    {
+      "case_id": "hipas_072",
+      "split": "external",
+      "gt_path": "hipas_072.nii.gz"
+    },
+    {
+      "case_id": "hipas_073",
+      "split": "external",
+      "gt_path": "hipas_073.nii.gz"
+    },
+    {
+      "case_id": "hipas_074",
+      "split": "external",
+      "gt_path": "hipas_074.nii.gz"
+    },
+    {
+      "case_id": "hipas_075",
+      "split": "external",
+      "gt_path": "hipas_075.nii.gz"
+    },
+    {
+      "case_id": "hipas_076",
+      "split": "external",
+      "gt_path": "hipas_076.nii.gz"
+    },
+    {
+      "case_id": "hipas_077",
+      "split": "external",
+      "gt_path": "hipas_077.nii.gz"
+    },
+    {
+      "case_id": "hipas_078",
+      "split": "external",
+      "gt_path": "hipas_078.nii.gz"
+    },
+    {
+      "case_id": "hipas_079",
+      "split": "external",
+      "gt_path": "hipas_079.nii.gz"
+    },
+    {
+      "case_id": "hipas_080",
+      "split": "external",
+      "gt_path": "hipas_080.nii.gz"
+    },
+    {
+      "case_id": "hipas_081",
+      "split": "external",
+      "gt_path": "hipas_081.nii.gz"
+    },
+    {
+      "case_id": "hipas_082",
+      "split": "external",
+      "gt_path": "hipas_082.nii.gz"
+    },
+    {
+      "case_id": "hipas_083",
+      "split": "external",
+      "gt_path": "hipas_083.nii.gz"
+    },
+    {
+      "case_id": "hipas_084",
+      "split": "external",
+      "gt_path": "hipas_084.nii.gz"
+    },
+    {
+      "case_id": "hipas_085",
+      "split": "external",
+      "gt_path": "hipas_085.nii.gz"
+    },
+    {
+      "case_id": "hipas_086",
+      "split": "external",
+      "gt_path": "hipas_086.nii.gz"
+    },
+    {
+      "case_id": "hipas_087",
+      "split": "external",
+      "gt_path": "hipas_087.nii.gz"
+    },
+    {
+      "case_id": "hipas_088",
+      "split": "external",
+      "gt_path": "hipas_088.nii.gz"
+    },
+    {
+      "case_id": "hipas_089",
+      "split": "external",
+      "gt_path": "hipas_089.nii.gz"
+    },
+    {
+      "case_id": "hipas_090",
+      "split": "external",
+      "gt_path": "hipas_090.nii.gz"
+    },
+    {
+      "case_id": "hipas_091",
+      "split": "external",
+      "gt_path": "hipas_091.nii.gz"
+    },
+    {
+      "case_id": "hipas_092",
+      "split": "external",
+      "gt_path": "hipas_092.nii.gz"
+    },
+    {
+      "case_id": "hipas_093",
+      "split": "external",
+      "gt_path": "hipas_093.nii.gz"
+    },
+    {
+      "case_id": "hipas_094",
+      "split": "external",
+      "gt_path": "hipas_094.nii.gz"
+    },
+    {
+      "case_id": "hipas_095",
+      "split": "external",
+      "gt_path": "hipas_095.nii.gz"
+    },
+    {
+      "case_id": "hipas_096",
+      "split": "external",
+      "gt_path": "hipas_096.nii.gz"
+    },
+    {
+      "case_id": "hipas_097",
+      "split": "external",
+      "gt_path": "hipas_097.nii.gz"
+    },
+    {
+      "case_id": "hipas_098",
+      "split": "external",
+      "gt_path": "hipas_098.nii.gz"
+    },
+    {
+      "case_id": "hipas_099",
+      "split": "external",
+      "gt_path": "hipas_099.nii.gz"
+    },
+    {
+      "case_id": "hipas_100",
+      "split": "external",
+      "gt_path": "hipas_100.nii.gz"
+    },
+    {
+      "case_id": "hipas_101",
+      "split": "external",
+      "gt_path": "hipas_101.nii.gz"
+    },
+    {
+      "case_id": "hipas_102",
+      "split": "external",
+      "gt_path": "hipas_102.nii.gz"
+    },
+    {
+      "case_id": "hipas_103",
+      "split": "external",
+      "gt_path": "hipas_103.nii.gz"
+    },
+    {
+      "case_id": "hipas_104",
+      "split": "external",
+      "gt_path": "hipas_104.nii.gz"
+    },
+    {
+      "case_id": "hipas_105",
+      "split": "external",
+      "gt_path": "hipas_105.nii.gz"
+    },
+    {
+      "case_id": "hipas_106",
+      "split": "external",
+      "gt_path": "hipas_106.nii.gz"
+    },
+    {
+      "case_id": "hipas_107",
+      "split": "external",
+      "gt_path": "hipas_107.nii.gz"
+    },
+    {
+      "case_id": "hipas_108",
+      "split": "external",
+      "gt_path": "hipas_108.nii.gz"
+    },
+    {
+      "case_id": "hipas_109",
+      "split": "external",
+      "gt_path": "hipas_109.nii.gz"
+    },
+    {
+      "case_id": "hipas_110",
+      "split": "external",
+      "gt_path": "hipas_110.nii.gz"
+    },
+    {
+      "case_id": "hipas_111",
+      "split": "external",
+      "gt_path": "hipas_111.nii.gz"
+    },
+    {
+      "case_id": "hipas_112",
+      "split": "external",
+      "gt_path": "hipas_112.nii.gz"
+    },
+    {
+      "case_id": "hipas_113",
+      "split": "external",
+      "gt_path": "hipas_113.nii.gz"
+    },
+    {
+      "case_id": "hipas_114",
+      "split": "external",
+      "gt_path": "hipas_114.nii.gz"
+    },
+    {
+      "case_id": "hipas_115",
+      "split": "external",
+      "gt_path": "hipas_115.nii.gz"
+    },
+    {
+      "case_id": "hipas_116",
+      "split": "external",
+      "gt_path": "hipas_116.nii.gz"
+    },
+    {
+      "case_id": "hipas_117",
+      "split": "external",
+      "gt_path": "hipas_117.nii.gz"
+    },
+    {
+      "case_id": "hipas_118",
+      "split": "external",
+      "gt_path": "hipas_118.nii.gz"
+    },
+    {
+      "case_id": "hipas_119",
+      "split": "external",
+      "gt_path": "hipas_119.nii.gz"
+    },
+    {
+      "case_id": "hipas_120",
+      "split": "external",
+      "gt_path": "hipas_120.nii.gz"
+    },
+    {
+      "case_id": "hipas_121",
+      "split": "external",
+      "gt_path": "hipas_121.nii.gz"
+    },
+    {
+      "case_id": "hipas_122",
+      "split": "external",
+      "gt_path": "hipas_122.nii.gz"
+    },
+    {
+      "case_id": "hipas_123",
+      "split": "external",
+      "gt_path": "hipas_123.nii.gz"
+    },
+    {
+      "case_id": "hipas_124",
+      "split": "external",
+      "gt_path": "hipas_124.nii.gz"
+    },
+    {
+      "case_id": "hipas_125",
+      "split": "external",
+      "gt_path": "hipas_125.nii.gz"
+    },
+    {
+      "case_id": "hipas_126",
+      "split": "external",
+      "gt_path": "hipas_126.nii.gz"
+    },
+    {
+      "case_id": "hipas_127",
+      "split": "external",
+      "gt_path": "hipas_127.nii.gz"
+    },
+    {
+      "case_id": "hipas_128",
+      "split": "external",
+      "gt_path": "hipas_128.nii.gz"
+    },
+    {
+      "case_id": "hipas_129",
+      "split": "external",
+      "gt_path": "hipas_129.nii.gz"
+    },
+    {
+      "case_id": "hipas_130",
+      "split": "external",
+      "gt_path": "hipas_130.nii.gz"
+    },
+    {
+      "case_id": "hipas_131",
+      "split": "external",
+      "gt_path": "hipas_131.nii.gz"
+    },
+    {
+      "case_id": "hipas_132",
+      "split": "external",
+      "gt_path": "hipas_132.nii.gz"
+    },
+    {
+      "case_id": "hipas_133",
+      "split": "external",
+      "gt_path": "hipas_133.nii.gz"
+    },
+    {
+      "case_id": "hipas_134",
+      "split": "external",
+      "gt_path": "hipas_134.nii.gz"
+    },
+    {
+      "case_id": "hipas_135",
+      "split": "external",
+      "gt_path": "hipas_135.nii.gz"
+    },
+    {
+      "case_id": "hipas_136",
+      "split": "external",
+      "gt_path": "hipas_136.nii.gz"
+    },
+    {
+      "case_id": "hipas_137",
+      "split": "external",
+      "gt_path": "hipas_137.nii.gz"
+    },
+    {
+      "case_id": "hipas_138",
+      "split": "external",
+      "gt_path": "hipas_138.nii.gz"
+    },
+    {
+      "case_id": "hipas_139",
+      "split": "external",
+      "gt_path": "hipas_139.nii.gz"
+    },
+    {
+      "case_id": "hipas_140",
+      "split": "external",
+      "gt_path": "hipas_140.nii.gz"
+    },
+    {
+      "case_id": "hipas_141",
+      "split": "external",
+      "gt_path": "hipas_141.nii.gz"
+    },
+    {
+      "case_id": "hipas_142",
+      "split": "external",
+      "gt_path": "hipas_142.nii.gz"
+    },
+    {
+      "case_id": "hipas_143",
+      "split": "external",
+      "gt_path": "hipas_143.nii.gz"
+    },
+    {
+      "case_id": "hipas_144",
+      "split": "external",
+      "gt_path": "hipas_144.nii.gz"
+    },
+    {
+      "case_id": "hipas_145",
+      "split": "external",
+      "gt_path": "hipas_145.nii.gz"
+    },
+    {
+      "case_id": "hipas_146",
+      "split": "external",
+      "gt_path": "hipas_146.nii.gz"
+    },
+    {
+      "case_id": "hipas_147",
+      "split": "external",
+      "gt_path": "hipas_147.nii.gz"
+    },
+    {
+      "case_id": "hipas_148",
+      "split": "external",
+      "gt_path": "hipas_148.nii.gz"
+    },
+    {
+      "case_id": "hipas_149",
+      "split": "external",
+      "gt_path": "hipas_149.nii.gz"
+    },
+    {
+      "case_id": "hipas_150",
+      "split": "external",
+      "gt_path": "hipas_150.nii.gz"
+    },
+    {
+      "case_id": "hipas_151",
+      "split": "external",
+      "gt_path": "hipas_151.nii.gz"
+    },
+    {
+      "case_id": "hipas_152",
+      "split": "external",
+      "gt_path": "hipas_152.nii.gz"
+    },
+    {
+      "case_id": "hipas_153",
+      "split": "external",
+      "gt_path": "hipas_153.nii.gz"
+    },
+    {
+      "case_id": "hipas_154",
+      "split": "external",
+      "gt_path": "hipas_154.nii.gz"
+    },
+    {
+      "case_id": "hipas_155",
+      "split": "external",
+      "gt_path": "hipas_155.nii.gz"
+    },
+    {
+      "case_id": "hipas_156",
+      "split": "external",
+      "gt_path": "hipas_156.nii.gz"
+    },
+    {
+      "case_id": "hipas_157",
+      "split": "external",
+      "gt_path": "hipas_157.nii.gz"
+    },
+    {
+      "case_id": "hipas_158",
+      "split": "external",
+      "gt_path": "hipas_158.nii.gz"
+    },
+    {
+      "case_id": "hipas_159",
+      "split": "external",
+      "gt_path": "hipas_159.nii.gz"
+    },
+    {
+      "case_id": "hipas_160",
+      "split": "external",
+      "gt_path": "hipas_160.nii.gz"
+    },
+    {
+      "case_id": "hipas_161",
+      "split": "external",
+      "gt_path": "hipas_161.nii.gz"
+    },
+    {
+      "case_id": "hipas_162",
+      "split": "external",
+      "gt_path": "hipas_162.nii.gz"
+    },
+    {
+      "case_id": "hipas_163",
+      "split": "external",
+      "gt_path": "hipas_163.nii.gz"
+    },
+    {
+      "case_id": "hipas_164",
+      "split": "external",
+      "gt_path": "hipas_164.nii.gz"
+    },
+    {
+      "case_id": "hipas_165",
+      "split": "external",
+      "gt_path": "hipas_165.nii.gz"
+    },
+    {
+      "case_id": "hipas_166",
+      "split": "external",
+      "gt_path": "hipas_166.nii.gz"
+    },
+    {
+      "case_id": "hipas_167",
+      "split": "external",
+      "gt_path": "hipas_167.nii.gz"
+    },
+    {
+      "case_id": "hipas_168",
+      "split": "external",
+      "gt_path": "hipas_168.nii.gz"
+    },
+    {
+      "case_id": "hipas_169",
+      "split": "external",
+      "gt_path": "hipas_169.nii.gz"
+    },
+    {
+      "case_id": "hipas_170",
+      "split": "external",
+      "gt_path": "hipas_170.nii.gz"
+    },
+    {
+      "case_id": "hipas_171",
+      "split": "external",
+      "gt_path": "hipas_171.nii.gz"
+    },
+    {
+      "case_id": "hipas_172",
+      "split": "external",
+      "gt_path": "hipas_172.nii.gz"
+    },
+    {
+      "case_id": "hipas_173",
+      "split": "external",
+      "gt_path": "hipas_173.nii.gz"
+    },
+    {
+      "case_id": "hipas_174",
+      "split": "external",
+      "gt_path": "hipas_174.nii.gz"
+    },
+    {
+      "case_id": "hipas_175",
+      "split": "external",
+      "gt_path": "hipas_175.nii.gz"
+    },
+    {
+      "case_id": "hipas_176",
+      "split": "external",
+      "gt_path": "hipas_176.nii.gz"
+    },
+    {
+      "case_id": "hipas_177",
+      "split": "external",
+      "gt_path": "hipas_177.nii.gz"
+    },
+    {
+      "case_id": "hipas_178",
+      "split": "external",
+      "gt_path": "hipas_178.nii.gz"
+    },
+    {
+      "case_id": "hipas_179",
+      "split": "external",
+      "gt_path": "hipas_179.nii.gz"
+    },
+    {
+      "case_id": "hipas_180",
+      "split": "external",
+      "gt_path": "hipas_180.nii.gz"
+    },
+    {
+      "case_id": "hipas_181",
+      "split": "external",
+      "gt_path": "hipas_181.nii.gz"
+    },
+    {
+      "case_id": "hipas_182",
+      "split": "external",
+      "gt_path": "hipas_182.nii.gz"
+    },
+    {
+      "case_id": "hipas_183",
+      "split": "external",
+      "gt_path": "hipas_183.nii.gz"
+    },
+    {
+      "case_id": "hipas_184",
+      "split": "external",
+      "gt_path": "hipas_184.nii.gz"
+    },
+    {
+      "case_id": "hipas_185",
+      "split": "external",
+      "gt_path": "hipas_185.nii.gz"
+    },
+    {
+      "case_id": "hipas_186",
+      "split": "external",
+      "gt_path": "hipas_186.nii.gz"
+    },
+    {
+      "case_id": "hipas_187",
+      "split": "external",
+      "gt_path": "hipas_187.nii.gz"
+    },
+    {
+      "case_id": "hipas_188",
+      "split": "external",
+      "gt_path": "hipas_188.nii.gz"
+    },
+    {
+      "case_id": "hipas_189",
+      "split": "external",
+      "gt_path": "hipas_189.nii.gz"
+    },
+    {
+      "case_id": "hipas_190",
+      "split": "external",
+      "gt_path": "hipas_190.nii.gz"
+    },
+    {
+      "case_id": "hipas_191",
+      "split": "external",
+      "gt_path": "hipas_191.nii.gz"
+    },
+    {
+      "case_id": "hipas_192",
+      "split": "external",
+      "gt_path": "hipas_192.nii.gz"
+    },
+    {
+      "case_id": "hipas_193",
+      "split": "external",
+      "gt_path": "hipas_193.nii.gz"
+    },
+    {
+      "case_id": "hipas_194",
+      "split": "external",
+      "gt_path": "hipas_194.nii.gz"
+    },
+    {
+      "case_id": "hipas_195",
+      "split": "external",
+      "gt_path": "hipas_195.nii.gz"
+    },
+    {
+      "case_id": "hipas_196",
+      "split": "external",
+      "gt_path": "hipas_196.nii.gz"
+    },
+    {
+      "case_id": "hipas_197",
+      "split": "external",
+      "gt_path": "hipas_197.nii.gz"
+    },
+    {
+      "case_id": "hipas_198",
+      "split": "external",
+      "gt_path": "hipas_198.nii.gz"
+    },
+    {
+      "case_id": "hipas_199",
+      "split": "external",
+      "gt_path": "hipas_199.nii.gz"
+    },
+    {
+      "case_id": "hipas_200",
+      "split": "external",
+      "gt_path": "hipas_200.nii.gz"
+    },
+    {
+      "case_id": "hipas_201",
+      "split": "external",
+      "gt_path": "hipas_201.nii.gz"
+    },
+    {
+      "case_id": "hipas_202",
+      "split": "external",
+      "gt_path": "hipas_202.nii.gz"
+    },
+    {
+      "case_id": "hipas_203",
+      "split": "external",
+      "gt_path": "hipas_203.nii.gz"
+    },
+    {
+      "case_id": "hipas_204",
+      "split": "external",
+      "gt_path": "hipas_204.nii.gz"
+    },
+    {
+      "case_id": "hipas_205",
+      "split": "external",
+      "gt_path": "hipas_205.nii.gz"
+    },
+    {
+      "case_id": "hipas_206",
+      "split": "external",
+      "gt_path": "hipas_206.nii.gz"
+    },
+    {
+      "case_id": "hipas_207",
+      "split": "external",
+      "gt_path": "hipas_207.nii.gz"
+    },
+    {
+      "case_id": "hipas_208",
+      "split": "external",
+      "gt_path": "hipas_208.nii.gz"
+    },
+    {
+      "case_id": "hipas_209",
+      "split": "external",
+      "gt_path": "hipas_209.nii.gz"
+    },
+    {
+      "case_id": "hipas_210",
+      "split": "external",
+      "gt_path": "hipas_210.nii.gz"
+    },
+    {
+      "case_id": "hipas_211",
+      "split": "external",
+      "gt_path": "hipas_211.nii.gz"
+    },
+    {
+      "case_id": "hipas_212",
+      "split": "external",
+      "gt_path": "hipas_212.nii.gz"
+    },
+    {
+      "case_id": "hipas_213",
+      "split": "external",
+      "gt_path": "hipas_213.nii.gz"
+    },
+    {
+      "case_id": "hipas_214",
+      "split": "external",
+      "gt_path": "hipas_214.nii.gz"
+    },
+    {
+      "case_id": "hipas_215",
+      "split": "external",
+      "gt_path": "hipas_215.nii.gz"
+    },
+    {
+      "case_id": "hipas_216",
+      "split": "external",
+      "gt_path": "hipas_216.nii.gz"
+    },
+    {
+      "case_id": "hipas_217",
+      "split": "external",
+      "gt_path": "hipas_217.nii.gz"
+    },
+    {
+      "case_id": "hipas_218",
+      "split": "external",
+      "gt_path": "hipas_218.nii.gz"
+    },
+    {
+      "case_id": "hipas_219",
+      "split": "external",
+      "gt_path": "hipas_219.nii.gz"
+    },
+    {
+      "case_id": "hipas_220",
+      "split": "external",
+      "gt_path": "hipas_220.nii.gz"
+    },
+    {
+      "case_id": "hipas_221",
+      "split": "external",
+      "gt_path": "hipas_221.nii.gz"
+    },
+    {
+      "case_id": "hipas_222",
+      "split": "external",
+      "gt_path": "hipas_222.nii.gz"
+    },
+    {
+      "case_id": "hipas_223",
+      "split": "external",
+      "gt_path": "hipas_223.nii.gz"
+    },
+    {
+      "case_id": "hipas_224",
+      "split": "external",
+      "gt_path": "hipas_224.nii.gz"
+    },
+    {
+      "case_id": "hipas_225",
+      "split": "external",
+      "gt_path": "hipas_225.nii.gz"
+    },
+    {
+      "case_id": "hipas_226",
+      "split": "external",
+      "gt_path": "hipas_226.nii.gz"
+    },
+    {
+      "case_id": "hipas_227",
+      "split": "external",
+      "gt_path": "hipas_227.nii.gz"
+    },
+    {
+      "case_id": "hipas_228",
+      "split": "external",
+      "gt_path": "hipas_228.nii.gz"
+    },
+    {
+      "case_id": "hipas_229",
+      "split": "external",
+      "gt_path": "hipas_229.nii.gz"
+    },
+    {
+      "case_id": "hipas_230",
+      "split": "external",
+      "gt_path": "hipas_230.nii.gz"
+    },
+    {
+      "case_id": "hipas_231",
+      "split": "external",
+      "gt_path": "hipas_231.nii.gz"
+    },
+    {
+      "case_id": "hipas_232",
+      "split": "external",
+      "gt_path": "hipas_232.nii.gz"
+    },
+    {
+      "case_id": "hipas_233",
+      "split": "external",
+      "gt_path": "hipas_233.nii.gz"
+    },
+    {
+      "case_id": "hipas_234",
+      "split": "external",
+      "gt_path": "hipas_234.nii.gz"
+    },
+    {
+      "case_id": "hipas_235",
+      "split": "external",
+      "gt_path": "hipas_235.nii.gz"
+    },
+    {
+      "case_id": "hipas_236",
+      "split": "external",
+      "gt_path": "hipas_236.nii.gz"
+    },
+    {
+      "case_id": "hipas_237",
+      "split": "external",
+      "gt_path": "hipas_237.nii.gz"
+    },
+    {
+      "case_id": "hipas_238",
+      "split": "external",
+      "gt_path": "hipas_238.nii.gz"
+    },
+    {
+      "case_id": "hipas_239",
+      "split": "external",
+      "gt_path": "hipas_239.nii.gz"
+    },
+    {
+      "case_id": "hipas_240",
+      "split": "external",
+      "gt_path": "hipas_240.nii.gz"
+    },
+    {
+      "case_id": "hipas_241",
+      "split": "external",
+      "gt_path": "hipas_241.nii.gz"
+    },
+    {
+      "case_id": "hipas_242",
+      "split": "external",
+      "gt_path": "hipas_242.nii.gz"
+    },
+    {
+      "case_id": "hipas_243",
+      "split": "external",
+      "gt_path": "hipas_243.nii.gz"
+    },
+    {
+      "case_id": "hipas_244",
+      "split": "external",
+      "gt_path": "hipas_244.nii.gz"
+    },
+    {
+      "case_id": "hipas_245",
+      "split": "external",
+      "gt_path": "hipas_245.nii.gz"
+    },
+    {
+      "case_id": "hipas_246",
+      "split": "external",
+      "gt_path": "hipas_246.nii.gz"
+    },
+    {
+      "case_id": "hipas_247",
+      "split": "external",
+      "gt_path": "hipas_247.nii.gz"
+    },
+    {
+      "case_id": "hipas_248",
+      "split": "external",
+      "gt_path": "hipas_248.nii.gz"
+    },
+    {
+      "case_id": "hipas_249",
+      "split": "external",
+      "gt_path": "hipas_249.nii.gz"
+    },
+    {
+      "case_id": "hipas_250",
+      "split": "external",
+      "gt_path": "hipas_250.nii.gz"
+    }
+  ],
+  "dataset": "HiPaS_public250",
+  "evaluated_classes": [
+    "pulmonary_artery",
+    "pulmonary_vein"
+  ],
+  "gt_allowed_labels": [
+    0,
+    1,
+    2
+  ],
+  "source_record": "https://zenodo.org/records/14879605",
+  "inherited_algorithm_protocol": "airrc-skeleton-branch-v1",
+  "same_numerical_sources_as_airrc": true,
+  "geometry_basis": "original origin/direction not published; canonical common LPS benchmark grid with published spacing, not recovered patient-world geometry",
+  "airway_gt_available": false,
+  "gt_root": "<FIXED_HIPAS_GT_ROOT>",
+  "prediction_root": "<MODEL_PREDICTION_ROOT>",
+  "previous_per_case": "<ORIGINAL_HIPAS_RESULTS>/per_case.csv",
+  "cache_root": "<FROZEN_HIPAS_GT_BRANCH_CACHE>",
+  "selected_cases": [
+    {
+      "case_id": "hipas_001",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_002",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_003",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_004",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_005",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_006",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_007",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_008",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_009",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_010",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_011",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_012",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_013",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_014",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_015",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_016",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_017",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_018",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_019",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_020",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_021",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_022",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_023",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_024",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_025",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_026",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_027",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_028",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_029",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_030",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_031",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_032",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_033",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_034",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_035",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_036",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_037",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_038",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_039",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_040",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_041",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_042",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_043",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_044",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_045",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_046",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_047",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_048",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_049",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_050",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_051",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_052",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_053",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_054",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_055",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_056",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_057",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_058",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_059",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_060",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_061",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_062",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_063",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_064",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_065",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_066",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_067",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_068",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_069",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_070",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_071",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_072",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_073",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_074",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_075",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_076",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_077",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_078",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_079",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_080",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_081",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_082",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_083",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_084",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_085",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_086",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_087",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_088",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_089",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_090",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_091",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_092",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_093",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_094",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_095",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_096",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_097",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_098",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_099",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_100",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_101",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_102",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_103",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_104",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_105",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_106",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_107",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_108",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_109",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_110",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_111",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_112",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_113",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_114",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_115",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_116",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_117",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_118",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_119",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_120",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_121",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_122",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_123",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_124",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_125",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_126",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_127",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_128",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_129",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_130",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_131",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_132",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_133",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_134",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_135",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_136",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_137",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_138",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_139",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_140",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_141",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_142",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_143",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_144",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_145",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_146",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_147",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_148",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_149",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_150",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_151",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_152",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_153",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_154",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_155",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_156",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_157",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_158",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_159",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_160",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_161",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_162",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_163",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_164",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_165",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_166",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_167",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_168",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_169",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_170",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_171",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_172",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_173",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_174",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_175",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_176",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_177",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_178",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_179",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_180",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_181",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_182",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_183",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_184",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_185",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_186",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_187",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_188",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_189",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_190",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_191",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_192",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_193",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_194",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_195",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_196",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_197",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_198",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_199",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_200",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_201",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_202",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_203",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_204",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_205",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_206",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_207",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_208",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_209",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_210",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_211",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_212",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_213",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_214",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_215",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_216",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_217",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_218",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_219",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_220",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_221",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_222",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_223",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_224",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_225",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_226",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_227",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_228",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_229",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_230",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_231",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_232",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_233",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_234",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_235",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_236",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_237",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_238",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_239",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_240",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_241",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_242",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_243",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_244",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_245",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_246",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_247",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_248",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_249",
+      "split": "external"
+    },
+    {
+      "case_id": "hipas_250",
+      "split": "external"
+    }
+  ]
+}

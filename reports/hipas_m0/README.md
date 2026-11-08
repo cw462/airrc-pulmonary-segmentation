@@ -49,3 +49,7 @@ MCS = (A→V体素数 + V→A体素数) / (预测A/V总体素数 + GT A/V总体�
 - [完成清单](completion_manifest.json)
 
 原始数据及预测保留在用户本机源目录；公开仓库不包含医学影像、模型权重或私有连接配置。
+
+## 骨架与参考分支补充评价
+
+已完成相同250例的动脉、静脉骨架及分支补算。[完整结果与固定协议](skeleton_branch/README.md)。clDSC即本报告clDice。

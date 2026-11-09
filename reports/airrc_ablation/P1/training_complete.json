@@ -1,0 +1,14 @@
+{
+  "state": "trained",
+  "group": "P1",
+  "training_iterations": 100000,
+  "successful_optimizer_updates": 99964,
+  "AMP_skips": 36,
+  "best_validation_macro_dice": 0.9561725708808958,
+  "best_checkpoint": "checkpoint_best.pth",
+  "wall_seconds": 119725.294353634,
+  "peak_allocated_gib": 9.436263084411621,
+  "peak_reserved_gib": 11.525390625,
+  "patient_split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7",
+  "initialized_from_trained_M0": false
+}

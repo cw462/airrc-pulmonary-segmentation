@@ -22,6 +22,6 @@ One training seed does not establish robustness to training randomness. These th
 
 
 
-Current pipeline state: **training**.
+Current pipeline state: **waiting_user_resume**.
 
 User requested pause: **P2**. GPU1 is reserved for the user’s other experiments. P1 continues; P2 will resume only after explicit user instruction.

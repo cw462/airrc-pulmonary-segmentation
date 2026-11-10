@@ -1,5 +1,5 @@
 {
-  "state": "resume_authorized",
+  "state": "running",
   "group": "P2",
   "from_iterations": 8500,
   "successful_optimizer_updates_before_resume": 8497,
@@ -14,5 +14,9 @@
   "subsequent_training_evaluation_gpu_index": 0,
   "reserved_gpu_indices": [
     1
-  ]
+  ],
+  "training_pid": 3673189,
+  "verified_gpu_index": 0,
+  "verified_unix": 1794285455.1005297,
+  "execution_revision": "d08e744"
 }

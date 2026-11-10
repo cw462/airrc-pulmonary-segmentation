@@ -1,5 +1,5 @@
 {
-  "state": "paused_by_user",
+  "state": "resumed_by_user_on_gpu0",
   "group": "P2",
   "iterations": 8500,
   "successful_optimizer_updates": 8497,
@@ -9,5 +9,7 @@
   "checkpoint_bytes": 337296978,
   "reason": "GPU1 released for user other experiments",
   "automatic_resume": false,
-  "unix": 1794141805.6076317
+  "unix": 1794141805.6076317,
+  "resume_requested_unix": 1794285222.305324,
+  "resume_gpu_index": 0
 }

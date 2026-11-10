@@ -1,0 +1,9 @@
+{
+  "state": "passed",
+  "change": "User-authorized P2 resume and all remaining segmentation training/validation/evaluation on GPU0; GPU1 remains reserved",
+  "orchestration_tests_passed": 9,
+  "training_source_sha256_unchanged": true,
+  "scientific_configuration_unchanged": true,
+  "P1_restarted": false,
+  "unix": 1794285222.305324
+}

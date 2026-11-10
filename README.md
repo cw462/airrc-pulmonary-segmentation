@@ -128,12 +128,12 @@ bash scripts/evaluate_parse.sh "$PARSE_RUN/manifest.json" "$MODEL" "$PARSE_RUN/r
 
 A separate binary U-Mamba P0/P1/P2 family uses a frozen64/16/20 split and100000 optimizer updates per group, all from scratch. P2 uses the supplied CT-guided residual refiner. See the [protocol](docs/parse22_supervised_protocol.md) and [current reports](reports/parse22_supervised/README.md). Historical [AirRC→PARSE22](reports/parse2022/) scores remain a separate cross-dataset evaluation and are excluded from this comparison.
 
-This family is currently paused at the PARSE22 P0 step1750 checkpoint by user instruction. Its data, configuration and checkpoint are retained; AirRC now has priority on both GPUs.
+This family is currently paused at the PARSE22 P0 step1750 checkpoint by user instruction. Its data, configuration and checkpoint are retained; AirRC uses GPU0 while GPU1 is reserved for the user's other experiment.
 
 ## AirRC M0 / P1 / P2
 
-Reuse the completed M0 as P0_M0. AirRC-P1 adds three-foreground-class Skeleton Recall Loss; AirRC-P2 adds the supplied four-class CT residual refiner to P1. Both variants start independently from scratch on separate GPUs, retaining M0's178/38/38 split,1mm plan,128³ patch,batch2, original4/2 augmentation workers and100000 training-iteration budget. Validation selects the mean patient Dice across PA/PV/airway lumen. All three structures receive the frozen basic and skeleton/branch metrics, with AV confusion metrics for PA/PV.
+Reuse the completed M0 as P0_M0. AirRC-P1 adds three-foreground-class Skeleton Recall Loss; AirRC-P2 adds the supplied four-class CT residual refiner to P1. Both variants start independently from scratch, each using one GPU, retaining M0's178/38/38 split,1mm plan,128³ patch,batch2, original4/2 augmentation workers and100000 training-iteration budget. Validation selects the mean patient Dice across PA/PV/airway lumen. All three structures receive the frozen basic and skeleton/branch metrics, with AV confusion metrics for PA/PV.
 
 See the [AirRC variant protocol](docs/airrc_ablation_protocol.md) and [current reports](reports/airrc_ablation/README.md). Original M0 and cross-dataset result files are retained unchanged. AirRC group names and directories are independent of the paused PARSE22 supervised family.
 
-Current resource arrangement(2026-11-08): the user requested GPU1 for other experiments. AirRC-P2 is saved and paused at8500 training iterations; AirRC-P1 continues on GPU0. P2 will resume only after explicit user instruction.
+Current resource arrangement(2026-11-10): P1 completed100000 training iterations. At the user's instruction, P2 resumes its own8500-iteration checkpoint on the same GPU0. All remaining segmentation training, validation and evaluation run serially on GPU0; GPU1 remains reserved for the user's other experiment. PARSE22 stays paused.

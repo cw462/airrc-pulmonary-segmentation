@@ -1,9 +1,18 @@
 {
   "P0_M0": "completed reused baseline",
   "P1_gpu_index": 0,
-  "P2_gpu_index": 1,
+  "P2_gpu_index": 0,
   "single_GPU_per_model": true,
   "batch_per_model": 2,
   "DDP": false,
-  "PARSE22": "paused by user,1750-step checkpoint retained"
+  "PARSE22": "paused by user,1750-step checkpoint retained",
+  "remaining_jobs": "serial on GPU0",
+  "evaluation_gpu_indices": {
+    "P1": 0,
+    "P2": 0
+  },
+  "reserved_gpu_indices": [
+    1
+  ],
+  "P2_resumed_from_iterations": 8500
 }

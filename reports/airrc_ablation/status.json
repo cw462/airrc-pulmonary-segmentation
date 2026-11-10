@@ -1,11 +1,11 @@
 {
-  "observed_unix": 1794253204.9805677,
+  "observed_unix": 1794285319.7356722,
   "pipeline": {
-    "state": "waiting_user_resume",
-    "groups": [],
-    "paused_groups": [
+    "state": "training",
+    "groups": [
       "P2"
     ],
+    "paused_groups": [],
     "waiting_for_gpu": [],
     "failures": {},
     "completed_groups": [
@@ -22,17 +22,17 @@
       "pause_checkpoint_iterations": null,
       "training_complete": true,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 2921.831437587738
+      "log_age_seconds": 35036.58679103851
     },
     "P2": {
       "training_iterations": 8500,
       "epochs": 34,
       "successful_optimizer_updates": 8497,
-      "paused_by_user": true,
+      "paused_by_user": false,
       "pause_checkpoint_iterations": 8500,
       "training_complete": false,
       "evaluation_state": "not_evaluated",
-      "log_age_seconds": 111510.31733608246
+      "log_age_seconds": 79.44117093086243
     }
   }
 }

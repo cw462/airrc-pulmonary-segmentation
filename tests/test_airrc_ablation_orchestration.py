@@ -98,6 +98,63 @@ class AirRCOrchestrationTests(unittest.TestCase):
             self.assertEqual(state['failures'], {})
 
     @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
+    def test_shared_gpu_serializes_even_before_gpu_process_is_visible(self):
+        from airrc_ablation.pipeline import run_parallel
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            processes = []
+
+            def launch(folder, module, arguments, log_name, label, gpu):
+                self.assertTrue(all(child.poll() is not None for child in processes))
+                self.assertEqual(gpu, 'gpu-A')
+                code = ("import time,json;from pathlib import Path;time.sleep(.1);"
+                        "p=Path({!r})/{!r};p.mkdir();"
+                        "(p/'training_complete.json').write_text(json.dumps({{'training_iterations':100000,'group':{!r}}}))").format(
+                            str(root), label, label)
+                child = subprocess.Popen([sys.executable, '-c', code])
+                processes.append(child)
+                return child
+
+            with patch('airrc_ablation.pipeline.launch', launch), patch('airrc_ablation.pipeline.gpu_available', return_value=True):
+                run_parallel(root, {'P1': 'gpu-A', 'P2': 'gpu-A'}, 'full', poll_seconds=.01)
+            self.assertEqual([child.returncode for child in processes], [0, 0])
+            self.assertEqual(read_json(root/'pipeline_state.json')['completed_groups'], ['P1', 'P2'])
+
+    @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
+    def test_gpu_migration_resumes_p2_only_and_preserves_completed_p1(self):
+        from airrc_ablation.pipeline import run_parallel
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_json(root/'P1/training_complete.json', {'training_iterations': 100000, 'group': 'P1'})
+            checkpoint = root/'P2/results/Dataset926_AirRC/AirRCVariantTrainer__nnUNetPlans__3d_fullres/fold_0/checkpoint_latest.pth'
+            checkpoint.parent.mkdir(parents=True); checkpoint.touch()
+            calls = []
+
+            def launch(folder, module, arguments, log_name, label, gpu):
+                calls.append(label)
+                self.assertEqual(label, 'P2')
+                self.assertEqual(gpu, 'gpu-A')
+                self.assertEqual(arguments[-2:], ['--resume', str(checkpoint)])
+                code = ("import json;from pathlib import Path;"
+                        "(Path({!r})/'P2/training_complete.json').write_text(json.dumps({{'training_iterations':100000,'group':'P2'}}))").format(str(root))
+                return subprocess.Popen([sys.executable, '-c', code])
+
+            with patch('airrc_ablation.pipeline.launch', launch), patch('airrc_ablation.pipeline.gpu_available', return_value=True) as available:
+                run_parallel(root, {'P1': 'gpu-A', 'P2': 'gpu-A'}, 'full', poll_seconds=.01)
+            self.assertEqual(calls, ['P2'])
+            self.assertEqual(available.call_args_list[0].args, ('gpu-A',))
+
+    @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
+    def test_user_allowed_device_policy_applies_to_both_training_and_evaluation_assignments(self):
+        from airrc_ablation.pipeline import validate_assignments
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_json(root/'user_control.json', {'allowed_cuda_visible_devices': ['gpu-A'], 'reserved_gpu_indices': [1]})
+            validate_assignments(root, {'P1': 'gpu-A', 'P2': 'gpu-A'})
+            with self.assertRaisesRegex(ValueError, 'reservation policy'):
+                validate_assignments(root, {'P1': 'gpu-A', 'P2': 'gpu-B'})
+
+    @unittest.skipUnless(importlib.util.find_spec('fcntl'), 'Linux server process queue')
     def test_adoption_observes_existing_pid_without_restarting_or_signaling_it(self):
         from airrc_ablation.pipeline import wait_for_existing_training
         with tempfile.TemporaryDirectory() as directory:

@@ -94,3 +94,12 @@ environment or changing versions. The time of historical corruption is
 unknown. A CUDA/Mamba witness and full smoke runs are required before use.
 Public reports contain code/configuration/metrics only; images, labels,
 predictions, weights and private connection details remain outside Git.
+
+On 2026-11-10, after P1 completed its fixed 100000-iteration budget, the user
+requested P2 and all subsequent training/evaluation to use the same GPU0.
+P2 resumes its own saved 8500-iteration checkpoint, including optimizer,
+scheduler, AMP scaler and RNG state, with the same configuration and output
+directory. Remaining jobs share GPU0 serially; GPU1 remains reserved for
+the user's other experiments. This changes device placement only, with no
+new M0/P1 training and no changes to the frozen scientific recipe. The
+original multiworker batch-arrival semantics remain nondeterministic.

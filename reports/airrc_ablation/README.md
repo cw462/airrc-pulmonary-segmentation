@@ -4,7 +4,7 @@
 
 M0 (P0_M0) is the completed four-label U-Mamba baseline. P1 adds Skeleton Recall Loss for all three foreground classes. P2 adds the user supplied CT guided residual refiner to P1.
 
-P1 and P2 start independently from scratch on separate GPUs. PARSE22 supervised training is paused by user instruction; its saved checkpoint is retained.
+P1 and P2 start independently from scratch, each using one GPU. Device scheduling is recorded in execution_schedule_public.json. PARSE22 supervised training is paused by user instruction; its saved checkpoint is retained.
 
 
 
@@ -22,6 +22,6 @@ One training seed does not establish robustness to training randomness. These th
 
 
 
-Current pipeline state: **waiting_user_resume**.
+Current pipeline state: **training**.
 
-User requested pause: **P2**. GPU1 is reserved for the user’s other experiments. P1 continues; P2 will resume only after explicit user instruction.
+Current user scheduling: all remaining training and evaluation use GPU0 serially. GPU1 is reserved for the user’s other experiments.

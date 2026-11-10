@@ -1,4 +1,4 @@
-"""Two independent single-GPU AirRC variants; completed M0 is never retrained."""
+"""Independent single-GPU AirRC variants; shared devices run serially."""
 import argparse
 import fcntl
 import os
@@ -34,6 +34,15 @@ def trained(root, group):
 def paused_groups(root):
     path = root/'user_control.json'
     return sorted(read_json(path).get('paused_groups', {})) if path.exists() else []
+
+
+def validate_assignments(root, assignments):
+    if set(assignments) != {'P1', 'P2'} or not all(isinstance(gpu, str) and gpu for gpu in assignments.values()):
+        raise ValueError('Both AirRC groups require an explicit single GPU assignment.')
+    path = root/'user_control.json'
+    allowed = read_json(path).get('allowed_cuda_visible_devices') if path.exists() else None
+    if allowed is not None and not set(assignments.values()).issubset(set(allowed)):
+        raise ValueError('GPU assignments violate the user device reservation policy.')
 
 
 def training_args(root, group, mode):
@@ -77,10 +86,12 @@ def run_parallel(root, assignments, mode, poll_seconds=5):
     processes, failures = {}, {}
     while pending or processes:
         paused = paused_groups(root)
+        busy_devices = {assignments[g] for g in processes}
         for group in list(pending):
-            if group not in paused and gpu_available(assignments[group]):
+            if group not in paused and assignments[group] not in busy_devices and gpu_available(assignments[group]):
                 processes[group] = launch(root, 'airrc_ablation.train', training_args(root, group, mode),
                     group+'_'+mode+'.log', group, assignments[group])
+                busy_devices.add(assignments[group])
                 pending.remove(group)
         for group, child in list(processes.items()):
             if child.poll() is not None:
@@ -131,7 +142,7 @@ def main():
                 wait_for_existing_training(root, args.adopt_group, args.adopt_pid, args.adopt_start_ticks)
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB); LOCK_FD = lock.fileno()
             assignments = read_json(root/'execution_schedule.json')['cuda_visible_devices']
-            assert set(assignments) == {'P1', 'P2'} and len(set(assignments.values())) == 2
+            validate_assignments(root, assignments)
             assert read_json(root/'shared/preprocessing_config.json')['state'] == 'done'
             if args.mode == 'formal':
                 assert read_json(root/'engineering_review.json')['state'] == 'passed'

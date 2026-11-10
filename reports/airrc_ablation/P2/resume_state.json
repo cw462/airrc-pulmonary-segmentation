@@ -1,0 +1,18 @@
+{
+  "state": "resume_authorized",
+  "group": "P2",
+  "from_iterations": 8500,
+  "successful_optimizer_updates_before_resume": 8497,
+  "amp_skips_before_resume": 3,
+  "checkpoint": "checkpoint_latest.pth",
+  "checkpoint_bytes": 337296978,
+  "gpu_index": 0,
+  "user_authorized": true,
+  "requested_unix": 1794285222.305324,
+  "same_configuration_split_output": true,
+  "P1_restarted": false,
+  "subsequent_training_evaluation_gpu_index": 0,
+  "reserved_gpu_indices": [
+    1
+  ]
+}

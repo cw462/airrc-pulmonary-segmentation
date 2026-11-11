@@ -1,0 +1,10 @@
+{
+  "seed": 2026,
+  "resamples": 10000,
+  "CI": "patient paired percentile95%",
+  "validation_test_separated": true,
+  "training_seeds": [
+    2026
+  ],
+  "NaN": "pairwise excluded and listed; never zero-filled"
+}

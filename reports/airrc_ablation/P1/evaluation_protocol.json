@@ -1,0 +1,442 @@
+{
+  "branch_protocol": {
+    "protocol_id": "airrc-skeleton-branch-v1",
+    "source_code_sha256": {
+      "evaluate_skeleton_branches.py": "771df329d045ca06088f0f9e0b005743e0297bf169ba880d2d40030d0c137bd4",
+      "branch_metrics.py": "f9b5827d3be8ae59b5f6f79df8b493b1c572e2b4440374ad00b0ff657edcc728",
+      "skeleton_metrics.py": "8bfd2a3087f6847cc207416bf0e38c96eb6af05dc4d6f85c167e01951eebaf21",
+      "evaluate_airrc.py": "97ecf3a3de3c9cb753feb184af579b20df472c6c244b9d37dadefd4649ffc7fa"
+    },
+    "python": "3.8.12",
+    "skimage": "0.21.0",
+    "scipy": "1.10.1",
+    "skeleton_extractor": "evaluate_airrc.skeletonize(mask, method=lee).astype(bool)",
+    "skeleton_count_weighting": "voxel counts; no dilation or spatial tolerance",
+    "gt_cache": "GT-only tight bounding-box skeleton, stored in full reference ZYX indices; prediction independent",
+    "connectivity": 26,
+    "junction_cluster_rule": "26-connected degree>=3 voxel clusters; absorb degree2 local returns with both neighbours in same cluster",
+    "corner_rule": "clusters with exactly two external paths are nonbranching bends; join paths with shortest internal 26-neighbour connection",
+    "junction_internal_length": "excluded for true junction clusters; nonbranching bend connectors belong to the degree2 path",
+    "all_components": true,
+    "pure_cycle_components": "record and exclude, including closed degree2 quotient components",
+    "minimum_branch_length_mm": 3.0,
+    "main_coverage_threshold": 0.8,
+    "sensitivity_threshold": 0.9,
+    "coverage_weighting": "half physical edge length to each endpoint; branch-macro average within patient",
+    "coverage_numerics": "math.fsum numerator/denominator, roundoff-only clamp to [0,1]; thresholds unchanged, no epsilon added",
+    "physical_length": "norm(direction @ diag(spacing_xyz) @ delta_index_xyz); convert ZYX indices to XYZ",
+    "spatial_tolerance_mm": 0.0,
+    "labels": {
+      "0": "background",
+      "1": "pulmonary_artery",
+      "2": "pulmonary_vein",
+      "3": "airway_lumen"
+    },
+    "raw_airrc_mapping": [
+      0,
+      3,
+      0,
+      1,
+      2
+    ],
+    "gt_encoding": "already unified prepared GT",
+    "gt_empty": "skeleton_recall and BDR undefined; preserve old clDice both-empty NaN / one-empty zero",
+    "prediction_empty": "recall=0 if GT skeleton exists, precision=NaN, BDR=0 only if effective GT branches exist",
+    "no_valid_gt_branches": "BDR and coverage mean NaN, no zero/one imputation",
+    "cldice_legacy_policy": "both empty NaN; either empty zero; exact perfect nonempty mask one; otherwise max(1,skeleton count) harmonic",
+    "cldice_absolute_difference_tolerance": 1e-12,
+    "aggregation": "per-patient mean/sample_std ddof=1/median/n_valid, separately by split and class; no branch pooling",
+    "definition_limit": "unrooted topological GT branches, not anatomical names or branch levels; coverage BDR does not ensure continuity",
+    "fixed_cases": [
+      {
+        "case_id": "LIDC-IDRI-0658",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0658.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0491",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0491.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0118",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0118.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0521",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0521.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0556",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0556.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0469",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0469.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0470",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0470.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0776",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0776.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0036",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0036.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0416",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0416.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0651",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0651.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0788",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0788.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0775",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0775.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-1001",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-1001.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0211",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0211.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0555",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0555.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0999",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0999.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0407",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0407.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0617",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0617.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0973",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0973.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0109",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0109.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0445",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0445.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0791",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0791.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0091",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0091.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0705",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0705.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-1003",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-1003.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0810",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0810.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0481",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0481.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0462",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0462.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0456",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0456.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0375",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0375.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0490",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0490.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0309",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0309.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0424",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0424.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0733",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0733.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0933",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0933.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0743",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0743.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0859",
+        "split": "val",
+        "gt_path": "LIDC-IDRI-0859.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0012",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0012.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0542",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0542.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0128",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0128.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0860",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0860.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0406",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0406.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0137",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0137.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0097",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0097.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0696",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0696.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0004",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0004.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0358",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0358.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0530",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0530.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0659",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0659.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0826",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0826.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0813",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0813.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0583",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0583.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0822",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0822.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0827",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0827.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0801",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0801.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0871",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0871.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0628",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0628.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0649",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0649.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0836",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0836.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0515",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0515.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0634",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0634.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0700",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0700.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0674",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0674.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0928",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0928.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0344",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0344.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0913",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0913.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0129",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0129.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-1004",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-1004.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0898",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0898.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0712",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0712.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0602",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0602.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0985",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0985.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0594",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0594.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0427",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0427.nii.gz"
+      },
+      {
+        "case_id": "LIDC-IDRI-0164",
+        "split": "test",
+        "gt_path": "LIDC-IDRI-0164.nii.gz"
+      }
+    ]
+  },
+  "labels": {
+    "background": 0,
+    "pulmonary_artery": 1,
+    "pulmonary_vein": 2,
+    "airway_lumen": 3
+  },
+  "av_formula": "(GT_artery_pred_vein + GT_vein_pred_artery)/(GT_A_or_V_count + Pred_A_or_V_count); no factor2",
+  "HiPaS_implementation_identity_claimed": false,
+  "original_M0_metric_implementations_retained": true
+}

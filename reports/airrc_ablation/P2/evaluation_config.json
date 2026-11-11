@@ -1,5 +1,13 @@
 {
-  "state": "pending_training",
+  "state": "done",
+  "checkpoint": {
+    "group": "P2",
+    "checkpoint_filename": "checkpoint_best.pth",
+    "selected_iteration": 88000,
+    "selected_epoch": 352,
+    "validation_macro_dice": 0.9538316772058572,
+    "patient_split_sha256": "5975226b81ed0863391b9e04c0a74b3b7dab5bafcdc4d3b25b553b54c79929b7"
+  },
   "inference": {
     "tile_step_size": 0.5,
     "Gaussian": true,

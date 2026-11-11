@@ -22,6 +22,6 @@ One training seed does not establish robustness to training randomness. These th
 
 
 
-Current pipeline state: **training**.
+Current pipeline state: **done**.
 
 Current user scheduling: all remaining training and evaluation use GPU0 serially. GPU1 is reserved for the user’s other experiments.
